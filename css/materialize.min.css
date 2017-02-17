@@ -2543,7 +2543,7 @@ input[type=range]+.thumb {
 .row .col {
     float: left;
     box-sizing: border-box;
-    padding: 0 0.75rem;
+    padding: 0 2.75rem;
     min-height: 1px
 }
 .row .col[class*="push-"],

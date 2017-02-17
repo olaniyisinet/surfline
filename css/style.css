@@ -304,14 +304,14 @@ p {
     border-radius: 10px;
 }
 .offers .entry i {
-    font-size: 20px;
+/*    font-size: 20px;*/
     margin-bottom: 12px;
     color: #fff;
     float: left;
 }
 
 .offers .entry h6 {
-    font-size: 15px;
+    font-size: 10px;
     margin-bottom: 5px;
     color: #fff;
 }
@@ -735,9 +735,10 @@ form input[type=date] {
     border-bottom: 1px solid #ccc;
     height: 40px;
     border-radius: 5px;
-    width: 100%;
+    width: 80%;
     overflow: visible;
-    box-sizing: border-box
+    box-sizing: border-box;
+    margin-left: 10%;
 }
 form input:not([type]):focus:not([readonly]),
 form input[type=number]:focus:not([readonly]),
