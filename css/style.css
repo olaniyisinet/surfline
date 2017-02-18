@@ -26,8 +26,7 @@ footer .icon-social {
 }
 body {
     background: #fff;
-    color: #0082C6;
-
+/*    color: #0082C6;*/
 }
 .button,
 .navbar {
@@ -55,13 +54,24 @@ h3 {
     font-size: 28px
 }
 h4 {
-    font-size: 24px
+    font-size: 20px
 }
 h5 {
     font-size: 18px
 }
 h6 {
     font-size: 16px
+}
+
+h7 {
+    font-size: 10px;
+    color: #0082C6;
+    padding:10px
+}
+
+h8 {
+    font-size: 13px;
+    color: #0082C6
 }
 a {
     color: #333

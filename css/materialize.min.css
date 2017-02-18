@@ -1690,7 +1690,7 @@ sub {
 }
 img {
     border: 0;
-    padding-top: 15px
+/*    padding-top: 15px*/
 }
 svg:not(:root) {
     overflow: hidden
@@ -4387,21 +4387,23 @@ button.btn-floating {
     line-height: 3rem;
     padding: 0 1rem;
     background-color: #fff;
-    border-bottom: 1px solid #ddd
+    border-bottom: 1px solid #ddd;
+    font-size: 13px
 }
 .collapsible-header i {
-    width: 2rem;
-    font-size: 1.6rem;
+/*    width: 2rem;*/
+    font-size: 1rem;
     line-height: 3rem;
     display: block;
     float: left;
     text-align: center;
-    margin-right: 1rem
+/*    margin-right: 0.3rem*/
 }
 .collapsible-body {
     display: none;
     border-bottom: 1px solid #ddd;
-    box-sizing: border-box
+    box-sizing: border-box;
+    background: white
 }
 .collapsible-body p {
     margin: 0;
