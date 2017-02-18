@@ -33,7 +33,7 @@
             <span style="text-align:center; color: white; font-size:17px">Bundles</span>
 
             <div class="panel-control-right">
-                <a href="index.html" class="sidenav-control-right"><i class="fa fa-power-off"></i></a>
+                <a href="#" id="logout" class="sidenav-control-right"><i class="fa fa-power-off"></i></a>
             </div>
         </div>
     </div>
@@ -227,6 +227,13 @@
     <script src="js/slick.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/custom.js"></script>
+    <script type="text/javascript">
+        $("#logout").click(function() {
+//            alert("ceci est une alerte");
+            window.location = 'index.html'
+        });
+
+    </script>
 </body>
 
 </html>

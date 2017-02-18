@@ -24,7 +24,7 @@
         <div class="container">
             <!--            <div class="site-title"><a href="index-2.html"><h1>MD</h1></a></div>-->
             <span style="text-align:center; color: white; font-size:17px">Home</span>
-            <div class="panel-control-right"><a href="index.html" data-activates="slide-out-right" class="sidenav-control-right"><i class="fa fa-power-off"></i></a></div>
+            <div class="panel-control-right"><a href="#" id="logout" class="sidenav-control-right"><i class="fa fa-power-off"></i></a></div>
         </div>
     </div>
 
@@ -107,6 +107,13 @@
     <script src="js/jquery.filterizr.min.js"></script>
     <script src="js/custom-portfolio.js"></script>
     <script src="js/custom.js"></script>
+    <script type="text/javascript">
+        $("#logout").click(function() {
+//            alert("ceci est une alerte");
+            window.location = 'index.html'
+        });
+
+    </script>
 </body>
 
 </html>

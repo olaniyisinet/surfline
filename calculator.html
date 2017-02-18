@@ -59,7 +59,7 @@
             <span style="text-align:center; color: white; font-size:17px">Data Calculator</span>
 
             <div class="panel-control-right">
-                <a href="index.html" class="sidenav-control-right"><i class="fa fa-power-off"></i></a>
+                <a href="#" id="logout" class="sidenav-control-right"><i class="fa fa-power-off"></i></a>
             </div>
         </div>
     </div>
@@ -185,12 +185,10 @@
     <script src="js/slick.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/custom.js"></script>
-    <script>
-        $('#slide_01').on('input', function() {
-            $("#text_01").get(0).MaterialTextfield.change(this.value);
-        });
-        $('#inp_text_01').keyup(function() {
-            $("#slide_01").get(0).MaterialSlider.change($('#inp_text_01').val());
+    <script type="text/javascript">
+        $("#logout").click(function() {
+//            alert("ceci est une alerte");
+            window.location = 'index.html'
         });
 
     </script>
