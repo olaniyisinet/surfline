@@ -24,10 +24,8 @@
 <body style ="background-image: url('img/background.png'); background-position: center top; background-size: 100% auto;" background-size: cover background-attachment: fixed;>
     <footer2>
             <div class="container">
-                <br>
-                <br>
-                <br>
-                <ul class="icon-social">
+
+                <ul class="icon-social" style="margin-top:20%">
                     <img src="img/logo.png" align="middle" alt="surflinelogo">
                 </ul>
 
@@ -57,7 +55,8 @@
   					<label for="checkbox">Remember me</label>
 				</div>
 -->
-                <button class="button" onclick="window.location='homeindex.html'">SIGN IN</button>
+<!--                <button class="button" onclick="window.location='homeindex.html'" id="signin">SIGN IN</button>-->
+                <button class="waves-effect button" id="signin">SIGN IN</button>
             </form>
             <footer2>
                 <div class="container">
@@ -85,7 +84,9 @@
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/custom.js"></script>
     <script>
-
+$('#signin').onclick(function(){
+   alert('i am clicked');
+});
     </script>
 
 </body>
