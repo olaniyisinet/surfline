@@ -34,4 +34,21 @@
         <icon src="img/icon.png" density="xxxhdpi" />
     </platform>
 
+    <platform name="windows">
+        <!--
+            ldpi    : 36x36 px
+            mdpi    : 48x48 px
+            hdpi    : 72x72 px
+            xhdpi   : 96x96 px
+            xxhdpi  : 144x144 px
+            xxxhdpi : 192x192 px
+        -->
+        <icon src="img/icon.png" density="ldpi" />
+        <icon src="img/icon.png" density="mdpi" />
+        <icon src="img/icon.png" density="hdpi" />
+        <icon src="img/icon.png" density="xhdpi" />
+        <icon src="img/icon.png" density="xxhdpi" />
+        <icon src="img/icon.png" density="xxxhdpi" />
+    </platform>
+
 </widget>
