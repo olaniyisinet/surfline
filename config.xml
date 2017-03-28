@@ -3,7 +3,7 @@
   <description>
 Cedezone customer app for booking cleaning services  </description>
   <author email="olaniyiolatunji@gmail.com" href="http://cordova.io">
-      Apache Cordova Team
+      Olaniyi Olatunji
   </author>
   <content src="index.html" />
   <plugin name="cordova-plugin-whitelist" spec="1" />
