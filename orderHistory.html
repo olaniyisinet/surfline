@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cedezone</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1  maximum-scale=1 user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="HandheldFriendly" content="True">
+
+    <link rel="shortcut icon" href="img/favicon.png">
+
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/materialize.min.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/slick-theme.css">
+    <link rel="stylesheet" href="css/owl.carousel.css">
+    <link rel="stylesheet" href="css/owl.theme.css">
+    <link rel="stylesheet" href="css/owl.transitions.css">
+    <link rel="stylesheet" href="css/lightbox.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive_table.css">
+    <link rel="stylesheet" href="css/ghpages-materialize.css">
+    <link rel="stylesheet" href="css/material.indigo-pink.min.css">
+    <link rel="stylesheet" href="css/icon.css">
+    <link rel="stylesheet" href="css/mdl-jquery-modal-dialog.css">
+
+</head>
+
+<body>
+    <img src="img/loading.gif" class="hidden" id="loading-gif" />
+    <!-- navbar -->
+    <div class="navbar">
+        <div class="container">
+            <div class="panel-control-left">
+                <a href="#" data-activates="slide-out-left" class="sidenav-control-left"><i class="fa fa-bars"></i></a>
+            </div>
+            <div class="site-title">
+                <a href="#" class="logo">
+                    <h1>History</h1>
+                </a>
+            </div>
+            <div class="panel-control-right">
+                <a href="index.html"><i class="fa fa-power-off"></i></a>
+            </div>
+        </div>
+    </div>
+    <!-- end navbar -->
+    <div class="mdl-spinner mdl-js-spinner is-active"></div>
+
+    <!-- panel control -->
+    <div class="panel-control-right">
+        <ul id="slide-out-left" class="side-nav collapsible" data-collapsible="accordion">
+            <li>
+                <div class="photos" id="photos">
+                    <img src="img/photos.png" alt="" id="avatar" onerror="imgError(this);">
+                    <h3 id="profileNameTop"></h3>
+                </div>
+            </li>
+            <li>
+                <a href="home.html"><i class="fa fa-home"></i>Home</a>
+            </li>
+            <li>
+                <a href="profile.html"><i class="fa fa-user"></i>Profile</a>
+            </li>
+            <li>
+                <a href="linkcard.html"><i class="fa fa-credit-card"></i>Link Card</a>
+            </li>
+            <li>
+                <a href="orderHistory.html"><i class="fa fa-history"></i>Order History</a>
+            </li>
+            <li>
+                <a href="bookaservice.html"><i class="fa fa-pencil-square-o"></i>Book a Service</a>
+            </li>
+            <li>
+                <a href="change_password.html"><i class="fa fa-lock"></i>Change Password</a>
+            </li>
+        </ul>
+    </div>
+    <!-- end panel control -->
+
+    <!-- pricing -->
+    <div class="pricing-app app-pages app-section">
+        <div class="container">
+            <!--<div class="pages-title">
+                <h5> Order</h5>
+            </div>-->
+            <div class="table-responsive-vertical order-container">
+                <!-- Table starts here -->
+
+                <div id="pagination">
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- end pricing -->
+    <br>
+    <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+        <a class="btn-floating btn-large orange" id="tooltip1" href="bookaservice.html">
+            <i class="material-icons">add</i>
+        </a>
+        <ul>
+            <!--<li style="background: orange; color: white">Book a Service</li>-->
+            <!--<li><a class="btn-floating red" style="transform: scaleY(0.4) scaleX(0.4) translateY(40px) translateX(0px); opacity: 0;">Book a Service</a></li>-->
+            <!--  <li><a class="btn-floating yellow darken-1" style="transform: scaleY(0.4) scaleX(0.4) translateY(40px) translateX(0px); opacity: 0;"><i class="material-icons">format_quote</i></a></li>
+            <li><a class="btn-floating green" style="transform: scaleY(0.4) scaleX(0.4) translateY(40px) translateX(0px); opacity: 0;"><i class="material-icons">publish</i></a></li>
+            <li><a class="btn-floating blue" style="transform: scaleY(0.4) scaleX(0.4) translateY(40px) translateX(0px); opacity: 0;"><i class="material-icons">attach_file</i></a></li>
+      -->
+        </ul>
+    </div>
+    <div id="provider" class="modal">
+        <div class="modal-content">
+            <h5 class="center">Provider Details</h5>
+
+            <div class="row">
+                <div class="col s12">
+                    <img src="img/author.png" alt="Default avatar" id="avatar" width="40%" height="40%" class="ava3 center" style="display: block; margin: auto"
+                        onerror="imgError(this);">
+                </div>
+
+                <div class="col s12">
+                    <br>
+                    <h6 class="username center" id="username"><i class="fa fa-user"></i> Johnny Appleseed</h6>
+                    <h6 class="email center" id="email"><i class="fa fa-enveloper"></i> Boston, MA</h6>
+                    <p class="phone center" id="phone"><i class="fa fa-phone"></i> Phone: </p>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-action modal-close">Close</a>
+        </div>
+    </div>
+
+    <script type="text/html" id="order_history_template">
+        <!-- <table id="myservices" class="table table-striped table-bordered" cellspacing="0" style="overflow-x: auto;overflow-y: auto; display: block;">-->
+        <table id="myservices" class="table table-hover table-mc-light-blue" style="overflow-x: auto;overflow-y: auto; display: block;">
+            <thead>
+                <tr>
+                    <th>SN</th>
+                    <th>Order Ref</th>
+                    <th>Service</th>
+                    <th>Attribute</th>
+                    <th>Date / Time</th>
+                    <th>Address</th>
+                    <!--                                    <th>Amount</th>-->
+                    <th>Status</th>
+                    <th>Provider</th>
+                    <!--  <th>Your Rating</th>-->
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+
+    </script>
+
+    <script type="text/html" id="empty-activity">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <img class="center-block img-responsive" src="img/empty.png" />
+                <br/>
+                <h3 class="text-center">Sorry you have not made any order yet</h3>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+    </script>
+
+    <!-- script -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.form.js"></script>
+    <script src="js/jquery.blockUI.js"></script>
+    <script src="js/materialize.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/mprogress.min.js"></script>
+    <script src="js/responsive_table.js"></script>
+    <script src="js/material.min.js"></script>
+    <script src="js/mdl-jquery-modal-dialog.js"></script>
+
+    <script src="js/pages/Main.js"></script>
+    <script src="js/pages/sideprofile.js"></script>
+    <script src="js/pages/orderHistory.js"></script>
+
+    <script type="application/javascript">
+        $(document).ready(function () {
+            // Form.init('login');
+            Cedezone.init();
+            userOrders.init();
+            sideProfile.init();
+ });
+    function imgError(image) {
+            image.onerror = "";
+            image.src = "img/author.png";
+            return true;
+        }    
+    </script>
+
+</body>
+
+</html>

@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>Surfline</title>
+	<title>Cedezone</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1  maximum-scale=1 user-scalable=no">
 	<meta name="mobile-web-app-capable" content="yes">
 	<meta name="HandheldFriendly" content="True">
@@ -19,73 +19,136 @@
 	<link rel="stylesheet" href="css/owl.transitions.css">
 	<link rel="stylesheet" href="css/lightbox.min.css">
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/mprogress.min.css">
+	 <link rel="stylesheet" href="css/material.indigo-pink.min.css">
+    <link rel="stylesheet" href="css/icon.css">
+    <link rel="stylesheet" href="css/mdl-jquery-modal-dialog.css">
 </head>
-<body style ="background-image: url('img/background.png');  background-position: center top; background-size: 100% auto;">
 
-     <footer2>
-            <div class="container">
+<body style="background-image: url('img/background.png');  background-position: center top; background-size: 100% auto;">
 
-                <ul class="icon-social">
-                    <img src="/img/logo.png" align="middle" alt="surflinelogo">
-                </ul>
+	<footer2 style="padding: 20px 0 ">
+		<div class="container">
 
-            </div>
-        </footer2>
+			<ul class="icon-social">
+				<img src="img/logo_white.png" align="middle" alt="Cedezonelogo">
+			</ul>
+
+		</div>
+	</footer2>
+	<!--<div class="mdl-spinner mdl-js-spinner is-active"></div>-->
+
 	<!-- register-->
-	<div class="register app-pages app-section" style="">
+	<div class="register ">
 		<div class="container">
 			<div class="pages-title">
-				<h3></h3>
+				<h3 style="color: white">Register</h3>
 			</div>
-			<form action="#">
+			<form id="register" data-parsley-validate role="form" method="POST" action="#">
 				<div class="input-field">
-					<input id="first-name" type="text" class="validate" placeholder="Full Name">
-<!--					<label for="first-name">First Name</label>-->
-				</div>
-<!--
-				<div class="input-field">
-					<input id="last-name" type="text" class="validate" placeholder="Last Name">
-					<label for="last-name">Last Name</label>
-				</div>
--->
-				<div class="input-field">
-					<input id="username" type="text" class="validate" placeholder="Username">
-<!--					<label for="username">Username</label>-->
+					<input id="full_name" type="text" class="validate" required name="name" placeholder="Full Name">
+					<!--<label for="full_name">Full Name</label>-->
+					<span class="help-block">
+                                        <strong>
+                                        </strong>
+            </span>
 				</div>
 				<div class="input-field">
-					<input id="email" type="email" class="validate" placeholder="Email">
-<!--					<label for="email">Email</label>-->
+					<input id="phone" type="number" class="validate" name="phone" placeholder="Phone Number" required onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
+					<!--<label for="last-name">Phone</label>-->
+					<span class="help-block">
+                                        <strong>
+                                        </strong>
+            </span>
 				</div>
-				<div class="input-field">
-					<input id="password" type="password" class="validate" placeholder="Password">
-<!--					<label for="password">Password</label>-->
-				</div>
-                <div class="input-field">
-					<input id="confirm_password" type="password" class="validate" placeholder="Confirm Password">
-<!--					<label for="password">Password</label>-->
-				</div>
-				<button class="button">Register</button>
-			</form>
-			 <footer2>
-                <div class="container">
 
-                    <ul class="icon-social">
-                        <li class="facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
-                        <li class="twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                    </ul>
- <div class="create-account" style="color: white">Already Registered? <a href="index.html" style="color: #0082C6">SIGN IN</a></div>
-                </div>
-            </footer2>
+				<div class="input-field">
+					<input id="email" type="email" class="validate" name="email" required placeholder="Email">
+					<!--<label for="email">Email</label>-->
+					<span class="help-block">
+                                        <strong>
+                                        </strong>
+            </span>
+				</div>
+				<div class="input-field">
+					<input id="address" type="text" class="validate" name="address" required placeholder="Address">
+					<!--<label for="address">Address</label>-->
+					<span class="help-block">
+                                        <strong>
+                                        </strong>
+            </span>
+				</div>
+				<div class="input-field">
+					<input id="password" type="password" class="validate" name="password" required placeholder="Password">
+					<!--<label for="password">Password</label>-->
+					<span class="help-block">
+                                        <strong>
+                                        </strong>
+            </span>
+				</div>
+				<div class="input-field">
+					<input id="confirm_password" type="password" class="validate" required name="password_confirmation" placeholder="Confirm Password">
+					<!--<label for="confirm_password">Confirm Password</label>-->
+					<span class="help-block">
+                                        <strong>
+                                        </strong>
+            </span>
+				</div>
+				<button class="button" type="submit">Register</button>
+				<!--<strong class="login-now">Your already registered? <a href="#">Login now</a></strong>-->
+			</form>
+			<footer2>
+				<div class="container">
+
+					<ul class="icon-social">
+						<li class="facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
+						<li class="twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
+					</ul>
+					<div class="create-account" style="color: white">Already Registered? <a href="index.html" style="color: orange">Login Now</a></div>
+				</div>
+			</footer2>
+			<br>
+			
 		</div>
 	</div>
+	<img src="img/loading.gif" class="hidden" id="loading-gif" />
 	<!-- end register -->
+	
+	<!-- footer -->
+	<!--<footer>
+		<div class="ft-bottom">
+			<span>Copyright © 2017 All Rights Reserved </span>
+		</div>
+	</footer>-->
+	<!-- end footer -->
 
 	<!-- script -->
 	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery.form.js"></script>
+	<script src="js/jquery.blockUI.js"></script>
 	<script src="js/materialize.min.js"></script>
 	<script src="js/slick.min.js"></script>
 	<script src="js/owl.carousel.min.js"></script>
 	<script src="js/custom.js"></script>
+
+	<script src="js/parsely.min.js"></script>
+	<script src="js/pnotify.min.js"></script>
+	<script src="js/mprogress.min.js"></script>
+	    <script src="js/material.min.js"></script>
+	<script src="js/mdl-jquery-modal-dialog.js"></script>
+
+	<script src="js/pages/Main.js"></script>
+	<script src="js/pages/register.js"></script>
+
+	<script>
+	</script>
+	<script type="application/javascript">
+		$(document).ready(function () {
+			// Form.init('login');
+			Register.init();
+			Cedezone.init();
+		})
+	</script>
 
 </body>
 

@@ -1,71 +1,30 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<widget xmlns   = "http://www.w3.org/ns/widgets"
-    xmlns:gap   = "http://phonegap.com/ns/1.0"
-    id          = "com.phonegap.example"
-    versionCode = "10"
-    version     = "1.0.0" >
-
-<!-- versionCode is optional and Android only -->
-
-  <name>Surfline Mobile</name>
-
+<widget id="io.cordova.hellocordova" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+  <name>Cedezone </name>
   <description>
-      Surfline Mobile App
-  </description>
-
-  <author href="http://aladstech.com.ng" email="olaniyi@aladstech.com.ng">
-      Olaniyi Olatunji
+Cedezone customer app for booking cleaning services  </description>
+  <author email="olaniyiolatunji@gmail.com" href="http://cordova.io">
+      Apache Cordova Team
   </author>
-
-     <platform name="android">
-        <!--
-            ldpi    : 36x36 px
-            mdpi    : 48x48 px
-            hdpi    : 72x72 px
-            xhdpi   : 96x96 px
-            xxhdpi  : 144x144 px
-            xxxhdpi : 192x192 px
-        -->
-        <icon src="img/icon.png" density="ldpi" />
-        <icon src="img/icon.png" density="mdpi" />
-        <icon src="img/icon.png" density="hdpi" />
-        <icon src="img/icon.png" density="xhdpi" />
-        <icon src="img/icon.png" density="xxhdpi" />
-        <icon src="img/icon.png" density="xxxhdpi" />
-    </platform>
-
-    <platform name="windows">
-        <!--
-            ldpi    : 36x36 px
-            mdpi    : 48x48 px
-            hdpi    : 72x72 px
-            xhdpi   : 96x96 px
-            xxhdpi  : 144x144 px
-            xxxhdpi : 192x192 px
-        -->
-        <icon src="img/icon.png" density="ldpi" />
-        <icon src="img/icon.png" density="mdpi" />
-        <icon src="img/icon.png" density="hdpi" />
-        <icon src="img/icon.png" density="xhdpi" />
-        <icon src="img/icon.png" density="xxhdpi" />
-        <icon src="img/icon.png" density="xxxhdpi" />
-    </platform>
-     <platform name="blackberry">
-        <!--
-            ldpi    : 36x36 px
-            mdpi    : 48x48 px
-            hdpi    : 72x72 px
-            xhdpi   : 96x96 px
-            xxhdpi  : 144x144 px
-            xxxhdpi : 192x192 px
-        -->
-        <icon src="img/icon.png" density="ldpi" />
-        <icon src="img/icon.png" density="mdpi" />
-        <icon src="img/icon.png" density="hdpi" />
-        <icon src="img/icon.png" density="xhdpi" />
-        <icon src="img/icon.png" density="xxhdpi" />
-        <icon src="img/icon.png" density="xxxhdpi" />
-    </platform>
-
-
+  <content src="index.html" />
+  <plugin name="cordova-plugin-whitelist" spec="1" />
+  <access origin="*" />
+  <allow-intent href="http://*/*" />
+  <allow-intent href="https://*/*" />
+  <allow-intent href="tel:*" />
+  <allow-intent href="sms:*" />
+  <allow-intent href="mailto:*" />
+  <allow-intent href="geo:*" />
+  <platform name="android">
+      <allow-intent href="market:*" />
+      <icon src="res/icon.png"  density="ldpi" />
+        <icon src="res/icon.png"  density="mdpi" />
+        <icon src="res/icon.png"  density="hdpi" />
+        <icon src="res/icon.png"  density="xhdpi" />
+        <icon src="res/icon.png"  density="xxhdpi" />
+        <icon src="res/icon.png"  density="xxxhdpi" />
+  </platform>
+  <platform name="ios">
+      <allow-intent href="itms:*" />
+      <allow-intent href="itms-apps:*" />
+  </platform>
 </widget>

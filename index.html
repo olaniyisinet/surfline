@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Surfline</title>
+    <title>Cedezone</title>
     <meta name="viewport" content="width=device-width, initial-scale=1  maximum-scale=1 user-scalable=no">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="HandheldFriendly" content="True">
@@ -18,88 +18,93 @@
     <link rel="stylesheet" href="css/owl.theme.css">
     <link rel="stylesheet" href="css/owl.transitions.css">
     <link rel="stylesheet" href="css/lightbox.min.css">
+    <link rel="stylesheet" href="css/pnotify.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <script langauage="javascript">
-        function validate(value) {
-            document.getElementById("message1") = value;
-        }
+    <link rel="stylesheet" href="css/mprogress.min.css">
+    <link rel="stylesheet" href="css/material.indigo-pink.min.css">
+    <link rel="stylesheet" href="css/icon.css">
+    <link rel="stylesheet" href="css/mdl-jquery-modal-dialog.css">
 
-    </script>
 </head>
 
-<body style="background-image: url('img/background.png'); background-position: center top; background-size: 100% auto; background-size: cover background-attachment: fixed;">
-    <footer2>
-        <div class="container">
+<body style ="background-image: url('img/background.png');  background-position: center top; background-size: 100% auto;">
 
-            <ul class="icon-social" style="margin-top:10%">
-                <img src="img/logo.png" align="middle" alt="surflinelogo">
-            </ul>
-
-        </div>
-    </footer2>
-
-    <!-- login-->
-    <div class="login app-pages app-section" style="margin-top: 10%">
-
-        <div class="container">
-            <div class="pages-title">
-                <h3></h3>
+    <footer2 style="padding: 20% 0 10% ">
+            <div class="container">
+                <ul class="icon-social">
+                    <img src="img/logo_white.png" align="middle" alt="Cedezonelogo">
+                </ul>
             </div>
-            <form action="#">
+        </footer2>
+         
+    <div class="login app-pages app-section" style="margin-top: 10%">
+            
+        <div class="container">
+            <br>
+            <form action="#" id="login" data-parsley-validate role="form" method="POST" >
+                <div class="form-group">
+                                <div class="col-xs-12 text-center">
+                                    <div id="login-error" style="color: red"></div>
+                                </div>
+                            </div>
                 <div class="input-field">
-                    <input id="email" type="email" class="validate" placeholder="Email/Username">
+                    <input id="email" type="email" required placeholder="Email" name="email">
                     <!--					<label for="email">Email</label>-->
                 </div>
                 <div class="input-field">
-                    <input id="password" type="password" class="validate" placeholder="Password">
+                    <input id="password" type="password" required placeholder="Password" name="password">
                     <!--					<label for="password">Password</label>-->
                 </div>
-                <!--
-				<div><a href="#" class="forgot">Forgot Password?</a></div>
-				<div class="chebox">
+               
+               <br>
+				<div><a href="forgot_password.html" class="forgot center" style="color: orange">Forgot Password?</a></div>
+			 <!--	<div class="chebox">
 					<input type="checkbox" id="checkbox" />
   					<label for="checkbox">Remember me</label>
 				</div>
 -->
-                <!--                <button class="button" onclick="window.location='homeindex.html'" id="signin">SIGN IN</button>-->
-                <button class="waves-effect button" id="signin">SIGN IN</button>
+                <button class="button" type="submit">SIGN IN</button>
             </form>
             <footer2>
-                <div class="container">
-
                     <ul class="icon-social">
                         <li class="facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
                         <li class="twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
                     </ul>
-                    <div class="create-account" style="color: white">Not Registered? <a href="register.html" style="color: #0082C6">Create an account</a></div>
-                </div>
+                 <div class="create-account" style="color: white">Not Registered? <a href="register.html" style="color: orange">Create an account</a></div>
             </footer2>
-
-        </div>
+        </div>  
     </div>
     <!-- end login -->
 
-    <!-- footer -->
-
-    <!-- end footer -->
-
+    <img src="img/loading.gif" class="hidden" id="loading-gif" />
     <!-- script -->
     <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.form.js"></script>
+    <script src="js/jquery.blockUI.js"></script>
+    <!--<script src="http://malsup.github.com/jquery.form.js"></script>-->
     <script src="js/materialize.min.js"></script>
     <script src="js/slick.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/custom.js"></script>
+   
+   <script src="js/parsely.min.js"></script>
+   <script src="js/pnotify.min.js"></script>
+   <script src="js/mprogress.min.js"></script>
+     <script src="js/material.min.js"></script>
+	<script src="js/mdl-jquery-modal-dialog.js"></script>
 
-    <script type="text/javascript">
-        $("#signin").click(function() {
-            var username = $("#email").val();
-            var password = $("#password").val();
-            if (username.length==0 || password.length==0){
-                alert('Please enter Username & Password')
-            }else{
-                window.location = 'homeindex.html'
-            }
-        });
+   <script src="js/pages/Main.js"></script>
+   <script src="js/pages/Login.js"></script>
+
+    <script>
+
+    </script>
+    <script type="application/javascript">
+        $(document).ready(function() {
+            // Form.init('login');
+            Login.init();
+            Cedezone.init();
+        })
 
     </script>
 

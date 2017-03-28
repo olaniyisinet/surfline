@@ -1,252 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- Mirrored from rabonadev.com/md/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 05 Feb 2017 21:05:06 GMT -->
-
 <head>
-    <meta charset="UTF-8">
-    <title>MD - Material Design Mobile Template</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1 user-scalable=no">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="HandheldFriendly" content="True">
-    <link rel="shortcut icon" href="img/favicon.png">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/materialize.min.css">
-    <link rel="stylesheet" href="css/slick.css">
-    <link rel="stylesheet" href="css/slick-theme.css">
-    <link rel="stylesheet" href="css/owl.carousel.css">
-    <link rel="stylesheet" href="css/owl.theme.css">
-    <link rel="stylesheet" href="css/owl.transitions.css">
-    <link rel="stylesheet" href="css/lightbox.min.css">
-    <link rel="stylesheet" href="css/style.css">
-</head>
+	<meta charset="UTF-8">
+	<title>Cedezone</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1  maximum-scale=1 user-scalable=no">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="HandheldFriendly" content="True">
 
+	<link rel="shortcut icon" href="img/favicon.png">
+
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/materialize.min.css">
+	<link rel="stylesheet" href="css/slick.css">
+	<link rel="stylesheet" href="css/slick-theme.css">
+	<link rel="stylesheet" href="css/owl.carousel.css">
+	<link rel="stylesheet" href="css/owl.theme.css">
+	<link rel="stylesheet" href="css/owl.transitions.css">
+	<link rel="stylesheet" href="css/lightbox.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/responsive_table.css"> 
+	<link rel="stylesheet" href="css/ghpages-materialize.css">
+	<link href="http://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
 <body>
-    <div class="navbar">
-        <div class="container">
-            <div class="site-title"><a href="index-2.html"><h1>MD</h1></a></div>
-            <div class="panel-control-right"><a href="#" data-activates="slide-out-right" class="sidenav-control-right"><i class="fa fa-bars"></i></a></div>
+<img src="img/loading.gif" class="hidden" id="loading-gif" />
+	<!-- navbar -->
+	<div class="navbar">
+		<div class="container">
+			<div class="panel-control-left">
+				<a href="#" data-activates="slide-out-left" class="sidenav-control-left"><i class="fa fa-bars"></i></a>
+			</div>
+			<div class="site-title">
+				<a href="#" class="logo"><h1>Cedezone</h1></a>
+			</div>
+			<div class="panel-control-right">
+				<a href="index.html"><i class="fa fa-power-off"></i></a>
+			</div>
+		</div>
+	</div>
+	<!-- end navbar -->
+          <div class="mdl-spinner mdl-js-spinner is-active"></div>
+
+	<!-- panel control -->
+	<div class="panel-control-right">
+		<ul id="slide-out-left" class="side-nav collapsible"  data-collapsible="accordion">
+			<li>
+				<div class="photos" id="photos">
+					<img src="img/photos.png" alt="" id="avatar" onerror="imgError(this);">
+					<h3 id="profileNameTop"></h3>
+				</div>
+			</li>
+			<li>
+			<a href="home.html"><i class="fa fa-home"></i>Home</a>
+			</li>
+			<li>
+			<a href="profile.html"><i class="fa fa-user"></i>Profile</a>
+			</li>
+			<li>
+			<a href="linkcard.html"><i class="fa fa-credit-card"></i>Link Card</a>
+			</li>
+			<li>
+			<a href="orderHistory.html"><i class="fa fa-history"></i>Order History</a>
+			</li>
+			<li>
+			<a href="bookaservice.html"><i class="fa fa-pencil-square-o"></i>Book a Service</a>
+			</li>
+			<li>
+				<a href="change_password.html"><i class="fa fa-lock"></i>Change Password</a>
+			</li>
+		</ul>
+	</div>
+	<!-- end panel control -->
+
+	<!-- pricing -->
+	<div class="pricing-app app-pages app-section">
+		<div class="container">
+			<div class="pages-title">
+				<h5>Recent Bookings</h5>
+			</div>
+			<div class="col s12" id="history-content">
+
+            </div>
+			
+		</div>
+	</div>
+	<!-- end pricing -->
+<br>
+<div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+          <a class="btn-floating btn-large orange" id="tooltip1" href="bookaservice.html">
+            <i class="material-icons">add</i>
+          </a>
+          <ul>
+			  <!--<li style="background: orange; color: white">Book a Service</li>-->
+            <!--<li><a class="btn-floating red" style="transform: scaleY(0.4) scaleX(0.4) translateY(40px) translateX(0px); opacity: 0;">Book a Service</a></li>-->
+          <!--  <li><a class="btn-floating yellow darken-1" style="transform: scaleY(0.4) scaleX(0.4) translateY(40px) translateX(0px); opacity: 0;"><i class="material-icons">format_quote</i></a></li>
+            <li><a class="btn-floating green" style="transform: scaleY(0.4) scaleX(0.4) translateY(40px) translateX(0px); opacity: 0;"><i class="material-icons">publish</i></a></li>
+            <li><a class="btn-floating blue" style="transform: scaleY(0.4) scaleX(0.4) translateY(40px) translateX(0px); opacity: 0;"><i class="material-icons">attach_file</i></a></li>
+      -->
+	      </ul>
+        </div>
+	
+
+<script type="text/html" id="activities_template">
+
+  <div class="table-responsive-vertical shadow-z-1">
+  <!-- Table starts here -->
+  <table id="table" class="table table-hover table-mc-light-blue">
+      <thead>
+        <tr>
+          <!--<th data-toggle="true">SN</th>-->
+                <th>Service</th>
+                <th>Attribute</th>
+                <!--<th>Service Ref</th>-->
+                <th>Date</th>
+                <th>Address</th>
+                <th>Status</th>
+                <th>Action</th>
+        </tr>
+      </thead>
+      <tbody class="table-content">
+    
+      </tbody>
+    </table>
+  </div>
+</script>
+
+<script type="text/html" id="loading-template">
+    <div class="row">
+        <div class="col s4"></div>
+        <div class="col s4">Loading Template</div>
+        <div class="col s4"></div>
+    </div>
+</script>
+
+<script type="text/html" id="empty-activity">
+    <div class="row">
+		<div class="col s1"></div>
+        <div class="col s10">
+            <img class="center-block img-responsive" src="img/empty.png" />
+            <br/>
+            <h6 class="center">Sorry you have not made any order yet</h6>
+			<div class="col s1"></div>
         </div>
     </div>
-    <div class="panel-control-right">
-        <ul id="slide-out-right" class="side-nav collapsible" data-collapsible="accordion">
-            <li>
-                <div class="photos"><img src="img/photos.png" alt="">
-                    <h3>Mario Doe</h3></div>
-            </li>
-            <li><a href="index-2.html"><i class="fa fa-home"></i>Home</a></li>
-            <li>
-                <div class="collapsible-header"><i class="fa fa-shopping-bag"> Store</i> <span><i class="fa fa-chevron-right"></i></span></div>
-                <div class="collapsible-body">
-                    <ul class="side-nav-panel">
-                        <li><a href="home-store.html">Home Store</a></li>
-                        <li><a href="product-details.html">Product Details</a></li>
-                        <li><a href="shopping-cart.html">Shopping Cart</a></li>
-                        <li><a href="checkout.html">Checkout</a></li>
-                    </ul>
-                </div>
-            </li>
-            <li>
-                <div class="collapsible-header"><i class="fa fa-rss"></i>Blog <span><i class="fa fa-chevron-right"></i></span></div>
-                <div class="collapsible-body">
-                    <ul class="side-nav-panel">
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="blog-single.html">Blog Single</a></li>
-                    </ul>
-                </div>
-            </li>
-            <li><a href="faq.html"><i class="fa fa-question-circle"></i>Faq</a></li>
-            <li><a href="testimonial.html"><i class="fa fa-user"></i>Testimonial</a></li>
-            <li><a href="404.html"><i class="fa fa-times-circle-o"></i>404 Page</a></li>
-            <li><a href="contact.html"><i class="fa fa-envelope"></i>Contact Us</a></li>
-            <li><a href="login.html"><i class="fa fa-sign-in"></i>Login</a></li>
-            <li><a href="register.html"><i class="fa fa-user-plus"></i>Register</a></li>
-        </ul>
-    </div>
-    <div class="slider-slick app-pages">
-        <div class="slider-entry"><img src="img/slider1.jpg" alt="">
-            <div class="overlay"></div>
-            <div class="caption">
-                <div class="container">
-                    <h2>Material Design</h2>
-                    <p>Lorem ipsum dolor sit amet</p><a class="button" href="#">Read More</a></div>
-            </div>
-        </div>
-        <div class="slider-entry">
-            <div class="overlay"></div><img src="img/slider2.jpg" alt="">
-            <div class="caption">
-                <div class="container">
-                    <h2>Awesome Features</h2>
-                    <p>Lorem ipsum dolor sit amet</p><a class="button" href="#">Read More</a></div>
-            </div>
-        </div>
-        <div class="slider-entry">
-            <div class="overlay"></div><img src="img/slider3.jpg" alt="">
-            <div class="caption">
-                <div class="container">
-                    <h2>Perfect Template</h2>
-                    <p>Lorem ipsum dolor sit amet</p><a class="button" href="#">Read More</a></div>
-            </div>
-        </div>
-    </div>
-    <div class="offers">
-        <div class="container">
-            <div class="row">
-                <div class="col s6">
-                    <div class="entry"><i class="fa fa-desktop"></i>
-                        <h5>Web Design</h5>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
-                    </div>
-                </div>
-                <div class="col s6">
-                    <div class="entry"><i class="fa fa-shopping-basket"></i>
-                        <h5>Store Pages</h5>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col s6">
-                    <div class="entry"><i class="fa fa-send"></i>
-                        <h5>Awesome</h5>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
-                    </div>
-                </div>
-                <div class="col s6">
-                    <div class="entry"><i class="fa fa-support"></i>
-                        <h5>Support</h5>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="portfolio app-section app-bg-dark">
-        <div class="container">
-            <div class="app-title">
-                <h4>Portfolio</h4>
-                <p>Lorem ipsum dolor sit amet consectetur</p>
-            </div>
-            <ul class="portfolio-filter">
-                <li data-filter="all" class="active">All</li>
-                <li data-filter="1">Nature</li>
-                <li data-filter="2">Abstract</li>
-                <li data-filter="3">Objects</li>
-            </ul>
-            <div class="portfolio-item">
-                <div class="row">
-                    <div class="col s6 filtr-item" data-category="1, 2">
-                        <a href="img/portfolio1.jpg" data-lightbox="image-1"><img src="img/portfolio1.jpg" alt=""></a>
-                    </div>
-                    <div class="col s6 filtr-item" data-category="2, 3">
-                        <a href="img/portfolio2.jpg" data-lightbox="image-1"><img src="img/portfolio2.jpg" alt=""></a>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col s6 filtr-item" data-category="3, 3">
-                        <a href="img/portfolio3.jpg" data-lightbox="image-1"><img src="img/portfolio3.jpg" alt=""></a>
-                    </div>
-                    <div class="col s6 filtr-item" data-category="3, 1">
-                        <a href="img/portfolio4.jpg" data-lightbox="image-1"><img src="img/portfolio4.jpg" alt=""></a>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col s6 filtr-item" data-category="2">
-                        <a href="img/portfolio5.jpg" data-lightbox="image-1"><img src="img/portfolio5.jpg" alt=""></a>
-                    </div>
-                    <div class="col s6 filtr-item" data-category="2, 1">
-                        <a href="img/portfolio6.jpg" data-lightbox="image-1"><img src="img/portfolio6.jpg" alt=""></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="testimonial app-section app-bg-color">
-        <div class="container">
-            <div class="app-title"><i class="fa fa-quote-left"></i></div>
-            <div id="testimonial" class="owl-carousel owl-theme">
-                <div class="item">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo inventore, numquam assumenda nihil totam sunt, ipsum nemo distinctio ipsa voluptates magni enim.</p><img src="img/testimonial1.png" alt="">
-                    <h6>John Doe</h6><strong>Web Developer</strong></div>
-                <div class="item">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo inventore, numquam assumenda nihil totam sunt, ipsum nemo distinctio ipsa voluptates magni enim.</p><img src="img/testimonial2.png" alt="">
-                    <h6>John Doe</h6><strong>Web Developer</strong></div>
-                <div class="item">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo inventore, numquam assumenda nihil totam sunt, ipsum nemo distinctio ipsa voluptates magni enim.</p><img src="img/testimonial3.png" alt="">
-                    <h6>John Doe</h6><strong>Web Developer</strong></div>
-            </div>
-        </div>
-    </div>
-    <div class="latest-news app-section">
-        <div class="container">
-            <div class="app-title">
-                <h4>Latest News</h4></div>
-            <div class="row">
-                <div class="col s6">
-                    <div class="entry"><img src="img/blog1.jpg" alt="">
-                        <div class="content">
-                            <h6><a href="#">Material Design</a></h6><span>3 Dec 2017</span>
-                            <p>Lorem ipsum dolor sit amet . . .</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col s6">
-                    <div class="entry"><img src="img/blog2.jpg" alt="">
-                        <div class="content">
-                            <h6><a href="#">Material Design</a></h6><span>3 Dec 2017</span>
-                            <p>Lorem ipsum dolor sit amet . . .</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row mb-0">
-                <div class="col s6">
-                    <div class="entry"><img src="img/blog3.jpg" alt="">
-                        <div class="content">
-                            <h6><a href="#">Material Design</a></h6><span>3 Dec 2017</span>
-                            <p>Lorem ipsum dolor sit amet . . .</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col s6">
-                    <div class="entry"><img src="img/blog4.jpg" alt="">
-                        <div class="content">
-                            <h6><a href="#">Material Design</a></h6><span>3 Dec 2017</span>
-                            <p>Lorem ipsum dolor sit amet . . .</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <footer>
-        <div class="container">
-            <h6>Find & follow us</h6>
-            <ul class="icon-social">
-                <li class="facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
-                <li class="twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                <li class="google"><a href="#"><i class="fa fa-google"></i></a></li>
-                <li class="instagram"><a href="#"><i class="fa fa-instagram"></i></a></li>
-                <li class="rss"><a href="#"><i class="fa fa-rss"></i></a></li>
-            </ul>
-            <div class="tel-fax-mail">
-                <ul>
-                    <li><span>Tel:</span> 900000002</li>
-                    <li><span>Fax:</span> 0400000098</li>
-                    <li><span>Email:</span> info@youremail.com</li>
-                </ul>
-            </div>
-            <div class="ft-bottom"><span>Copyright © 2017 All Rights Reserved </span></div>
-        </div>
-    </footer>
-    <script src="js/jquery.min.js"></script>
-    <script src="js/materialize.min.js"></script>
-    <script src="js/slick.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/lightbox.min.js"></script>
-    <script src="js/jquery.filterizr.min.js"></script>
-    <script src="js/custom-portfolio.js"></script>
-    <script src="js/custom.js"></script>
+</script>
+
+	<!-- script -->
+	<script src="js/jquery.min.js"></script>
+    <script src="js/jquery.form.js"></script>
+    <script src="js/jquery.blockUI.js"></script>
+	<script src="js/materialize.min.js"></script>
+	<script src="js/slick.min.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
+	<script src="js/custom.js"></script>
+	<script src="js/mprogress.min.js"></script>
+	<script src="js/responsive_table.js"></script>
+
+	 <script src="js/pages/Main.js"></script>
+     <script src="js/pages/sideprofile.js"></script>
+     <script src="js/pages/home.js"></script>
+	
+    <script type="application/javascript">
+        $(document).ready(function() {
+            // Form.init('login');
+			Cedezone.init();
+			Home.init();
+            sideProfile.init();
+});
+	function imgError(image) {
+    image.onerror = "";
+    image.src = "img/author.png";
+    return true;
+}
+        
+    </script>
+
 </body>
-<!-- Mirrored from rabonadev.com/md/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 05 Feb 2017 21:06:55 GMT -->
 
 </html>
