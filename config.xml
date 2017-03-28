@@ -1,5 +1,5 @@
 <widget id="io.cordova.hellocordova" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-  <name>Cedezone </name>
+  <name>Cedezone Customer</name>
   <description>
 Cedezone customer app for booking cleaning services  </description>
   <author email="olaniyiolatunji@gmail.com" href="http://cordova.io">
