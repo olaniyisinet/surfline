@@ -16,12 +16,22 @@ Cedezone customer app for booking cleaning services  </description>
   <allow-intent href="geo:*" />
   <platform name="android">
       <allow-intent href="market:*" />
-      <icon src="res/icon.png"  density="ldpi" />
+        <icon src="res/icon.png"  density="ldpi" />
         <icon src="res/icon.png"  density="mdpi" />
         <icon src="res/icon.png"  density="hdpi" />
         <icon src="res/icon.png"  density="xhdpi" />
         <icon src="res/icon.png"  density="xxhdpi" />
         <icon src="res/icon.png"  density="xxxhdpi" />
+
+    <splash src="res/splash.png" density="land-hdpi"/>
+    <splash src="res/splash.png" density="land-ldpi"/>
+    <splash src="res/splash.png" density="land-mdpi"/>
+    <splash src="res/splash.png" density="land-xhdpi"/>
+    <splash src="res/splash.png" density="port-hdpi"/>
+    <splash src="res/splash.png" density="port-ldpi"/>
+    <splash src="res/splash.png" density="port-mdpi"/>
+    <splash src="res/splash.png" density="port-xhdpi"/>
+
   </platform>
   <platform name="ios">
       <allow-intent href="itms:*" />
