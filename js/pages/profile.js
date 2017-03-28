@@ -29,19 +29,19 @@ Profile = {
             }
         });
         /***For getting **/
-        $('#changePhoto').click( function(){
+        $('#changePhoto').click(function () {
             Profile.updateAvatar();
         })
         $('.country_id').change(function () {
             var value = $(this).val()
-            if(value!=null){
-            Profile.getStatesInCountry(value);
+            if (value != null) {
+                Profile.getStatesInCountry(value);
             }
         });
 
         $('.state_id').change(function () {
             var value = $(this).val();
-            if(value!=null) {
+            if (value != null) {
                 Profile.getLocationsInState(value);
             }
         });
@@ -49,7 +49,7 @@ Profile = {
 
     getProfile: function () {
         $.ajax({
-           // url: App.api + '/' + Route.PROFILE,
+            // url: App.api + '/' + Route.PROFILE,
             url: Cedezone.CONSTANTS.BASE_URL + Profile.CONSTANTS.card_linking,
             data: {
                 token: Cedezone.getToken()
@@ -79,13 +79,13 @@ Profile = {
         $('#profileForm').find('#address').val(data.data.address);
         $('#profileForm').find('#country_id').val(data.data.country_id);
 
-//        if(data.data.country_id = '0'){
-//            $('#profileTab').find('#profileLocation').text('');
-//        }else{
-//        $('#profileTab').find('#profileLocation').text(data.data.country + ',' + data.data.state + ',' + data.data.location);
-//        }
+        //        if(data.data.country_id = '0'){
+        //            $('#profileTab').find('#profileLocation').text('');
+        //        }else{
+        //        $('#profileTab').find('#profileLocation').text(data.data.country + ',' + data.data.state + ',' + data.data.location);
+        //        }
 
-        if(data.data.avatar!='') {
+        if (data.data.avatar != '') {
             $('.img-uplod').find('#avatar').attr('src', data.data.avatar); //
             // $('#photo').attr('data-default-file',data.data.avatar);
             // $('#photo').dropify();
@@ -94,7 +94,7 @@ Profile = {
         Profile.getStatesInCountry(data.data.country_id);
         Profile.getLocationsInState(data.data.state_id);
         Cedezone.storeName(Profile.CONSTANTS.profile.data.name);
-//        Dashboard.init();
+        //        Dashboard.init();
     },
 
     uploadPic: function () {
@@ -109,7 +109,7 @@ Profile = {
             data: data,
             error: function (data) {
                 Cedezone.hideLoadingGif();
-               Profile.ProcessError(data);
+                Profile.ProcessError(data);
             },
 
             headers: {
@@ -119,14 +119,14 @@ Profile = {
             success: function (data) {
                 Cedezone.hideLoadingGif();
                 if (data.status == true) {
-                  showDialog({
-                    title: 'Success',
-                    text: 'Profile Updated Successfully',
-                })
-                // setTimeout(function () {
-                // window.location="profile.html";
-                // }, 4000);
-                 }
+                    showDialog({
+                        title: 'Success',
+                        text: 'Profile Updated Successfully',
+                    })
+                    // setTimeout(function () {
+                    // window.location="profile.html";
+                    // }, 4000);
+                }
             },
             beforeSend: function () {
                 Cedezone.showLoadingGif();
@@ -149,13 +149,26 @@ Profile = {
             processData: false,
             contentType: false,
             success: function (data) {
-                if(data.status==true){
-                    // swal('Success',data.msg,'success')
-//                    location.reload(); ///reload page to change profile pic
+                Cedezone.hideLoadingGif();
+                if (data.status == true) {
+                    showDialog({
+                        title: 'Success',
+                        text: 'Avatar uploaded successfully',
+                    })
                     Profile.getProfile();
                     sideProfile.init();
                 }
-            }
+            },
+            error: function (data) {
+                Cedezone.hideLoadingGif();
+                showDialog({
+                    title: 'Oops!',
+                    text: 'Error occured while uploading avatar ',
+                })
+            },
+            beforeSend: function () {
+                Cedezone.showLoadingGif();
+            },
         });
     },
 
@@ -185,14 +198,14 @@ Profile = {
             //console.log(data)
             $country.append("<option value=" + value.id + ">" + value.name + "</option>");
         });
-         if (Profile.CONSTANTS.profile) {
+        if (Profile.CONSTANTS.profile) {
             $country.val(Profile.CONSTANTS.profile.data.country_id);
         }
     },
 
     getStatesInCountry: function (countryid) {
         $.ajax({
-            url: Cedezone.CONSTANTS.BASE_URL+ '/country/states/' + countryid,
+            url: Cedezone.CONSTANTS.BASE_URL + '/country/states/' + countryid,
             data: {
                 format: 'json'
             },
@@ -250,111 +263,12 @@ Profile = {
         }
     },
 
-
-    /******ADDRESS MANAGEMENT SCRIPT***/
-    getAddress: function(){
-        $.ajax({
-            url: Cedezone.CONSTANTS.BASE_URL + Profile.CONSTANTS.address_route,
-            data: {
-                format: 'json'
-            },
-            headers: {
-                "Authorization": "Bearer " + Cedezone.getToken()
-            },
-            error: function () {
-                // swal('Error', 'Error fetching your address', 'error');
-            },
-            dataType: 'json',
-            success: function (data) {
-                //  console.log(data);
-                Profile.processGetAddress(data);
-            },
-            type: 'GET'
-        });
-    },
-
- processGetAddress: function(data)   {
-     if($.isEmptyObject(data.data)){
-         $('.address-holder').append($('#empty-address').html())
-         return false;
-     }
-     var no = (data.pagination.current_page - 1) * data.pagination.per_page;
-     $content =$('.address-template').html();
-     $('.address-holder').html("");
-     $('.address-holder').append($content);
-     var responses=data.data;
-     $.each(responses, function (i, item) {
-         //for(no =1; no<=5; no++){
-         no++
-         $tr = $('<tr>').append(
-             $('<td>').text(no),
-             $('<td>').text(item.name),
-             $('<td>').text(item.country.name+','+ item.state.name,', '+item.location.name),
-             $('<td>').text(item.address),
-             $('<td>').text(item.updated_at.date),
-             $('<td>').html('<button class="btn btn-sm btn-info view" data-id="'+item.id+'" ' +
-                 'data-state-id="'+item.state.id+'" data-country-id="'+item.country.id+'"  data-location-id="'+item.location.id+'">Edit</button>'
-                 +'<button class="btn btn-sm btn-danger delete" data-id="'+item.id+'">Delete</button>'
-             )
-         )
-         $('.address-holder table tbody').append($tr);
-     })
- },
-
- saveNewAddress: function(data){
-     $.ajax({
-         url: Cedezone.CONSTANTS.BASE_URL + Profile.CONSTANTS.address_route,
-         data: data,
-         headers: {
-             "Authorization": "Bearer " + Cedezone.getToken()
-         },
-         error: function () {
-            //  swal('Error', 'Error saving your address', 'error');
-         },
-         dataType: 'json',
-         success: function (data) {
-             if(data.status==true){
-                 swal('Success',data.msg,'success')
-                  $('#myAddress').modal('toggle');
-                 Profile.getAddress();
-                 return false;
-             }
-            //  swal('Error','Address could not be saved please review inputs','error');
-         },
-         type: 'POST'
-     });
- }, 
-    
- deleteAddress: function(id){
-     $.ajax({
-         url: Cedezone.CONSTANTS.BASE_URL + Profile.CONSTANTS.address_route + '/' + id,
-         data: data,
-         headers: {
-             "Authorization": "Bearer " + Cedezone.getToken()
-         },
-         error: function () {
-            //  swal('Error', 'Error saving your address', 'error');
-         },
-         dataType: 'json',
-         success: function (data) {
-             if(data.status==true){
-                //  swal('Success',data.msg,'success')
-                  $('#myAddress').modal('toggle');
-                 Profile.getAddress();
-                 return false;
-             }
-            //  swal('Error','Address could not be saved please review inputs','error');
-         },
-         type: 'POST'
-     });
- },
-
- ProcessError: function (data) {
+    ProcessError: function (data) {
         Cedezone.hideLoadingGif();
         console.log(data);
-         try {
+        try {
             var errorKeys = Object.keys(data.responseJSON);
-            
+
             errorKeys.forEach(function (record) {
                 console.log(record);
                 $('#' + record).addClass('parsley-error').parent().append(
@@ -363,9 +277,9 @@ Profile = {
             });
         } catch (err) {
             showDialog({
-                    title: 'Error',
-                    text: 'Unable to Connect, ',
-                })
+                title: 'Error',
+                text: 'Unable to Connect, ',
+            })
         }
     },
 }
