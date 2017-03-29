@@ -105,4 +105,24 @@ linkcard = {
         element.innerHTML = newtext;
         componentHandler.upgradeElement(element);
     },
+    
+    ProcessError: function (data) {
+        Cedezone.hideLoadingGif();
+        console.log(data);
+         try {
+            var errorKeys = Object.keys(data.responseJSON);
+            
+            errorKeys.forEach(function (record) {
+                console.log(record);
+                $('#' + record).addClass('parsley-error').parent().append(
+                    '<ul class="parsley-errors-list filled"><li class="parsley-required">' + data.responseJSON[record] + '</li></ul>'
+                )
+            });
+        } catch (err) {
+            showDialog({
+                    title: 'Error',
+                    text: 'Unable to Connect, ',
+                })
+        }
+    },
 }

@@ -22,7 +22,7 @@ Password = {
             beforeSubmit: Cedezone.showLoadingGif(),
             data: {
                 //  token: Cedezone.getToken(),
-                oldpassword: $('oldpassword').val(),
+                oldpassword: $('#oldpassword').val(),
                 password: $('#password').val(),
                 password_confirmation: $('#password-confirmation').val()
             },
@@ -42,7 +42,7 @@ Password = {
                 }),
 
                 setTimeout(function () {
-                    window.location = 'home.html'
+                    window.location = 'change_password.html'
                 }, 1000);
             },
             type: 'POST',
