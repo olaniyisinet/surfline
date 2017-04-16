@@ -82,7 +82,7 @@ Login = {
                         document.getElementById('login-error').innerHTML = 'Invalid Username or Password';
                         break;
                     case 3:
-                        Login.providerStatus(data.data);
+                        document.getElementById('login-error').innerHTML = 'Invalid Username or Password';
                         break;
                     case 4:
                         // Login.adminDetails(data.data);

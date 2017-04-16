@@ -28,7 +28,11 @@ sideProfile = {
             dataType: 'json',
             success: function (data) {
                 Cedezone.hideLoadingGif();
+                if (data.msg == "Token has expired") {
+                    window.location = "index.html";
+                } else {
                 sideProfile.populateProfile(data)
+                }
             },
             type: 'GET',
             beforeSend: function () {
