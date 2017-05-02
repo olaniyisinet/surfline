@@ -30,7 +30,7 @@
 <!--<body style ="background-image: url('img/map.jpeg');background-position: center top; background-size: 100% auto;">-->
 
 <body>
-    <footer2 style="padding: 20% 0 10% ">
+    <footer2 style="padding: 10% 0 10% ">
         <div class="container">
             <ul class="icon-social">
                 <li> <img src="img/logo_white.png" align="middle" alt="Cedezonelogo"></li>
@@ -57,13 +57,13 @@
           			<option value=""></option>
         			</select>
                 </div>
-
+-->
                 <label>State</label>
                 <div class="input-field">
                     <select class="browser-default state_id" id="state_id" name="state_id" required>
           		<option value=""></option>
         				</select>
-                </div>-->
+                </div>
 
                 <label>City</label>
                 <div class="input-field">
@@ -74,11 +74,12 @@
 
                 <label>Email</label>
                 <div class="input-field">
-                    <input id="email" type="email" class="browser-default" name="email" required placeholder="Email">
+                    <input id="email" type="email" class="browser-default" name="email" required placeholder="" style=" padding: 0; margin:0">
                 </div>
                 <br>
+                                <button class="button" id="next" type="button">Next</button>
                 <br>
-                <br>
+              <br>
             </div>
         </div>
     </div>
@@ -102,15 +103,16 @@
     <script src="js/mdl-jquery-modal-dialog.js"></script>
 
     <script src="js/pages/Main.js"></script>
-    <script src="js/pages/Login.js"></script>
+    <script src="js/pages/landingPage.js"></script>
 
     <script>
     </script>
     <script type="application/javascript">
         $(document).ready(function () {
             // Form.init('login');
-            Login.init();
-            Cedezone.init();
+            // Login.init();
+             Cedezone.init();
+             Landing.init();
         })
     </script>
 

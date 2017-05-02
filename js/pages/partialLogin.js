@@ -32,7 +32,7 @@ Login = {
             dataType: 'json', // 'xml', 'script', or 'json' (expected server response type)
             clearForm: false, // clear all form fields after successful submit
             resetForm: false,
-            url: App.api + '/' + 'login',
+            url: Cedezone.CONSTANTS.BASE_URL + '/' + 'login',
             // reset the form after successful submit
             // $.ajax options can be used here too, for example:
             //timeout:   3000
@@ -57,7 +57,7 @@ Login = {
 
     getProfile: function () {
         $.ajax({
-            url: App.api + '/' + Login.CONSTANTS.profileroute,
+            url: Cedezone.CONSTANTS.BASE_URL + '/' + Login.CONSTANTS.profileroute,
             data: {
                 token: Cedezone.getToken()
             },
@@ -66,29 +66,37 @@ Login = {
             },
             dataType: 'json',
             success: function (data) {
-
+alert(data.data.role)
                 switch (parseInt(data.data.role)) {
                 case 1:
                     ///general user
+                    showDialog({
+                    title: 'Success',
+                    text: 'Login you in.....',
+                })
                     Login.loadOrder();
-                    break;
-                case 2:
-                    //individual service provider
-                        window.location = App.api + '/'
-                    break;
-                case 3:
-                        window.location = App.api + '/'
-                    break;
-                case 4:
-                    window.location = App.api + '/'
-                    break;
-                case 5:
-                    //super admin;
-                        window.location = App.api + '/'
-                    break;
-                default:
-                    Login.loaOrder();
-                    break;
+                        break;
+                    case 2:
+                        //individual service provider
+                        document.getElementById('login-error').innerHTML = 'Invalid Username or Password';
+                        break;
+                    case 3:
+                        document.getElementById('login-error').innerHTML = 'Invalid Username or Password';
+                        break;
+                    case 4:
+                        // Login.adminDetails(data.data);
+                        document.getElementById('login-error').innerHTML = 'Invalid Username or Password';
+                        break;
+                    case 5:
+                        //super admin
+                        //  Login.adminDetails(data.data);
+                        document.getElementById('login-error').innerHTML = 'Invalid Username or Password';
+                        break;
+                    default:
+                        // Login.userDetails(data.data);
+                    Login.loadOrder();
+
+                        break;
                 }
             },
             type: 'GET'
@@ -96,7 +104,7 @@ Login = {
     },
 
     loadOrder: function () {
-        window.location = App.url + '/createorder'
+        window.location = 'bookaservice.html'
     },
 
     showRequest: function () {

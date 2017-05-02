@@ -744,9 +744,9 @@ serviceOrder = {
             serviceOrder.getAttribute(Cedezone.getServiceID(), Cedezone.getCategoryID());
 
             serviceOrder.CONSTANTS.location = Cedezone.getLocationID();
-            serviceOrder.CONSTANTS.service = Cedezone.getServiceID();
-            serviceOrder.CONSTANTS.category = Cedezone.getCategoryID();
-            serviceOrder.CONSTANTS.attribute = Cedezone.getAttributeID();
+            // serviceOrder.CONSTANTS.service = Cedezone.getServiceID();
+            // serviceOrder.CONSTANTS.category = Cedezone.getCategoryID();
+            // serviceOrder.CONSTANTS.attribute = Cedezone.getAttributeID();
 
             Cedezone.showLoadingGif();
             serviceOrder.getQuote(Cedezone.getLocationID(), Cedezone.getServiceID(), Cedezone.getCategoryID(), Cedezone.getAttributeID());

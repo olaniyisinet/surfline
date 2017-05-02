@@ -151,11 +151,11 @@ Cedezone = {
     getAvatar: function () {
         return localStorage.getItem('avatar');
     },
-    storeCountryID: function (country_id) {
-            localStorage.setItem('country_id', country_id);
+    storeEmail: function (email) {
+            localStorage.setItem('email', email);
         },
-        getCountryID: function () {
-            return localStorage.getItem('country_id');
+        getEmail: function () {
+            return localStorage.getItem('email');
         },
 
         storeStateID: function (state_id) {
@@ -172,11 +172,11 @@ Cedezone = {
             return localStorage.getItem('location_id');
         },
 
-        storeServiceID: function (service_id) {
-            localStorage.setItem('service_id', service_id);
+        storeCountryID: function (country_id) {
+            localStorage.setItem('country_id', country_id);
         },
-        getServiceID: function () {
-            return localStorage.getItem('service_id');
+        getCountryID: function () {
+            return localStorage.getItem('servcountry_idice_id');
         },
 
         storeCategoryID: function (category_id) {
