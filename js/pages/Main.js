@@ -151,6 +151,47 @@ Cedezone = {
     getAvatar: function () {
         return localStorage.getItem('avatar');
     },
+    storeCountryID: function (country_id) {
+            localStorage.setItem('country_id', country_id);
+        },
+        getCountryID: function () {
+            return localStorage.getItem('country_id');
+        },
+
+        storeStateID: function (state_id) {
+            localStorage.setItem('state_id', state_id);
+        },
+        getStateID: function () {
+            return localStorage.getItem('state_id');
+        },
+
+        storeLocationID: function (location_id) {
+            localStorage.setItem('location_id', location_id);
+        },
+        getLocationID: function () {
+            return localStorage.getItem('location_id');
+        },
+
+        storeServiceID: function (service_id) {
+            localStorage.setItem('service_id', service_id);
+        },
+        getServiceID: function () {
+            return localStorage.getItem('service_id');
+        },
+
+        storeCategoryID: function (category_id) {
+            localStorage.setItem('category_id', category_id);
+        },
+        getCategoryID: function () {
+            return localStorage.getItem('category_id');
+        },
+
+        storeAttributeID: function (attribute_id) {
+            localStorage.setItem('attribute_id', attribute_id);
+        },
+        getAttributeID: function () {
+            return localStorage.getItem('attribute_id');
+        },
 
     storeStatus: function (status) {
         localStorage.setItem('status', status);

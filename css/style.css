@@ -73,7 +73,8 @@ body {
 	background: #fff;
 	/*color: #999;*/
 	color: black;
-	font-family: 'Roboto', sans-serif;
+	/*font-family: 'Roboto', sans-serif;*/
+	font-family: "Circular","Helvetica",sans-serif;
 }
 
 body::-webkit-scrollbar {
