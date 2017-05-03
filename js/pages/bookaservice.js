@@ -101,7 +101,7 @@ serviceOrder = {
         //    alert(Cedezone.getStatus());
         if (Cedezone.getStatus() == 'true') {
             //  alert(Cedezone.getStatus());
-            $country.val(Cedezone.getCountryID());
+            $country.val(1);
         }
     },
 
@@ -255,9 +255,9 @@ serviceOrder = {
             $("#service_id option[value=2]").hide();
         });
 
-        if (Cedezone.getStatus() == 'true') {
-            $service.val(Cedezone.getServiceID());
-        }
+        // if (Cedezone.getStatus() == 'true') {
+        //     $service.val(Cedezone.getServiceID());
+        // }
     },
 
     getCategory: function (serviceID) {
@@ -299,9 +299,9 @@ serviceOrder = {
             $category.append("<option value=" + value.id + ">" + value.name + "</option>");
         });
 
-        if (Cedezone.getStatus() == 'true') {
-            $category.val(Cedezone.getCategoryID());
-        }
+        // if (Cedezone.getStatus() == 'true') {
+        //     $category.val(Cedezone.getCategoryID());
+        // }
     },
 
     getAttribute: function (serviceID, CategoryID) {
@@ -339,10 +339,10 @@ serviceOrder = {
         $.each(data.data, function (index, value) {
             $attribute.append("<option value=" + value.id + ">" + value.name + "</option>");
         });
-        if (Cedezone.getStatus() == 'true') {
-            //  alert(Cedezone.getAttributeID());
-            $attribute.val(Cedezone.getAttributeID());
-        }
+        // if (Cedezone.getStatus() == 'true') {
+        //     //  alert(Cedezone.getAttributeID());
+        //     $attribute.val(Cedezone.getAttributeID());
+        // }
     },
 
     categoryOptions: function () {
@@ -737,11 +737,11 @@ serviceOrder = {
 
     checkStatus: function () {
         if (Cedezone.getStatus() == 'true') {
-            serviceOrder.getStatesInCountry(Cedezone.getCountryID());
+            serviceOrder.getStatesInCountry(1);
             serviceOrder.getLocationsInState(Cedezone.getStateID());
 
-            serviceOrder.getCategory(Cedezone.getServiceID());
-            serviceOrder.getAttribute(Cedezone.getServiceID(), Cedezone.getCategoryID());
+            // serviceOrder.getCategory(Cedezone.getServiceID());
+            // serviceOrder.getAttribute(Cedezone.getServiceID(), Cedezone.getCategoryID());
 
             serviceOrder.CONSTANTS.location = Cedezone.getLocationID();
             // serviceOrder.CONSTANTS.service = Cedezone.getServiceID();
@@ -749,30 +749,30 @@ serviceOrder = {
             // serviceOrder.CONSTANTS.attribute = Cedezone.getAttributeID();
 
             Cedezone.showLoadingGif();
-            serviceOrder.getQuote(Cedezone.getLocationID(), Cedezone.getServiceID(), Cedezone.getCategoryID(), Cedezone.getAttributeID());
+            // serviceOrder.getQuote(Cedezone.getLocationID(), Cedezone.getServiceID(), Cedezone.getCategoryID(), Cedezone.getAttributeID());
             Cedezone.hideLoadingGif();
 
-            setTimeout(function () {
-                var selectedservice = $('#category_id option:selected').text();
-                var selectedattrib = $('#attribute_id option:selected').text();
-                //  alert(selectedservice);
-                if (selectedservice == 'Home') {
-                    $("#housetype").show();
-                } else {
-                    $("#housetype").hide();
-                    $("#livingrooms").hide();
-                    $("#bedrooms").hide();
-                    $("#bathrooms").hide();
-                    $("#garden").hide();
-                }
+            // setTimeout(function () {
+            //     // var selectedservice = $('#category_id option:selected').text();
+            //     // var selectedattrib = $('#attribute_id option:selected').text();
+            //     //  alert(selectedservice);
+            //     if (selectedservice == 'Home') {
+            //         $("#housetype").show();
+            //     } else {
+            //         $("#housetype").hide();
+            //         $("#livingrooms").hide();
+            //         $("#bedrooms").hide();
+            //         $("#bathrooms").hide();
+            //         $("#garden").hide();
+            //     }
 
-                if (selectedattrib == 'Regular') {
-                    $("#plan").show();
-                } else {
-                    $("#plan").hide();
-                    $("#regularly").val = 0;
-                }
-            }, 3000);
+            //     if (selectedattrib == 'Regular') {
+            //         $("#plan").show();
+            //     } else {
+            //         $("#plan").hide();
+            //         $("#regularly").val = 0;
+            //     }
+            // }, 3000);
         }
     },
 }
