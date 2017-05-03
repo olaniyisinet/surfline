@@ -43,21 +43,13 @@
 
     <div class="login app-pages app-section" style="background-image: url('img/map.jpeg');  background-position: center top; background-size: 100% auto; margin-top: 2%">
 
-        <div class="container" style="background-color:white; border-radius: 5px; border-color: orange" >
-          
-            <div style="margin: 5% 5%"> 
-                <br>       
-                   <label align="middle">Where are you located?</label>
-            
-            <br>
-<br>
-                <!--<label>Country</label>
-                <div class="input-field">
-                    <select class="browser-default country_id" id="country_id" name="country_id" required>
-          			<option value=""></option>
-        			</select>
-                </div>
--->
+        <div class="container" style="background-color:white; border-radius: 5px; border-color: orange">
+
+            <div style="margin: 5% 5%">
+                <br>
+                <label align="middle">Where are you located?</label>
+
+                <br>
                 <label>State</label>
                 <div class="input-field">
                     <select class="browser-default state_id" id="state_id" name="state_id" required>
@@ -77,11 +69,13 @@
                     <input id="email" type="email" class="browser-default" name="email" required placeholder="" style=" padding: 0; margin:0">
                 </div>
                 <br>
-                                <button class="button" id="next" type="button">Next</button>
+                <button class="button" id="next" type="button">Next</button>
                 <br>
-              <br>
+                <br>
             </div>
         </div>
+
+
     </div>
     <!-- end login -->
 
@@ -109,10 +103,9 @@
     </script>
     <script type="application/javascript">
         $(document).ready(function () {
-            // Form.init('login');
-            // Login.init();
-             Cedezone.init();
-             Landing.init();
+
+            Cedezone.init();
+            Landing.init();
         })
     </script>
 

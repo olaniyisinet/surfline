@@ -1,6 +1,7 @@
 Cedezone = {
     CONSTANTS: {
-        BASE_URL: 'http://api.staging.cedezone.com/api/v1',
+        // BASE_URL: 'http://api.staging.cedezone.com/api/v1',
+                BASE_URL: 'http://localhost/cleaning-app/public/api/v1',
         mprogress: '',
         profile_data: '',
         card_status:'',
@@ -179,18 +180,11 @@ Cedezone = {
             return localStorage.getItem('servcountry_idice_id');
         },
 
-        storeCategoryID: function (category_id) {
-            localStorage.setItem('category_id', category_id);
+        storeServiceID: function (service_id) {
+            localStorage.setItem('service_id', service_id);
         },
-        getCategoryID: function () {
-            return localStorage.getItem('category_id');
-        },
-
-        storeAttributeID: function (attribute_id) {
-            localStorage.setItem('attribute_id', attribute_id);
-        },
-        getAttributeID: function () {
-            return localStorage.getItem('attribute_id');
+        getServiceID: function () {
+            return localStorage.getItem('service_id');
         },
 
     storeStatus: function (status) {

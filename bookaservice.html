@@ -70,7 +70,7 @@
 				<a href="orderHistory.html"><i class="fa fa-history"></i>Order History</a>
 			</li>
 			<li>
-				<a href="bookaservice.html"><i class="fa fa-pencil-square-o"></i>Book a Service</a>
+				<a href="services.html"><i class="fa fa-pencil-square-o"></i>Book a Service</a>
 			</li>
 			<li>
 				<a href="change_password.html"><i class="fa fa-lock"></i>Change Password</a>
@@ -107,22 +107,22 @@
 			<div class="row">
 				<div class="col s12">
 					<ul class="tabs">
-						<li class="tab col s4"><a href="#step1"><i class="fa fa-shield" ></i> </a></li>
-						<li class="tab col s4"><a href="#step2"><i class="fa fa-flag"></i> </a></li>
-						<li class="tab col s4"><a href="#step3"><i class="fa fa-calendar"></i></a></li>
-						<li class="tab col s4"><a href="#step4"><i class="fa fa-map-marker"></i></a></li>
+						<li class="tab col s4" id="1step"><a href="#step1"><i class="fa fa-shield" ></i> </a></li>
+						<li class="tab col s4" id="2step"><a href="#step2"><i class="fa fa-flag"></i> </a></li>
+						<li class="tab col s4" id="3step"><a href="#step3"><i class="fa fa-calendar"></i></a></li>
+						<li class="tab col s4" id="4step"><a href="#step4"><i class="fa fa-map-marker"></i></a></li>
 					</ul>
 					<div id="step1">
 						<br>
 
-						<div id="">
+						<!--<div id="">
 							<label>Service</label>
 							<div class="input-field">
 								<select class="browser-default service_id" data-price-checker="true" id="service_id" name="service_id" required>
           			<option value=""></option>
         			</select>
 							</div>
-						</div>
+						</div>-->
 
 						<div id="category">
 							<label>Category</label>
@@ -235,10 +235,9 @@
 						</div>
 
 						<!-- end house type -->
-						<div>
-							<button type="button"> Next </button>
+						<div align="center">
+							                <button class="button" type="button" id="serviceNext">Next</button>
 					</div>
-
 					</div>
 
 					<div id="step2">
@@ -427,6 +426,8 @@
 			// userOrders.init();
 			sideProfile.init();
 			serviceOrder.init();
+    $(".tabs #3step").click(); 
+
 		});
 		var yesterday = new Date((new Date()).valueOf() - 1000 * 60 * 60 * 24);
 		var $input = $('.datepicker').pickadate({

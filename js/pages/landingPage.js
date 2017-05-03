@@ -147,5 +147,15 @@
         });
     },
 
-
+//  myFunction: function() {
+//                 var x = document.getElementById('locdiv');
+//                 var x2 = document.getElementById('maildiv');
+//                 if (x.style.display === 'none') {
+//                     x.style.display = 'block';
+//                     x2.style.display = 'none';
+//                 } else {
+//                     x.style.display = 'none';
+//                     x2.style.display = 'block';
+//                 }
+//             }
    }

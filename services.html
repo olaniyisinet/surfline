@@ -34,7 +34,7 @@
             </div>
             <div class="site-title">
                 <a href="#" class="logo">
-                    <h1>Link Card</h1>
+                    <h1>Services</h1>
                 </a>
             </div>
             <div class="panel-control-right">
@@ -72,85 +72,60 @@
                 <a href="change_password.html"><i class="fa fa-lock"></i>Change Password</a>
             </li>
             <li>
-				<a href="index.html"><i class="fa fa-power-off"></i>Log Out</a>
-			</li>
+                <a href="index.html"><i class="fa fa-power-off"></i>Log Out</a>
+            </li>
         </ul>
     </div>
     <!-- end panel control -->
 
-    <!-- settings -->
-    <div class="setting-app app-pages app-section tab-content">
+    <!-- services -->
+    <div class="features-app app-pages app-section">
         <div class="container">
-            <!--<div class="pages-title">
-                <h6>Link Card</h6>
-            </div>-->
-
-            <footer2 style="padding: 0 10px ">
-                <div class="container">
-                    <ul class="icon-social">
-                        <img src="img/card.png" align="middle" alt="Card Image">
-                    </ul>
-                </div>
-            </footer2>
-
+            <div class="pages-title">
+            </div>
             <div class="row">
-                <div class="col s6" style="text-align:left">
-                    <h6 style="margin: 0 0; text-align: right">Card Linked?
-                        <h6>
-                            
+                <div class="col s6" id="cleaning" align="center">
+                    <div class="entry">
+                        <i class="fa fa-s15" style="color:#8DC331"></i>
+                        <h6>Cleaning</h6>
+                        <p>Professional Cleaning</p>
+                    </div>
                 </div>
-                <div class="col s6" id="cardstatus" >
-                    <!--<h6 style="margin: 0 0; color:green" id="cardstatus">False</h6>-->
-                    <!--<input type="text" class="validate" id="cardstatus" placeholder="False" style="text-transform: uppercase">-->
+                <div class="col s6" align="center">
+                    <div class="entry">
+                        <i class="fa fa-plug" style="color:#38D3BA"></i>
+                        <h6>Electrical</h6>
+                        <p>Coming Soon</p>
+                    </div>
                 </div>
             </div>
-
-            <form id="cardlinking" class="form-horizontal" data-parsley-validate role="form" method="POST" action="">
-
-                <label>Name as on Card</label>
-                <div class="input-field">
-                    <input type="text" class="validate" id="name" required placeholder="Name on Card">
-                </div>
-
-                <label>Card Number</label>
-                <div class="input-field">
-                    <input id="card_no" name="card_no" type="number" placeholder="0000-0000-0000-0000" pattern="[0-9]{13,20}" required="Enter Card No">
-                </div>
-
-                <label>Expiration</label>
-                <div class="input-field row">
-                    <div class="col s6">
-                        <input type="number" class="validate" type="text" min="1" max="31" id="expiry_month" name="expiry_month" required placeholder="00">
-                    </div>
-                    <div class="col s6">
-                        <input type="number" class="validate" type="text" min="1" max="99" id="expiry_year" name="expiry_year" required placeholder="00">
+            <div class="row">
+                <div class="col s6" align="center">
+                    <div class="entry">
+                        <i class="fa fa-paint-brush" style="color: #FF615D"></i>
+                        <h6>Painting</h6>
+                        <p>Coming Soon</p>
                     </div>
                 </div>
-
-                <label>CVV</label>
-                <div class="input-field">
-                    <input id="cvv" name="cvv" type="number" required="" id="cvv" name="cvv" max="999" required placeholder="Enter CVV">
+                <div class="col s6" align="center">
+                    <div class="entry">
+                        <i class="fa fa-gavel" style="color:#98388E"></i>
+                        <h6>Carpentry</h6>
+                        <p>Coming Soon</p>
+                    </div>
                 </div>
-
-                <label>Card Pin</label>
-                <div class="input-field">
-                    <input id="pin" name="pin" type="number" min="1" max="9999" id="pin" name="pin" required placeholder="0000">
-                </div>
-
-                <div class="input-field center">
-                    <button class="button" type="submit" style="border-radius: 5px;">Submit</button>
-                </div>
-            </form>
+            </div>
         </div>
     </div>
-    <!-- end settings -->
+    <!-- end services -->
     <img src="img/loading.gif" class="hidden" id="loading-gif" />
     <!-- footer -->
     <!--<footer>
-        <div class="ft-bottom">
-            <span>Copyright © 2017 All Rights Reserved </span>
-        </div>
-    </footer>-->
+
+		<div class="ft-bottom">
+			<span>Copyright © 2017 All Rights Reserved </span>
+		</div>
+	</footer>-->
     <!-- end footer -->
 
     <!-- script -->
@@ -164,18 +139,18 @@
     <script src="js/parsely.min.js"></script>
     <!--<script src="js/pnotify.min.js"></script>-->
     <script src="js/mprogress.min.js"></script>
-        <script src="js/material.min.js"></script>
-	<script src="js/mdl-jquery-modal-dialog.js"></script>
+    <script src="js/material.min.js"></script>
+    <script src="js/mdl-jquery-modal-dialog.js"></script>
 
     <script src="js/pages/Main.js"></script>
     <script src="js/pages/sideprofile.js"></script>
-    <script src="js/pages/linkCard.js"></script>
+    <script src="js/pages/service.js"></script>
 
     <script type="application/javascript">
         $(document).ready(function () {
             Cedezone.init();
             sideProfile.init();
-            linkcard.init();
+            Services.init();
         });
 
         function imgError(image) {

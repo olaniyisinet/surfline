@@ -27,7 +27,8 @@ serviceOrder = {
 
         serviceOrder.listener(); ////listen to any price change
         serviceOrder.checkStatus();
-        serviceOrder.getService();
+        // serviceOrder.getService();
+        serviceOrder.getCategory(Cedezone.getServiceID());
 
         serviceOrder.getCountries();
 
@@ -41,13 +42,13 @@ serviceOrder = {
             serviceOrder.getLocationsInState(value);
         })
 
-        $('#service_id').change(function () {
-            var value = $('#service_id').val();
-            serviceOrder.getCategory(value);
-        });
+        // $('#service_id').change(function () {
+        //     var value = Cedezone.getServiceID()
+        //     serviceOrder.getCategory(value);
+        // });
 
         $('#category_id').change(function () {
-            var value = $('#service_id').val();
+            var value = Cedezone.getServiceID()
             var value2 = $('#category_id').val();
             serviceOrder.getAttribute(value, value2);
         });
@@ -79,8 +80,16 @@ serviceOrder = {
             },
             error: function () {
                 //   alert('Sorry error occured while fetching available countries');
-                $('#alert').modal();
-                document.getElementById('alertresponse').innerHTML = 'Unable to fecth available countries.'
+                // $('#alert').modal();
+                // document.getElementById('alertresponse').innerHTML = 'Unable to fecth available countries.'
+                showDialog({
+                        title: 'Oops!',
+                        text: 'Unable to fecth available countries.',
+                        positive: {
+                            title: 'Ok'
+                        },
+                        cancelable: false
+                    });
             },
             dataType: 'json',
             success: function (data) {
@@ -409,7 +418,7 @@ serviceOrder = {
 
     checkQuote: function () {
         var location_id = $('#location_id').val();
-        var service_id = $('#service_id').val();
+        var service_id = Cedezone.getServiceID();
         var category_id = $('#category_id').val();
         var attribute_id = $('#attribute_id').val();
         if (location_id != '' && service_id != '' && category_id != '' && attribute_id != '') {
@@ -428,13 +437,16 @@ serviceOrder = {
                 serviceattribute_id: attribute_id
             },
             error: function () {
-                $('#alert').modal();
-                document.getElementById('alertresponse').innerHTML = 'Our Prices does not cover this service category / location yet';
                 document.getElementById('price_per_hour').innerHTML = '0.00';
                 document.getElementById('rec_hour').innerHTML = '0';
-
-                //    serviceOrder.getAttribute($('#service_id').val(), $('#category_id').val());
-
+                showDialog({
+                    title: 'Sorry',
+                    text: 'Our Prices does not cover this service category / location yet',
+                    positive: {
+                                title: 'Ok'
+                            },
+                            cancelable: false
+                })
             },
             dataType: 'json',
             success: function (data) {
@@ -453,9 +465,6 @@ serviceOrder = {
                         }),
                         document.getElementById('price_per_hour').innerHTML = '0.00';
                     document.getElementById('rec_hour').innerHTML = '0';
-
-                    //serviceOrder.getAttribute($('#service_id').val(), $('#category_id').val());
-
                 } else {
                     document.getElementById('price_per_hour').innerHTML = '<b>' + data.data.price + '</b>';
                     document.getElementById('rec_hour').innerHTML = '<b>' + data.data.recommended_hour + '</b>';
@@ -468,11 +477,11 @@ serviceOrder = {
 
     getOrderPrice: function () {
         //   var selectedservice = $('#service_id').val();
-        var selectedservice = $('#service_id option:selected').text();
+        var selectedservice = Cedezone.getServiceID();
         var selectedcategory = $('#category_id option:selected').text();
         //     alert(selectedservice);
         serviceOrder.CONSTANTS.location = $('#location_id').val();
-        serviceOrder.CONSTANTS.service = $('#service_id').val();
+        serviceOrder.CONSTANTS.service = Cedezone.getServiceID();
         serviceOrder.CONSTANTS.category = $('#category_id').val();
         serviceOrder.CONSTANTS.attribute = $('#attribute_id').val();
 
@@ -531,7 +540,7 @@ serviceOrder = {
         serviceOrder.CONSTANTS.address = ($.trim($('#address').val()));
 
         serviceOrder.CONSTANTS.location = $('#location_id').val();
-        serviceOrder.CONSTANTS.service = $('#service_id').val();
+        serviceOrder.CONSTANTS.service = Cedezone.getServiceID();
         serviceOrder.CONSTANTS.category = $('#category_id').val();
         serviceOrder.CONSTANTS.attribute = $('#attribute_id').val();
 

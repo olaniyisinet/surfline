@@ -115,7 +115,7 @@ Home = {
                    $html='<button class="btn waves-effect waves-light red" data-id="" disabled><i class="fa fa-trash"></i> Canceled </button>'
                 }else{
 
-                   $html='<a class="btn waves-effect waves-light red cancel" data-id="'+id+'"><i class="fa fa-trash"></i> Cancel </a>'
+                //    $html='<a class="btn waves-effect waves-light red cancel" data-id="'+id+'"><i class="fa fa-trash"></i> Cancel </a>'
                 }
 
         return $html
