@@ -187,6 +187,13 @@ Cedezone = {
             return localStorage.getItem('service_id');
         },
 
+        storeAddress: function (address) {
+            localStorage.setItem('address', address);
+        },
+        getAddress: function () {
+            return localStorage.getItem('address');
+        },
+
     storeStatus: function (status) {
         localStorage.setItem('status', status);
     },

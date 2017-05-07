@@ -86,36 +86,42 @@
 	<div class="step-app app-pages app-section" id="changepage">
 		<div class="container">
 			<div id="changepage">
-		<div class="order">
-				<h5 class="title">Price</h5>
-				<div class="row">
-					<div class="col s8 text-right">
-						<h6 class="col s6">Price/Hr:</h6>
-					</div>
-					<div class="col s4 text-left">
-						<h6 class="col s6" id="price_per_hour">0.00</h6>
-					</div>
-					<div class="col s8 text-right">
-						<h6 class="col s6"> Hours:</h6>
-					</div>
-					<div class="col s4 text-left">
-						<h6 class="col s6" id="rec_hour">0</h6>
+				<div class="order" style="margin-bottom: 0px;">
+					<h5 class="title">Price</h5>
+					<div class="row">
+						<div class="col s12">
+							<div class="col s2 text-left">
+								<!--<h6 id="price_per_hour">0.00</h6>-->
+							</div>
+							<div class="col s3 center">
+								<h6 class="samplefont">Price/Hr:</h6>
+								<h6 class="samplefont" id="price_per_hour">0.00</h6>
+							</div>
+							<div class="col s2 text-left">
+								<!--<h6 id="price_per_hour">0.00</h6>-->
+							</div>
+							<div class="col s3 center">
+								<h6 class="samplefont"> Hours:</h6>
+								<h6 class="samplefont" id="rec_hour">0</h6>
+							</div>
+							<div class="col s2 text-left">
+							</div>
+						</div>
 					</div>
 				</div>
-			</div>
 
-			<div class="row">
-				<div class="col s12">
-					<ul class="tabs">
+				<div class="row">
+					<div class="col s12">
+						<!--<ul class="tabs">
 						<li class="tab col s4" id="1step"><a href="#step1"><i class="fa fa-shield" ></i> </a></li>
 						<li class="tab col s4" id="2step"><a href="#step2"><i class="fa fa-flag"></i> </a></li>
 						<li class="tab col s4" id="3step"><a href="#step3"><i class="fa fa-calendar"></i></a></li>
 						<li class="tab col s4" id="4step"><a href="#step4"><i class="fa fa-map-marker"></i></a></li>
-					</ul>
-					<div id="step1">
-						<br>
+					</ul>-->
+						<div id="step1">
+							<br>
 
-						<!--<div id="">
+							<!--<div id="">
 							<label>Service</label>
 							<div class="input-field">
 								<select class="browser-default service_id" data-price-checker="true" id="service_id" name="service_id" required>
@@ -124,52 +130,52 @@
 							</div>
 						</div>-->
 
-						<div id="category">
-							<label>Category</label>
-							<div class="input-field">
-								<select class="browser-default category_id" data-price-checker="true" id="category_id" name="category_id" required>
+							<div id="category">
+								<label>Category</label>
+								<div class="input-field">
+									<select class="browser-default category_id" data-price-checker="true" id="category_id" name="category_id" required>
           		<option value=""></option>
         				</select>
+								</div>
 							</div>
-						</div>
 
-						<div id="attribute">
-							<label>Attribute</label>
-							<div class="input-field">
-								<select class="browser-default attribute_id" data-price-checker="true" id="attribute_id" name="attribute_id" required>
+							<div id="attribute">
+								<label>Attribute</label>
+								<div class="input-field">
+									<select class="browser-default attribute_id" data-price-checker="true" id="attribute_id" name="attribute_id" required>
           		<option value=""></option>
         				</select>
+								</div>
 							</div>
-						</div>
 
-						<div id="plan">
-							<label>Plan</label>
-							<div class="input-field">
-								<select class="browser-default" id="regularly" name="regularly" required>
+							<div id="plan">
+								<label>Plan</label>
+								<div class="input-field">
+									<select class="browser-default" id="regularly" name="regularly" required>
           		<option value="1">Weekly</option>
                     <option value="2">2 Weeks</option>
                     <option value="3">Monthly</option>
         				</select>
+								</div>
 							</div>
-						</div>
 
-						<!-- House Type -->
-						<div id="housetype">
-							<label>Apartment Type</label>
-							<div class="input-field">
-								<select class="browser-default" id="housetype_value" name="housetype_value" required>
+							<!-- House Type -->
+							<div id="housetype">
+								<label>Apartment Type</label>
+								<div class="input-field">
+									<select class="browser-default" id="housetype_value" name="housetype_value" required>
           			<option value="Not Selected">Select House Type</option>
                     <option value="apartment">Apartment/Flats</option>
                     <option value="duplex">Duplex</option>
                     <option value="mansion">Mansion</option>
         			</select>
+								</div>
 							</div>
-						</div>
 
-						<div id="livingrooms">
-							<label>Living Room(s)</label>
-							<div class="input-field">
-								<select class="browser-default" id="livingrooms_value" name="livingrooms_value" required>
+							<div id="livingrooms">
+								<label>Living Room(s)</label>
+								<div class="input-field">
+									<select class="browser-default" id="livingrooms_value" name="livingrooms_value" required>
           		<option selected="selected" value="Not Selected">Select</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -182,13 +188,13 @@
                     <option value="9">9</option>
                     <option value="10">10</option>
         				</select>
+								</div>
 							</div>
-						</div>
 
-						<div id="bedrooms">
-							<label>Bedroom(s)</label>
-							<div class="input-field">
-								<select class="browser-default " id="bedrooms_value" name="bedrooms_value" required>
+							<div id="bedrooms">
+								<label>Bedroom(s)</label>
+								<div class="input-field">
+									<select class="browser-default " id="bedrooms_value" name="bedrooms_value" required>
           		<option selected="selected" value="Not Selected">Select</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -201,13 +207,13 @@
                     <option value="9">9</option>
                     <option value="10">10</option>
         				</select>
+								</div>
 							</div>
-						</div>
 
-						<div id="bathrooms">
-							<label>Bathroom(s)</label>
-							<div class="input-field">
-								<select class="browser-default" id="bathrooms_value" name="bathrooms_value" required>
+							<div id="bathrooms">
+								<label>Bathroom(s)</label>
+								<div class="input-field">
+									<select class="browser-default" id="bathrooms_value" name="bathrooms_value" required>
           		<option selected="selected" value="Not Selected">Select</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -220,93 +226,134 @@
                     <option value="9">9</option>
                     <option value="10">10</option>
         				</select>
+								</div>
 							</div>
-						</div>
 
-						<div id="garden">
-							<label>Garden</label>
-							<div class="input-field">
-								<select class="browser-default" id="garden_value" name="garden_value" required>
+							<div id="garden">
+								<label>Garden</label>
+								<div class="input-field">
+									<select class="browser-default" id="garden_value" name="garden_value" required>
           		<option selected="selected" value="No">Select</option>
                     <option value="Yes">Yes</option>
                     <option value="No">No</option>
         				</select>
+								</div>
 							</div>
+							<!-- end house type -->
+							<!--<div align="center">
+							                <button class="button" type="button" id="serviceNext">Next</button>
+					</div>-->
 						</div>
 
-						<!-- end house type -->
-						<div align="center">
-							                <button class="button" type="button" id="serviceNext">Next</button>
-					</div>
-					</div>
-
-					<div id="step2">
-						<br>
-						<label>Country</label>
-						<div class="input-field">
-							<select class="browser-default country_id" id="country_id" name="country_id" required>
+						<div id="step2">
+							<br>
+							<label>Country</label>
+							<div class="input-field">
+								<select class="browser-default country_id" id="country_id" name="country_id" required>
           			<option value=""></option>
         			</select>
-						</div>
+							</div>
 
-						<label>State</label>
-						<div class="input-field">
-							<select class="browser-default state_id" id="state_id" name="state_id" required>
+							<label>State</label>
+							<div class="input-field">
+								<select class="browser-default state_id" id="state_id" name="state_id" required>
           		<option value=""></option>
         				</select>
-						</div>
+							</div>
 
-						<label>City</label>
-						<div class="input-field">
-							<select class="browser-default" data-price-checker="true" id="location_id" name="location_id" required>
+							<label>City</label>
+							<div class="input-field">
+								<select class="browser-default" data-price-checker="true" id="location_id" name="location_id" required>
           		<option value=""></option>
         				</select>
-						</div>
+							</div>
 
-					</div>
-					<div id="step3">
-						<br>
-						<label><i class="fa fa-calendar-check-o"></i> Date</label>
-						<!--<div class="input-field">
+						</div>
+						<div id="step3">
+							<br>
+							<label><i class="fa fa-calendar-check-o"></i> Date</label>
+							<!--<div class="input-field">
 							<span class="input-group-addon bg-info b-0 text-white datepicker" style="background-color:#006DD9"><i class="fa fa-calendar-check-o"></i></span>
 							<input class="form-control datepicker" name="date" type="text" autofocuss value="dd/mm/yyyy" data-valuee="01/08/2016" name="service_date"
 							    id="service_date">
 						</div>-->
-						<div class="input-field">
+							<div class="input-field">
 
-							<input class="validate datepicker" name="date" type="text" autofocuss value="" data-valuee="" name="service_date"
-							    id="service_date" style="padding: 0 !important">
+								<input class="validate datepicker" name="date" type="text" autofocuss value="" data-valuee="" name="service_date" id="service_date"
+								    style="padding: 0 !important">
 
-							<div id="container"></div>
+								<div id="container"></div>
+							</div>
+							<label><i class="fa fa-clock-o" ></i> Time</label>
+							<div class="input-field">
+								<input class="validate timepicker" type="time" name="service_time" id="service_time" style="padding: 0 !important">
+							</div>
+
+<!-- Cleaning Extras -->
+							<div class="row" id="extras">
+								<h6 class="center"> Extras </h6>
+								<hr>
+<div class="col s12">
+								<div class="col s6">
+								<input type="checkbox" name="" value="Inside Cabinets" class="checkbox" id="checkbox1"> 
+								<label class="label_item" for="checkbox1"> Inside Cabinets</label>
+								</div>
+								
+								<div class="col s6">
+								<input type="checkbox" name="" value="Inside Fridge" class="checkbox" id="checkbox2">
+								<label class="label_item" for="checkbox2"> Inside Fridge</label>
+								</div>
+</div>
+
+<div class="col s12">
+								<div class="col s6">
+								<input type="checkbox" name="" value="Inside Oven" class="checkbox" id="checkbox3">
+								<label class="label_item" for="checkbox3">Inside Oven</label>
+								</div>
+
+								<div class="col s6">
+								<input type="checkbox" name="" value="Inside Windows" class="checkbox" id="checkbox4">
+								<label class="label_item" for="checkbox4"> Windows </label>
+								</div>
+</div>
+							</div>
+<!-- End Cleaning Extras -->
 						</div>
-						<label><i class="fa fa-clock-o" ></i> Time</label>
-						<div class="input-field">
-							<input class="validate timepicker" type="time" name="service_time" id="service_time" style="padding: 0 !important">
-						</div>
-					</div>
 
-					<div id="step4">
-						<br>
-						<label>Address</label>
-						<div class="input-field">
-							<textarea class="validate attribute_id" id="address" name="address" required> </textarea>
-						</div>
+						<div id="step4">
+							<br>
+							<label>Address</label>
+							<div class="input-field">
+								<textarea class="validate attribute_id" id="address" name="address" required value="Cedezone.getAddress();"> </textarea>
+							</div>
 
-						<label>Additional Info (e.g Land mark)</label>
-						<div class="input-field">
-							<textarea class="validate attribute_id" id="additional_info" name="additional_info" required> </textarea>
-						</div>
-
-						<div style="margin-top: 10%" class="center">
-							<button type="button" class="btn waves-effect waves-light green" id="createOrder"><i class="fa fa-check"></i> Submit </button>
-<a href="#confirm" type="button" id="clickme" class="hidden"></a>
+							<label>Additional Info (e.g Land mark)</label>
+							<div class="input-field">
+								<textarea class="validate attribute_id" id="additional_info" name="additional_info" required> </textarea>
+							</div>
+							<div class="row">
+								<hr>
+								<input type="radio" name="gender" value="male"> Male
+							</div>
+							<div style="margin-top: 10%" class="center">
+								<button type="button" class="btn waves-effect waves-light green" id="createOrder"><i class="fa fa-check"></i> Submit </button>
+								<a href="#confirm" type="button" id="clickme" class="hidden"></a>
+							</div>
+							<br>
+							<br>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		</div>
 	</div>
+
+	<ul class="tabs" style="position:fixed; bottom:1%; top:auto">
+		<li class="tab col s4" id="1step"><a href="#step1"><i class="fa fa-shield" ></i> </a></li>
+		<li class="tab col s4" id="2step"><a href="#step2"><i class="fa fa-flag"></i> </a></li>
+		<li class="tab col s4" id="3step"><a href="#step3"><i class="fa fa-calendar"></i></a></li>
+		<li class="tab col s4" id="4step"><a href="#step4"><i class="fa fa-map-marker"></i></a></li>
+	</ul>
 	<!-- end step -->
 
 	<!-- footer -->
@@ -319,7 +366,7 @@
 
 	<div id="confirm" class="modal">
 		<div class="modal-content">
-			<h5 class="center">Confirm</h5>
+			<h5 class="center">Complete Booking</h5>
 			<p>Are you ready to make this booking?</p>
 		</div>
 		<div class="modal-footer">
@@ -391,10 +438,7 @@
 					</section>
 
 				</div>
-
 			</div>
-
-
 		</div>
 	</script>
 
@@ -426,7 +470,7 @@
 			// userOrders.init();
 			sideProfile.init();
 			serviceOrder.init();
-    $(".tabs #3step").click(); 
+			// $(".tabs #3step").click(); 
 
 		});
 		var yesterday = new Date((new Date()).valueOf() - 1000 * 60 * 60 * 24);
@@ -450,11 +494,11 @@
 		var picker2 = $input2.pickatime('picker');
 		// picker2.open();
 
-function imgError(image) {
-    image.onerror = "";
-    image.src = "img/author.png";
-    return true;
-}
+		function imgError(image) {
+			image.onerror = "";
+			image.src = "img/author.png";
+			return true;
+		}
 	</script>
 
 </body>

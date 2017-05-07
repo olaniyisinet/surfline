@@ -66,7 +66,7 @@ Login = {
             },
             dataType: 'json',
             success: function (data) {
-alert(data.data.role)
+// alert(data.data.role)
                 switch (parseInt(data.data.role)) {
                 case 1:
                     ///general user

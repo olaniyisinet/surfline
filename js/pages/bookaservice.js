@@ -17,6 +17,8 @@ serviceOrder = {
     },
 
     init: function () {
+        // alert(Cedezone.getAddress());
+     	$('#address').val(Cedezone.getAddress());
         $("#housetype").hide();
         $("#livingrooms").hide();
         $("#bedrooms").hide();
