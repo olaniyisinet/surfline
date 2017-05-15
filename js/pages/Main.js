@@ -9,11 +9,12 @@ Cedezone = {
 
     init: function () {
         Cedezone.CONSTANTS.mprogress = new Mprogress();
-        $('#logout').click(function (e) {
+        $('.fa-power-off').click(function (e) {
             // window.localStorage.removeItem('token');
             localStorage.clear();
             ///  alert('Storage cleared');
-            window.location = App.url + '/';
+            window.location = 'login.html';
+            Logout();
         });
         $('#change').click(function (e) {
             // alert('am here');
