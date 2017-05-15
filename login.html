@@ -27,38 +27,36 @@
 
 </head>
 
-<body style ="background-image: url('img/background.png');  background-position: center top; background-size: 100% auto;">
+<body style="background-image: url('img/background.png');  background-position: center top; background-size: 100% auto;">
 
     <footer2 style="padding: 20% 0 10% ">
-            <div class="container">
-                <ul class="icon-social">
-                    <img src="img/logo_white.png" align="middle" alt="Cedezonelogo">
-                </ul>
-            </div>
-        </footer2>
-         
+        <div class="container">
+            <ul class="icon-social">
+                <img src="img/logo_white.png" align="middle" alt="Cedezonelogo">
+            </ul>
+        </div>
+    </footer2>
+
     <div class="login app-pages app-section" style="margin-top: 10%">
-            
+
         <div class="container">
             <br>
-            <form action="#" id="login" data-parsley-validate role="form" method="POST" >
+            <form action="#" id="login" data-parsley-validate role="form" method="POST">
                 <div class="form-group">
-                                <div class="col-xs-12 text-center">
-                                    <div id="login-error" style="color: red"></div>
-                                </div>
-                            </div>
+                    <div class="col-xs-12 text-center">
+                        <div id="login-error" style="color: red"></div>
+                    </div>
+                </div>
                 <div class="input-field">
                     <input id="email" type="email" required placeholder="Email" name="email">
-                    <!--					<label for="email">Email</label>-->
                 </div>
                 <div class="input-field">
                     <input id="password" type="password" required placeholder="Password" name="password">
-                    <!--					<label for="password">Password</label>-->
                 </div>
-               
-               <br>
-				<div><a href="forgot_password.html" class="forgot center" style="color: orange">Forgot Password?</a></div>
-			 <!--	<div class="chebox">
+
+                <br>
+                <div><a href="forgot_password.html" class="forgot center" style="color: orange">Forgot Password?</a></div>
+                <!--	<div class="chebox">
 					<input type="checkbox" id="checkbox" />
   					<label for="checkbox">Remember me</label>
 				</div>
@@ -66,17 +64,31 @@
                 <button class="button" type="submit">SIGN IN</button>
             </form>
             <footer2>
-                    <ul class="icon-social">
-                        <li class="facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
-                        <li class="twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                    </ul>
-                 <div class="create-account" style="color: white">Not Registered? <a href="register.html" style="color: orange">Create an account</a></div>
-            </footer2>
-        </div>  
-    </div>
-    <!-- end login -->
 
+                OR
+                <!--<div class="fb-login-button" data-max-rows="1" data-size="small" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="false"
+                    data-use-continue-as="false"></div>-->
+<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+</fb:login-button>
+                <ul class="icon-social">
+
+                    <!--<li class="facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>-->
+                    <!--<li class="twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>-->
+                </ul>
+                <div class="create-account" style="color: white">Not Registered? <a href="register.html" style="color: orange">Create an account</a></div>
+
+<div id="status">
+</div>
+
+            </footer2>
+        </div>
+    </div>
+
+    <!-- end login -->
     <img src="img/loading.gif" class="hidden" id="loading-gif" />
+
+    <div id="fb-root"></div>
+
     <!-- script -->
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery.form.js"></script>
@@ -86,27 +98,44 @@
     <script src="js/slick.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/custom.js"></script>
-   
-   <script src="js/parsely.min.js"></script>
-   <script src="js/pnotify.min.js"></script>
-   <script src="js/mprogress.min.js"></script>
-     <script src="js/material.min.js"></script>
-	<script src="js/mdl-jquery-modal-dialog.js"></script>
 
-   <script src="js/pages/Main.js"></script>
-   <script src="js/pages/Login.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+
+    <script src="js/parsely.min.js"></script>
+    <script src="js/pnotify.min.js"></script>
+    <script src="js/mprogress.min.js"></script>
+    <script src="js/material.min.js"></script>
+    <script src="js/mdl-jquery-modal-dialog.js"></script>
+
+    <script src="js/pages/Main.js"></script>
+    <script src="js/pages/Login.js"></script>
+    <script src="js/pages/facebooklogin.js"></script>
 
     <script>
-
     </script>
     <script type="application/javascript">
-        $(document).ready(function() {
+        $(document).ready(function () {
             // Form.init('login');
             Login.init();
             Cedezone.init();
-        })
-
+        });
     </script>
+    <!--<script>
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.9&appId=1026073090860657";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+-->
+
+    <script>
+
+</script>
 
 </body>
 

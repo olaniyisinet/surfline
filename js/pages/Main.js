@@ -136,7 +136,7 @@ Cedezone = {
     checkToken: function () {
         //  alert(Cedezone.getToken());
         if (Cedezone.getToken() === null) {
-            window.location = Cedezone.CONSTANTS.BASE_URL + '/';
+            window.location = "login.html";
         }
     },
 
