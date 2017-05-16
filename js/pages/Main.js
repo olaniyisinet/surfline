@@ -14,7 +14,6 @@ Cedezone = {
             localStorage.clear();
             ///  alert('Storage cleared');
             window.location = 'login.html';
-            Logout();
         });
         $('#change').click(function (e) {
             // alert('am here');

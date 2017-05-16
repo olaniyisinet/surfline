@@ -7,13 +7,22 @@ Login = {
     },
     init: function () {
         $('#login').submit(function (e) {
+
+            $.getScript('js/jquery.min.js');
+            $.getScript('js/jquery.form.js');
+            $.getScript('js/jquery.blockUI.js');
+            $.getScript('js/parsely.min.js');
+
             e.preventDefault();
+
             var instance = $(this).parsley();
             if (instance.isValid()) {
                 $(this).ajaxSubmit(Login.setOptions());
             } else {
                 return (false);
             }
+            $(this).ajaxSubmit(Login.setOptions());
+            // Login.getLoginToken();
         });
         //  $('#a').click( func)
     },
@@ -38,6 +47,29 @@ Login = {
             }
         };
     },
+
+    getLoginToken: function () {
+        $.ajax({
+            url: Cedezone.CONSTANTS.BASE_URL + '/login',
+            data: {
+                email: $('#email').val(),
+                password: $('#password').val()
+            },
+            error: function (data) {
+                // Cedezone.showNotification('error', 'Error occured while making connection', 'Error')
+                showDialog({
+                    title: 'Error',
+                    text: data.data,
+                })
+            },
+            dataType: 'json',
+            success: function (data) {
+                Login.showResponse(data);
+            },
+            type: 'POST'
+        });
+    },
+
     showResponse: function (data) {
         //alert('am here');
         Cedezone.hideLoadingGif();
@@ -72,9 +104,9 @@ Login = {
                     case 1:
                         Cedezone.storeName(data.data.name);
                         showDialog({
-                    title: 'Success',
-                    text: 'Login you in.....',
-                })
+                            title: 'Success',
+                            text: 'Login you in.....',
+                        })
                         window.location = 'home.html';
                         break;
                     case 2:
@@ -104,7 +136,6 @@ Login = {
             },
             type: 'GET'
         });
-
     },
 
     showRequest: function () {
@@ -127,9 +158,9 @@ Login = {
             });
         } catch (err) {
             showDialog({
-                    title: 'Error',
-                    text: 'Unable to Connect',
-                })
+                title: 'Error',
+                text: 'Unable to Connect',
+            })
         }
     },
 }

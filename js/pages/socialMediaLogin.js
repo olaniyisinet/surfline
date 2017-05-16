@@ -5,7 +5,7 @@ socialLogin = {
     },
 
     init: function () {
-        
+
     },
 
     ProcessError: function (data) {
@@ -34,9 +34,9 @@ socialLogin = {
             },
             dataType: 'json',
             success: function (data) {
-                Cedezone.hideLoadingGif();
-
-                alert(data);
+                // Cedezone.hideLoadingGif();
+Cedezone.storeToken(data.token);
+                window.location = "home.html";
             },
             type: 'POST',
             beforeSend: function () {

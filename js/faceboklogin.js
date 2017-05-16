@@ -47,8 +47,11 @@
     //
     // These three cases are handled in the callback function.
 
-    FB.getLoginStatus(function (response) {
-      statusChangeCallback(response);
+    // FB.getLoginStatus(function (response) {
+    //   statusChangeCallback(response);
+    // });
+    FB.logout(function (response) {
+      alert('You are now logged out')
     });
   };
 
@@ -70,12 +73,13 @@
     FB.api('/me', function (response) {
       console.log('Successful login for: ' + response.name);
       alert(JSON.stringify(response));
-
-      //  socialLogin.getToken(response.name + '@facebook.com', response.name, 'Facebook', response.id)
+      var name = response.name.split(" ");
+      alert(name[0]);
+      socialLogin.getToken(name[0] + '@facebook.com', response.name, 'Facebook', response.id)
       //   document.getElementById('status').innerHTML =
       //     'Thanks for logging in, ' + response.name + '!';
       // window.location = "home.html"
-      Logout();
+      // Logout();
     });
   }
 
@@ -83,4 +87,10 @@
     FB.logout(function (response) {
       alert('You are now logged out')
     });
+  }
+
+  facebookLogout = {
+    logout: function () {
+      logout();
+    }
   }
