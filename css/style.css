@@ -2530,3 +2530,26 @@ input.parsley-error,textarea.parsley-error,select.parsley-error{
 	font-size: 10px; 
 	margin:5px 0 10px
 }
+._4z_e{
+	border-radius: 100%;
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    margin: 0 3px;
+    text-align: center;
+    /*width: 30px;*/
+}
+span.icon {
+      background: url('../img/google.png') transparent 5px 50% no-repeat;
+      display: inline-block;
+      vertical-align: middle;
+      width: 42px;
+      height: 42px;
+    }
+.icon {
+      background: url('../img/google.png') transparent 5px 50% no-repeat;
+      display: inline-block;
+      vertical-align: middle;
+      width: 42px;
+      height: 42px;
+    }

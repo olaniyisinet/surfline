@@ -51,7 +51,7 @@
     //   statusChangeCallback(response);
     // });
     FB.logout(function (response) {
-      alert('You are now logged out')
+      // alert('You are now logged out')
     });
   };
 
@@ -61,7 +61,7 @@
     if (d.getElementById(id)) return;
     js = d.createElement(s);
     js.id = id;
-    js.src = "//connect.facebook.net/en_US/sdk.js";
+    js.src = "js/facebooksdk.js";
     // js.src ="js/facebooksdk.js"
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));
@@ -72,9 +72,9 @@
     console.log('Welcome!  Fetching your information.... ');
     FB.api('/me', function (response) {
       console.log('Successful login for: ' + response.name);
-      alert(JSON.stringify(response));
+      // alert(JSON.stringify(response));
       var name = response.name.split(" ");
-      alert(name[0]);
+      // alert(name[0]);
       socialLogin.getToken(name[0] + '@facebook.com', response.name, 'Facebook', response.id)
       //   document.getElementById('status').innerHTML =
       //     'Thanks for logging in, ' + response.name + '!';

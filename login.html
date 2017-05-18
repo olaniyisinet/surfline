@@ -8,6 +8,8 @@
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="HandheldFriendly" content="True">
 
+    <meta name="google-signin-client_id" content="183619491292-8q40kp872bs20p6fa4b5c42g44boch8o.apps.googleusercontent.com">
+
     <link rel="shortcut icon" href="img/favicon.png">
 
     <link rel="stylesheet" href="css/font-awesome.min.css">
@@ -25,6 +27,10 @@
     <link rel="stylesheet" href="css/icon.css">
     <link rel="stylesheet" href="css/mdl-jquery-modal-dialog.css">
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <script async defer src="https://apis.google.com/js/api.js" onload="this.onload=function(){};handleClientLoad()" onreadystatechange="if (this.readyState === 'complete') this.onload()">
+    </script>
 </head>
 
 <body style="background-image: url('img/background.png');  background-position: center top; background-size: 100% auto;">
@@ -64,21 +70,32 @@
                 <button class="button" type="submit">SIGN IN</button>
             </form>
             <footer2>
+                <br>
+                <span style="color:white"> OR </span>
+                <br>
 
-                OR
-                <!--<div class="fb-login-button" data-max-rows="1" data-size="small" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="false"
-                    data-use-continue-as="false"></div>-->
-<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-</fb:login-button>
+                <div id="auth-status" style="display: inline; padding-left: 25px"></div>
+                <hr>
+                <!--<fb:login-button scope="public_profile,email" onlogin="checkLoginState();" id="fb">
+                </fb:login-button>-->
+
+                <!--<div class="g-signin2" data-onsuccess="onSignIn"></div>-->
+
+                <!--<button id="sign-in-or-out-button" style="margin-left: 25px">
+                    <i class="fa fa-facebook"></i>                </button>-->
                 <ul class="icon-social">
+                    <li>
+                        <fb:login-button scope="public_profile,email" onlogin="checkLoginState();" id="fb">
+                        </fb:login-button>
+                    </li>
+                    <!--<li class="facebook" onclick="document.getElementById('fb').click()"><a href="#"><i class="fa fa-facebook"></i></a></li>-->
 
-                    <!--<li class="facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>-->
-                    <!--<li class="twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>-->
+                    <li class="google" id="sign-in-or-out-button"><a href="#"><i class="fa fa-google"></i></a></li>
                 </ul>
                 <div class="create-account" style="color: white">Not Registered? <a href="register.html" style="color: orange">Create an account</a></div>
 
-<div id="status">
-</div>
+                <div id="status">
+                </div>
 
             </footer2>
         </div>
@@ -106,14 +123,14 @@
     <script src="js/mdl-jquery-modal-dialog.js"></script>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
 
     <script src="js/pages/Main.js"></script>
     <script src="js/pages/Login.js"></script>
     <script src="js/pages/socialMediaLogin.js"></script>
     <script src="js/faceboklogin.js"></script>
+    <script src="js/googlelogin.js"></script>
 
-    <script>
-    </script>
     <script type="application/javascript">
         $(document).ready(function () {
             // Form.init('login');
@@ -136,8 +153,7 @@
 -->
 
     <script>
-
-</script>
+    </script>
 
 </body>
 
