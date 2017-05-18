@@ -7,13 +7,12 @@ Login = {
     },
     init: function () {
         $('#login').submit(function (e) {
-
-            $.getScript('js/jquery.min.js');
-            $.getScript('js/jquery.form.js');
-            $.getScript('js/jquery.blockUI.js');
-            $.getScript('js/parsely.min.js');
-
             e.preventDefault();
+
+            // $.getScript('js/jquery.min.js');
+            // $.getScript('js/jquery.form.js');
+            // $.getScript('js/jquery.blockUI.js');
+            // $.getScript('js/parsely.min.js');
 
             var instance = $(this).parsley();
             if (instance.isValid()) {
@@ -21,7 +20,7 @@ Login = {
             } else {
                 return (false);
             }
-            $(this).ajaxSubmit(Login.setOptions());
+               $(this).ajaxSubmit(Login.setOptions());
             // Login.getLoginToken();
         });
         //  $('#a').click( func)

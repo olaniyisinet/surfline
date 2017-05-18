@@ -17,7 +17,6 @@ socialLogin = {
     },
 
     getToken: function (useremail, username, provider, provider_id) {
-         
         $.ajax({
             url: Cedezone.CONSTANTS.BASE_URL + socialLogin.CONSTANTS.route,
             data: {
@@ -27,22 +26,25 @@ socialLogin = {
                 auth_provider_id: provider_id
             },
             error: function () {
-                //  Cedezone.hideLoadingGif();
+                Cedezone.hideLoadingGif();
                 showDialog({
                     title: 'Error',
-                    text: 'Unable to get card status',
+                    text: 'Error Occured while login you in',
                 })
             },
             dataType: 'json',
             success: function (data) {
-                //  Cedezone.hideLoadingGif();
-Cedezone.storeToken(data.token);
-                window.location = "home.html";
+                Cedezone.hideLoadingGif();
+                Cedezone.storeToken(data.token);
+                if (Cedezone.getStatus() == 'true') {
+                    window.location = 'bookaservice.html'
+                } else {
+                    window.location = "home.html";
+                }
             },
             type: 'POST',
             beforeSend: function () {
-                
-                //  Cedezone.showLoadingGif();
+                Cedezone.showLoadingGif();
             },
         });
     },
@@ -51,5 +53,9 @@ Cedezone.storeToken(data.token);
         componentHandler.downgradeElements(element);
         element.innerHTML = newtext;
         componentHandler.upgradeElement(element);
+    },
+
+    loadOrder: function () {
+        window.location = 'bookaservice.html'
     },
 }

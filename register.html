@@ -23,6 +23,11 @@
 	 <link rel="stylesheet" href="css/material.indigo-pink.min.css">
     <link rel="stylesheet" href="css/icon.css">
     <link rel="stylesheet" href="css/mdl-jquery-modal-dialog.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <script async defer src="https://apis.google.com/js/api.js" onload="this.onload=function(){};handleClientLoad()" onreadystatechange="if (this.readyState === 'complete') this.onload()">
+    </script>
 </head>
 
 <body style="background-image: url('img/background.png');  background-position: center top; background-size: 100% auto;">
@@ -101,9 +106,9 @@
 				<div class="container">
 
 					<ul class="icon-social">
-						<li class="facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
-						<li class="twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
-					</ul>
+                    <li class="google" id="sign-in-or-out-button"><a href="#"><i class="fa fa-google"></i></a></li>
+                    <li class="facebook"><a href="#" onclick="fb_login();"><i class="fa fa-facebook"></i></a></li>
+                </ul>
 					<div class="create-account" style="color: white">Already Registered? <a href="login.html" style="color: orange">Login Now</a></div>
 				</div>
 			</footer2>
@@ -121,7 +126,7 @@
 		</div>
 	</footer>-->
 	<!-- end footer -->
-
+ <div id="fb-root"></div>
 	<!-- script -->
 	<script src="js/jquery.min.js"></script>
 	<script src="js/jquery.form.js"></script>
@@ -134,11 +139,15 @@
 	<script src="js/parsely.min.js"></script>
 	<script src="js/pnotify.min.js"></script>
 	<script src="js/mprogress.min.js"></script>
-	    <script src="js/material.min.js"></script>
+	<script src="js/material.min.js"></script>
 	<script src="js/mdl-jquery-modal-dialog.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
 
 	<script src="js/pages/Main.js"></script>
 	<script src="js/pages/register.js"></script>
+	<script src="js/pages/socialMediaLogin.js"></script>
+	<script src="js/faceboklogin.js"></script>
+    <script src="js/googlelogin.js"></script>
 
 	<script>
 	</script>
@@ -147,6 +156,7 @@
 			// Form.init('login');
 			Register.init();
 			Cedezone.init();
+			socialLogin.init();
 		})
 	</script>
 

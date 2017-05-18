@@ -25,30 +25,34 @@
     <link rel="stylesheet" href="css/icon.css">
     <link rel="stylesheet" href="css/mdl-jquery-modal-dialog.css">
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <script async defer src="https://apis.google.com/js/api.js" onload="this.onload=function(){};handleClientLoad()" onreadystatechange="if (this.readyState === 'complete') this.onload()">
+    </script>
 </head>
 
-<body style ="background-image: url('img/background.png');  background-position: center top; background-size: 100% auto;">
+<body style="background-image: url('img/background.png');  background-position: center top; background-size: 100% auto;">
 
     <footer2 style="padding: 20% 0 10% ">
-            <div class="container">
-                <ul class="icon-social">
-                    <img src="img/logo_white.png" align="middle" alt="Cedezonelogo">
-                </ul>
-            </div>
-        </footer2>
-         
+        <div class="container">
+            <ul class="icon-social">
+                <img src="img/logo_white.png" align="middle" alt="Cedezonelogo">
+            </ul>
+        </div>
+    </footer2>
+
     <div class="login app-pages app-section" style="margin-top: 10%">
-            
+
         <div class="container">
             <br>
-                            <h6 id="loginName" align="middle" style="color:white">Name</h6>
-                            <br>
-            <form action="#" id="login" data-parsley-validate role="form" method="POST" >
+            <h6 id="loginName" align="middle" style="color:white">Name</h6>
+            <br>
+            <form action="#" id="login" data-parsley-validate role="form" method="POST">
                 <div class="form-group">
-                                <div class="col-xs-12 text-center">
-                                    <div id="login-error" style="color: red"></div>
-                                </div>
-                            </div>
+                    <div class="col-xs-12 text-center">
+                        <div id="login-error" style="color: red"></div>
+                    </div>
+                </div>
                 <div class="input-field">
                     <input id="email" type="email" required placeholder="Email" name="email">
                     <!--					<label for="email">Email</label>-->
@@ -57,10 +61,10 @@
                     <input id="password" type="password" required placeholder="Password" name="password">
                     <!--					<label for="password">Password</label>-->
                 </div>
-               
-               <br>
-				<div><a href="forgot_password.html" class="forgot center" style="color: orange">Forgot Password?</a></div>
-			 <!--	<div class="chebox">
+
+                <br>
+                <div><a href="forgot_password.html" class="forgot center" style="color: orange">Forgot Password?</a></div>
+                <!--	<div class="chebox">
 					<input type="checkbox" id="checkbox" />
   					<label for="checkbox">Remember me</label>
 				</div>
@@ -68,18 +72,20 @@
                 <button class="button" type="submit">SIGN IN</button>
             </form>
             <footer2>
-                    <ul class="icon-social">
-                        <li class="facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
-                        <li class="twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                    </ul>
-                 <div class="create-account" style="color: white">Not Registered? <a href="register.html" style="color: orange">Create an account</a></div>
+                <ul class="icon-social">
+                    <li class="google" id="sign-in-or-out-button"><a href="#"><i class="fa fa-google"></i></a></li>
+                    <li class="facebook"><a href="#" onclick="fb_login();"><i class="fa fa-facebook"></i></a></li>
+                </ul>
+                <div class="create-account" style="color: white">Not Registered? <a href="register.html" style="color: orange">Create an account</a></div>
             </footer2>
-        </div>  
+        </div>
     </div>
     <!-- end login -->
 
     <img src="img/loading.gif" class="hidden" id="loading-gif" />
     <!-- script -->
+     <div id="fb-root"></div>
+     
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery.form.js"></script>
     <script src="js/jquery.blockUI.js"></script>
@@ -88,26 +94,29 @@
     <script src="js/slick.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/custom.js"></script>
-   
-   <script src="js/parsely.min.js"></script>
-   <script src="js/pnotify.min.js"></script>
-   <script src="js/mprogress.min.js"></script>
-     <script src="js/material.min.js"></script>
-	<script src="js/mdl-jquery-modal-dialog.js"></script>
 
-   <script src="js/pages/Main.js"></script>
-   <script src="js/pages/partialLogin.js"></script>
+    <script src="js/parsely.min.js"></script>
+    <script src="js/pnotify.min.js"></script>
+    <script src="js/mprogress.min.js"></script>
+    <script src="js/material.min.js"></script>
+    <script src="js/mdl-jquery-modal-dialog.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+    <script src="js/pages/Main.js"></script>
+    <script src="js/pages/partialLogin.js"></script>
+    <script src="js/pages/socialMediaLogin.js"></script>
+    <script src="js/faceboklogin.js"></script>
+    <script src="js/googlelogin.js"></script>
 
     <script>
-
     </script>
     <script type="application/javascript">
-        $(document).ready(function() {
+        $(document).ready(function () {
             // Form.init('login');
             Cedezone.init();
             Login.init();
+            socialLogin.init();
         })
-
     </script>
 
 </body>

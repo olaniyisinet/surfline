@@ -26,34 +26,34 @@
     });
   }
 
-  window.fbAsyncInit = function () {
-    FB.init({
-      appId: '1026073090860657',
-      cookie: true, // enable cookies to allow the server to access 
-      // the session
-      xfbml: true, // parse social plugins on this page
-      version: 'v2.8' // use graph api version 2.8
-    });
+  // window.fbAsyncInit = function () {
+  //   FB.init({
+  //     appId: '1026073090860657',
+  //     cookie: true, // enable cookies to allow the server to access 
+  //     // the session
+  //     xfbml: true, // parse social plugins on this page
+  //     version: 'v2.8' // use graph api version 2.8
+  //   });
 
-    // Now that we've initialized the JavaScript SDK, we call 
-    // FB.getLoginStatus().  This function gets the state of the
-    // person visiting this page and can return one of three states to
-    // the callback you provide.  They can be:
-    //
-    // 1. Logged into your app ('connected')
-    // 2. Logged into Facebook, but not your app ('not_authorized')
-    // 3. Not logged into Facebook and can't tell if they are logged into
-    //    your app or not.
-    //
-    // These three cases are handled in the callback function.
+  //   // Now that we've initialized the JavaScript SDK, we call 
+  //   // FB.getLoginStatus().  This function gets the state of the
+  //   // person visiting this page and can return one of three states to
+  //   // the callback you provide.  They can be:
+  //   //
+  //   // 1. Logged into your app ('connected')
+  //   // 2. Logged into Facebook, but not your app ('not_authorized')
+  //   // 3. Not logged into Facebook and can't tell if they are logged into
+  //   //    your app or not.
+  //   //
+  //   // These three cases are handled in the callback function.
 
-    // FB.getLoginStatus(function (response) {
-    //   statusChangeCallback(response);
-    // });
-    FB.logout(function (response) {
-      // alert('You are now logged out')
-    });
-  };
+  //   // FB.getLoginStatus(function (response) {
+  //   //   statusChangeCallback(response);
+  //   // });
+  //   FB.logout(function (response) {
+  //     // alert('You are now logged out')
+  //   });
+  // };
 
   // Load the SDK asynchronously
   (function (d, s, id) {
@@ -83,14 +83,50 @@
     });
   }
 
-  function Logout() {
-    FB.logout(function (response) {
-      alert('You are now logged out')
+  window.fbAsyncInit = function () {
+    FB.init({
+      appId: '1026073090860657',
+      oauth: true,
+      status: true, // check login status
+      cookie: true, // enable cookies to allow the server to access the session
+      xfbml: true, // parse XFBML
+      version: 'v2.8' // use graph api version 2.8
+    });
+
+  };
+
+  function fb_login() {
+    FB.login(function (response) {
+
+      if (response.authResponse) {
+        console.log('Welcome!  Fetching your information.... ');
+        //console.log(response); // dump complete info
+        access_token = response.authResponse.accessToken; //get access token
+        user_id = response.authResponse.userID; //get FB UID
+
+        FB.api('/me', function (response) {
+          user_email = response.email; //get user email
+          // you can store this data into your database  
+          console.log('Successful login for: ' + response.name);
+          // alert(JSON.stringify(response));
+          var name = response.name.split(" ");
+          // alert(name[0]);
+          socialLogin.getToken(name[0] + '@facebook.com', response.name, 'Facebook', response.id)
+        });
+
+      } else {
+        //user hit cancel button
+        console.log('User cancelled login or did not fully authorize.');
+
+      }
+    }, {
+      scope: 'public_profile,email'
     });
   }
-
-  facebookLogout = {
-    logout: function () {
-      logout();
-    }
-  }
+  (function () {
+    var e = document.createElement('script');
+    // e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js';
+    e.src = document.location.protocol + 'js/facebooksdk.js';
+    e.async = true;
+    document.getElementById('fb-root').appendChild(e);
+  }());
