@@ -18,7 +18,7 @@ serviceOrder = {
 
     init: function () {
         // alert(Cedezone.getAddress());
-     	$('#address').val(Cedezone.getAddress());
+        $('#address').val(Cedezone.getAddress());
         $("#housetype").hide();
         $("#livingrooms").hide();
         $("#bedrooms").hide();
@@ -68,10 +68,31 @@ serviceOrder = {
         });
 
         $('#confirm').on('click', '.confirm', function (e) {
-
             serviceOrder.orderAjax();
             // $('#confirm').modal('toggle');
         })
+
+        $('#checkbox1').change(function () {
+            $(this).prop('checked') 
+            ? serviceOrder.addextras()
+            : serviceOrder.deductextras();
+        });
+        $('#checkbox2').change(function () {
+            $(this).prop('checked') 
+            ? serviceOrder.addextras()
+            : serviceOrder.deductextras();
+        });
+        $('#checkbox3').change(function () {
+            $(this).prop('checked') 
+            ? serviceOrder.addextras()
+            : serviceOrder.deductextras();
+        });
+        $('#checkbox4').change(function () {
+            $(this).prop('checked') 
+            ? serviceOrder.addextras()
+            : serviceOrder.deductextras();
+        });
+        // serviceOrder.checkedExtras();
     },
 
     getCountries: function () {
@@ -85,13 +106,13 @@ serviceOrder = {
                 // $('#alert').modal();
                 // document.getElementById('alertresponse').innerHTML = 'Unable to fecth available countries.'
                 showDialog({
-                        title: 'Oops!',
-                        text: 'Unable to fecth available countries.',
-                        positive: {
-                            title: 'Ok'
-                        },
-                        cancelable: false
-                    });
+                    title: 'Oops!',
+                    text: 'Unable to fecth available countries.',
+                    positive: {
+                        title: 'Ok'
+                    },
+                    cancelable: false
+                });
             },
             dataType: 'json',
             success: function (data) {
@@ -445,9 +466,9 @@ serviceOrder = {
                     title: 'Sorry',
                     text: 'Our Prices does not cover this service category / location yet',
                     positive: {
-                                title: 'Ok'
-                            },
-                            cancelable: false
+                        title: 'Ok'
+                    },
+                    cancelable: false
                 })
             },
             dataType: 'json',
@@ -683,7 +704,9 @@ serviceOrder = {
                 address: serviceOrder.CONSTANTS.address,
                 service_date: serviceOrder.CONSTANTS.service_date,
                 service_time: serviceOrder.CONSTANTS.service_time,
-                order_attributes: serviceOrder.CONSTANTS.serviceattributesArray
+                order_attributes: serviceOrder.CONSTANTS.serviceattributesArray,
+                active: 0,
+                frequency: 7
             },
             error: function (data) {
                 Cedezone.hideLoadingGif();
@@ -786,4 +809,14 @@ serviceOrder = {
             // }, 3000);
         }
     },
+
+    addextras: function () {
+        var priceLabel = document.getElementById('price_per_hour').innerText;
+        document.getElementById('price_per_hour').innerHTML = parseFloat(priceLabel) + 500;
+    },
+
+    deductextras: function () {
+        var priceLabel = document.getElementById('price_per_hour').innerText;
+        document.getElementById('price_per_hour').innerHTML = parseFloat(priceLabel) - 500;
+    }
 }

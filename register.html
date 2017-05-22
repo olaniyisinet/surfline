@@ -7,6 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1  maximum-scale=1 user-scalable=no">
 	<meta name="mobile-web-app-capable" content="yes">
 	<meta name="HandheldFriendly" content="True">
+    <meta name="google-signin-client_id" content="183619491292-8q40kp872bs20p6fa4b5c42g44boch8o.apps.googleusercontent.com">
 
 	<link rel="shortcut icon" href="img/favicon.png">
 
@@ -24,10 +25,34 @@
     <link rel="stylesheet" href="css/icon.css">
     <link rel="stylesheet" href="css/mdl-jquery-modal-dialog.css">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
     <script async defer src="https://apis.google.com/js/api.js" onload="this.onload=function(){};handleClientLoad()" onreadystatechange="if (this.readyState === 'complete') this.onload()">
-    </script>
+    </script>-->
+
+	<style>
+     .abcRioButtonBlue {
+            width: 30px !important;
+            height: 30px !important;
+            border-radius: 100% !important;
+            display: inline-block !important;
+            line-height: 30px !important;
+            margin: 0 3px !important;
+            text-align: center !important;
+        }
+
+        .abcRioButtonContents {
+            display: none;
+        }
+
+        .abcRioButtonIconImage18 {
+            /*display: none;*/
+        }
+
+        .abcRioButtonIcon {
+            padding: 5px !important
+        }       
+</style>
 </head>
 
 <body style="background-image: url('img/background.png');  background-position: center top; background-size: 100% auto;">
@@ -106,8 +131,11 @@
 				<div class="container">
 
 					<ul class="icon-social">
-                    <li class="google" id="sign-in-or-out-button"><a href="#"><i class="fa fa-google"></i></a></li>
+                    <!--<li class="google" id="sign-in-or-out-button"><a href="#"><i class="fa fa-google"></i></a></li>-->
                     <li class="facebook"><a href="#" onclick="fb_login();"><i class="fa fa-facebook"></i></a></li>
+					<li>
+                        <div id="my-signin2"></div>
+                    </li>
                 </ul>
 					<div class="create-account" style="color: white">Already Registered? <a href="login.html" style="color: orange">Login Now</a></div>
 				</div>
@@ -147,7 +175,8 @@
 	<script src="js/pages/register.js"></script>
 	<script src="js/pages/socialMediaLogin.js"></script>
 	<script src="js/faceboklogin.js"></script>
-    <script src="js/googlelogin.js"></script>
+    <script src="js/logingoogle.js"></script>
+        <script src="js/platform.js" async defer></script>
 
 	<script>
 	</script>

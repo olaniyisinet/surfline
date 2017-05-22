@@ -2553,3 +2553,24 @@ span.icon {
       width: 42px;
       height: 42px;
     }
+        .abcRioButtonBlue {
+            width: 30px !important;
+            height: 30px !important;
+            border-radius: 100% !important;
+            display: inline-block !important;
+            line-height: 30px !important;
+            margin: 0 3px !important;
+            text-align: center !important;
+        }
+
+        .abcRioButtonContents {
+            display: none;
+        }
+
+        .abcRioButtonIconImage18 {
+            /*display: none;*/
+        }
+
+        .abcRioButtonIcon {
+            padding: 5px !important
+        }

@@ -288,36 +288,6 @@
 							<div class="input-field">
 								<input class="validate timepicker" type="time" name="service_time" id="service_time" style="padding: 0 !important">
 							</div>
-
-<!-- Cleaning Extras -->
-							<div class="row" id="extras">
-								<h6 class="center"> Extras </h6>
-								<hr>
-<div class="col s12">
-								<div class="col s6">
-								<input type="checkbox" name="" value="Inside Cabinets" class="checkbox" id="checkbox1"> 
-								<label class="label_item" for="checkbox1"> Inside Cabinets</label>
-								</div>
-								
-								<div class="col s6">
-								<input type="checkbox" name="" value="Inside Fridge" class="checkbox" id="checkbox2">
-								<label class="label_item" for="checkbox2"> Inside Fridge</label>
-								</div>
-</div>
-
-<div class="col s12">
-								<div class="col s6">
-								<input type="checkbox" name="" value="Inside Oven" class="checkbox" id="checkbox3">
-								<label class="label_item" for="checkbox3">Inside Oven</label>
-								</div>
-
-								<div class="col s6">
-								<input type="checkbox" name="" value="Inside Windows" class="checkbox" id="checkbox4">
-								<label class="label_item" for="checkbox4"> Windows </label>
-								</div>
-</div>
-							</div>
-<!-- End Cleaning Extras -->
 						</div>
 
 						<div id="step4">
@@ -331,10 +301,54 @@
 							<div class="input-field">
 								<textarea class="validate attribute_id" id="additional_info" name="additional_info" required> </textarea>
 							</div>
-							<div class="row">
+
+							<!--<div style="margin-top: 10%" class="center">
+								<button type="button" class="btn waves-effect waves-light green" id="createOrder"><i class="fa fa-check"></i> Submit </button>
+								<a href="#confirm" type="button" id="clickme" class="hidden"></a>
+							</div>-->
+							<br>
+							<br>
+						</div>
+						<div id="step5">
+							<br>
+
+							<!-- Cleaning Extras -->
+							<div class="row" id="cleaning_extras">
+								<h6 class="center"> Extras </h6>
 								<hr>
-								<input type="radio" name="gender" value="male"> Male
+								<div class="col s12">
+									<div class="col s6">
+										<input type="checkbox" name="" value="Inside Cabinets" class="checkbox" id="checkbox1">
+										<!--<label class="label_item" for="checkbox1"> Inside Cabinets</label>-->
+										<label for="checkbox1">
+  <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcR0LkgDZRDTgnDrzhnXGDFRSItAzGCBEWEnkLMdnA_zkIH5Zg6oag">
+</label> </div>
+									<div class="col s6">
+										<input type="checkbox" name="" value="Inside Fridge" class="checkbox" id="checkbox2">
+										<!--<label class="label_item" for="checkbox2"> Inside Fridge</label>-->
+										<label for="checkbox2">
+  <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRhJjGB3mQxjhI5lfS9SwXou06-2qT_0MjNAr0atu75trXIaR2d">
+</label>
+									</div>
+								</div>
+
+								<div class="col s12">
+									<div class="col s6">
+										<input type="checkbox" name="" value="Inside Oven" class="checkbox" id="checkbox3">
+										<!--<label class="label_item" for="checkbox3">Inside Oven</label>-->
+													<label for="checkbox3">
+  <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQuwWbUXC-lgzQHp-j1iw56PIgl_2eALrEENUP-ld72gq3s8cVo">
+</label>
+									</div>
+
+									<div class="col s6">
+										<input type="checkbox" name="" value="Inside Windows" class="checkbox" id="checkbox4">
+										<!--<label class="label_item" for="checkbox4"> Windows </label>-->
+									</div>
+								</div>
 							</div>
+							<!-- End Cleaning Extras -->
+
 							<div style="margin-top: 10%" class="center">
 								<button type="button" class="btn waves-effect waves-light green" id="createOrder"><i class="fa fa-check"></i> Submit </button>
 								<a href="#confirm" type="button" id="clickme" class="hidden"></a>
@@ -353,6 +367,7 @@
 		<li class="tab col s4" id="2step"><a href="#step2"><i class="fa fa-flag"></i> </a></li>
 		<li class="tab col s4" id="3step"><a href="#step3"><i class="fa fa-calendar"></i></a></li>
 		<li class="tab col s4" id="4step"><a href="#step4"><i class="fa fa-map-marker"></i></a></li>
+		<li class="tab col s4" id="5step"><a href="#step5"><i class="fa fa-paper-plane"></i></a></li>
 	</ul>
 	<!-- end step -->
 
