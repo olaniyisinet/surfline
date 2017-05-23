@@ -2473,7 +2473,8 @@ input.parsley-error,textarea.parsley-error,select.parsley-error{
 }
 .order {
     background: #fefefe none repeat scroll 0 0;
-    border: 1px solid #ddd;
+    border: 1px solid orange;
+	border-radius: 3px;
     margin-bottom: 35px;
     /*margin-top: 25px;*/
     padding: 1px 12px 2px;

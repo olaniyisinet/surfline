@@ -86,19 +86,17 @@
 	<div class="step-app app-pages app-section" id="changepage">
 		<div class="container">
 			<div id="changepage">
-				<div class="order" style="margin-bottom: 0px;">
-					<h5 class="title">Price</h5>
-					<div class="row">
+				<div class="order" style="margin-bottom: 0%; padding: 0; box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23); z-index: 100;">
+					<!--<h5 class="title" style="margin: 8px 0 4px;">Price</h5>-->
+					<div class="row" style="margin: 2px;">
 						<!--<div class="col s12">-->
 							<div class="col s2 text-left">
-								<!--<h6 id="price_per_hour">0.00</h6>-->
 							</div>
 							<div class="col s3 center">
 								<h6 class="samplefont">Price/Hr:</h6>
 								<h6 class="samplefont" id="price_per_hour">0.00</h6>
 							</div>
 							<div class="col s2 text-left">
-								<!--<h6 id="price_per_hour">0.00</h6>-->
 							</div>
 							<div class="col s3 center">
 								<h6 class="samplefont"> Hours:</h6>
@@ -112,23 +110,9 @@
 
 				<div class="row">
 					<div class="col s12">
-						<!--<ul class="tabs">
-						<li class="tab col s4" id="1step"><a href="#step1"><i class="fa fa-shield" ></i> </a></li>
-						<li class="tab col s4" id="2step"><a href="#step2"><i class="fa fa-flag"></i> </a></li>
-						<li class="tab col s4" id="3step"><a href="#step3"><i class="fa fa-calendar"></i></a></li>
-						<li class="tab col s4" id="4step"><a href="#step4"><i class="fa fa-map-marker"></i></a></li>
-					</ul>-->
+						
 						<div id="step1">
 							<br>
-
-							<!--<div id="">
-							<label>Service</label>
-							<div class="input-field">
-								<select class="browser-default service_id" data-price-checker="true" id="service_id" name="service_id" required>
-          			<option value=""></option>
-        			</select>
-							</div>
-						</div>-->
 
 							<div id="category">
 								<label>Category</label>
@@ -288,9 +272,19 @@
 							<div class="input-field">
 								<input class="validate timepicker" type="time" name="service_time" id="service_time" style="padding: 0 !important">
 							</div>
+
+							<label>Address</label>
+							<div class="input-field">
+								<textarea class="validate attribute_id" id="address" name="address" required value="Cedezone.getAddress();"> </textarea>
+							</div>
+
+							<label>Additional Info (e.g Land mark)</label>
+							<div class="input-field">
+								<textarea class="validate attribute_id" id="additional_info" name="additional_info" required> </textarea>
+							</div>
 						</div>
 
-						<div id="step4">
+						<!--<div id="step4">
 							<br>
 							<label>Address</label>
 							<div class="input-field">
@@ -301,14 +295,9 @@
 							<div class="input-field">
 								<textarea class="validate attribute_id" id="additional_info" name="additional_info" required> </textarea>
 							</div>
-
-							<!--<div style="margin-top: 10%" class="center">
-								<button type="button" class="btn waves-effect waves-light green" id="createOrder"><i class="fa fa-check"></i> Submit </button>
-								<a href="#confirm" type="button" id="clickme" class="hidden"></a>
-							</div>-->
 							<br>
 							<br>
-						</div>
+						</div>-->
 						<div id="step5">
 							<!-- Cleaning Extras -->
 							<div class="row" id="cleaning_extras">
@@ -318,7 +307,7 @@
 									<input type="checkbox" name="" value="Inside Cabinets" class="checkbox" id="checkbox1">
 									<!--<label class="label_item" for="checkbox1"> Inside Cabinets</label>-->
 									<label for="checkbox1">
-  <img src="img/cabinet.png"> Inside Cabinets (+0.5 Mins)
+  <img src="img/cabinet.png"> Inside Cabinets (+0.5hr)
 </label>
 									<hr>
 
@@ -327,7 +316,7 @@
 									<input type="checkbox" name="" value="Inside Fridge" class="checkbox" id="checkbox2">
 									<!--<label class="label_item" for="checkbox2"> Inside Fridge</label>-->
 									<label for="checkbox2">
-  <img src="img/fridge.png"> Inside Fridge (+0.5 Mins)
+  <img src="img/fridge.png"> Inside Fridge (+0.5hr)
 </label>
 									<hr>
 								</div>
@@ -336,7 +325,7 @@
 									<input type="checkbox" name="" value="Inside Oven" class="checkbox" id="checkbox3">
 									<!--<label class="label_item" for="checkbox3">Inside Oven</label>-->
 									<label for="checkbox3">
-  <img src="img/oven.png"> Inside Oven (+0.5 Mins)</label>
+  <img src="img/oven.png"> Inside Oven (+0.5hr)</label>
 									<hr>
 								</div>
 
@@ -344,7 +333,7 @@
 									<input type="checkbox" name="" value="Inside Windows" class="checkbox" id="checkbox4">
 									<!--<label class="label_item" for="checkbox4"> Windows </label>-->
 									<label for="checkbox4">
-  <img src="img/window.png"> Windows (+0.5 Mins)
+  <img src="img/window.png"> Windows (+0.5hr)
 </label>
 									<hr>
 
@@ -352,7 +341,7 @@
 							</div>
 							<!-- End Cleaning Extras -->
 
-							<div style="margin-top: 10%" class="center">
+							<div style="margin-top: 5%" class="center">
 								<button type="button" class="btn waves-effect waves-light green" id="createOrder"><i class="fa fa-check"></i> Submit </button>
 								<a href="#confirm" type="button" id="clickme" class="hidden"></a>
 							</div>
@@ -365,11 +354,11 @@
 		</div>
 	</div>
 
-	<ul class="tabs" style="position:fixed; bottom:1%; top:auto">
+	<ul class="tabs" style="position:fixed; z-index:100; bottom:1%; top:auto">
 		<li class="tab col s4" id="1step"><a href="#step1"><i class="fa fa-shield" ></i> </a></li>
 		<li class="tab col s4" id="2step"><a href="#step2"><i class="fa fa-flag"></i> </a></li>
 		<li class="tab col s4" id="3step"><a href="#step3"><i class="fa fa-calendar"></i></a></li>
-		<li class="tab col s4" id="4step"><a href="#step4"><i class="fa fa-map-marker"></i></a></li>
+		<!--<li class="tab col s4" id="4step"><a href="#step4"><i class="fa fa-map-marker"></i></a></li>-->
 		<li class="tab col s4" id="5step"><a href="#step5"><i class="fa fa-paper-plane"></i></a></li>
 	</ul>
 	<!-- end step -->

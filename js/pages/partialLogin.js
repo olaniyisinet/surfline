@@ -104,7 +104,8 @@ Login = {
     },
 
     loadOrder: function () {
-        window.location = 'bookaservice.html'
+        // window.location = 'bookaservice.html'
+        window.location = 'services.html'
     },
 
     showRequest: function () {

@@ -37,7 +37,7 @@ socialLogin = {
                 Cedezone.hideLoadingGif();
                 Cedezone.storeToken(data.token);
                 if (Cedezone.getStatus() == 'true') {
-                    window.location = 'bookaservice.html'
+                    window.location = 'services.html'
                 } else {
                     window.location = "home.html";
                 }
