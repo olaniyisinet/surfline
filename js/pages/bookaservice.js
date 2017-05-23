@@ -73,24 +73,24 @@ serviceOrder = {
         })
 
         $('#checkbox1').change(function () {
-            $(this).prop('checked') 
-            ? serviceOrder.addextras()
-            : serviceOrder.deductextras();
+            $(this).prop('checked') ?
+                serviceOrder.addextras() :
+                serviceOrder.deductextras();
         });
         $('#checkbox2').change(function () {
-            $(this).prop('checked') 
-            ? serviceOrder.addextras()
-            : serviceOrder.deductextras();
+            $(this).prop('checked') ?
+                serviceOrder.addextras() :
+                serviceOrder.deductextras();
         });
         $('#checkbox3').change(function () {
-            $(this).prop('checked') 
-            ? serviceOrder.addextras()
-            : serviceOrder.deductextras();
+            $(this).prop('checked') ?
+                serviceOrder.addextras() :
+                serviceOrder.deductextras();
         });
         $('#checkbox4').change(function () {
-            $(this).prop('checked') 
-            ? serviceOrder.addextras()
-            : serviceOrder.deductextras();
+            $(this).prop('checked') ?
+                serviceOrder.addextras() :
+                serviceOrder.deductextras();
         });
         // serviceOrder.checkedExtras();
     },
@@ -813,10 +813,16 @@ serviceOrder = {
     addextras: function () {
         var priceLabel = document.getElementById('price_per_hour').innerText;
         document.getElementById('price_per_hour').innerHTML = parseFloat(priceLabel) + 500;
+
+        var priceLabel = document.getElementById('rec_hour').innerText;
+        document.getElementById('rec_hour').innerHTML = parseFloat(priceLabel) + 0.5;
     },
 
     deductextras: function () {
         var priceLabel = document.getElementById('price_per_hour').innerText;
         document.getElementById('price_per_hour').innerHTML = parseFloat(priceLabel) - 500;
+
+        var priceLabel = document.getElementById('rec_hour').innerText;
+        document.getElementById('rec_hour').innerHTML = parseFloat(priceLabel) - 0.5;
     }
 }

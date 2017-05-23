@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Cedezone</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1  maximum-scale=1 user-scalable=no">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="HandheldFriendly" content="True">
+
+	<link rel="shortcut icon" href="img/favicon.png">
+
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/materialize.min.css">
+	<link rel="stylesheet" href="css/slick.css">
+	<link rel="stylesheet" href="css/slick-theme.css">
+	<link rel="stylesheet" href="css/owl.carousel.css">
+	<link rel="stylesheet" href="css/owl.theme.css">
+	<link rel="stylesheet" href="css/owl.transitions.css">
+	<link rel="stylesheet" href="css/lightbox.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/material.indigo-pink.min.css">
+	<link rel="stylesheet" href="css/icon.css">
+	<link rel="stylesheet" href="css/mdl-jquery-modal-dialog.css">
+	<link rel="stylesheet" href="css/default.css">
+	<link rel="stylesheet" href="css/default.date.css">
+	<link rel="stylesheet" href="css/default.time.css">
+    	<link rel="stylesheet" href="css/tabs.css" type="text/css" media="screen, projection"/>
+</head>
+
+<body>
+	<img src="img/loading.gif" class="hidden" id="loading-gif" />
+
+	<!-- navbar -->
+	<div class="navbar">
+		<div class="container">
+			<div class="panel-control-left">
+				<a href="#" data-activates="slide-out-left" class="sidenav-control-left"><i class="fa fa-bars"></i></a>
+			</div>
+			<div class="site-title">
+				<a href="#" class="logo">
+					<h1>Booking</h1>
+				</a>
+			</div>
+			<div class="panel-control-right">
+				<a href="index.html"><i class="fa fa-power-off"></i></a>
+			</div>
+		</div>
+	</div>
+	<!-- end navbar -->
+
+	<!-- panel control -->
+	<div class="panel-control-right">
+		<ul id="slide-out-left" class="side-nav collapsible" data-collapsible="accordion">
+			<li>
+				<div class="photos" id="photos">
+					<img src="img/author.png" alt="" id="avatar" onerror="imgError(this);">
+					<h3 id="profileNameTop"></h3>
+				</div>
+			</li>
+			<li>
+				<a href="home.html"><i class="fa fa-home"></i>Home</a>
+			</li>
+			<li>
+				<a href="profile.html"><i class="fa fa-user"></i>Profile</a>
+			</li>
+			<li>
+				<a href="linkcard.html"><i class="fa fa-credit-card"></i>Link Card</a>
+			</li>
+			<li>
+				<a href="orderHistory.html"><i class="fa fa-history"></i>Order History</a>
+			</li>
+			<li>
+				<a href="services.html"><i class="fa fa-pencil-square-o"></i>Book a Service</a>
+			</li>
+			<li>
+				<a href="change_password.html"><i class="fa fa-lock"></i>Change Password</a>
+			</li>
+			<li>
+				<a href="index.html"><i class="fa fa-power-off"></i>Log Out</a>
+			</li>
+		</ul>
+	</div>
+	<!-- end panel control -->	
+									
+		<div id="page-wrap">
+		
+		<div id="tabs">
+		
+    		<ul>
+        		<li><a href="#fragment-1">1</a></li>
+        		<li><a href="#fragment-2">2</a></li>
+        		<li><a href="#fragment-3">3</a></li>
+        		<li><a href="#fragment-4">4</a></li>
+        		<li><a href="#fragment-5">5</a></li>
+    	   </ul>
+	
+        	<div id="fragment-1" class="ui-tabs-panel">
+        	       <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>  
+        	</div>
+        	
+        	<div id="fragment-2" class="ui-tabs-panel ui-tabs-hide">
+                    <p>Donec ultricies senectus tristique egestas vitae, et ac morbi habitant quam sit mi quam, malesuada leo. Vestibulum tempor Mauris tortor libero eget, egestas. eu vitae feugiat netus amet Pellentesque ante. amet, ultricies eleifend turpis sit placerat et semper. Aenean est. fames </p>
+            </div>
+            
+        	<div id="fragment-3" class="ui-tabs-panel ui-tabs-hide">
+            		<p>ante. Mauris Vestibulum est. fames egestas quam, leo. amet tristique sit libero egestas. ultricies mi turpis senectus Pellentesque habitant eu ac morbi netus eget, Aenean malesuada vitae, semper. eleifend et feugiat vitae amet, placerat Donec et tortor ultricies tempor quam sit </p>
+            </div>
+        
+        	<div id="fragment-4" class="ui-tabs-panel ui-tabs-hide">
+
+        	</div>
+        	
+        	<div id="fragment-5" class="ui-tabs-panel ui-tabs-hide">
+                
+        	</div>
+
+        </div>
+		
+	</div>
+	<!-- end step -->
+
+	<div id="confirm" class="modal">
+		<div class="modal-content">
+			<h5 class="center">Complete Booking</h5>
+			<p>Are you ready to make this booking?</p>
+		</div>
+		<div class="modal-footer">
+			<button type="button" href="#" class="modal-action modal-close" style="color: red">No</button>
+			<button type="button" class="modal-action confirm modal-close" style="color: green">Yes</button>
+		</div>
+	</div>
+
+	<script type="text/html" id="successMsg">
+		<br/>
+		<br/>
+		<div class="container payment-content-wrapper" style="width: 90%">
+
+			<div class="row">
+				<div class="col s12">
+					<div class="clearfix"></div>
+					<section class="img-section">
+						<div class="col s2"></div>
+						<div class="col s8">
+							<img src="img/success.png" class="center-block" style="margin: 0px auto;" width="100" alt="Success" />
+							<h3 class="text-center">Congratulations!</h3>
+						</div>
+						<div class="col s2"></div>
+
+					</section>
+					<section class="text-section">
+						<div class="col 12">
+							<div class="col s2"></div>
+							<div class="col s8">
+								<p><strong>Hi,</strong> Your order was placed successfully. We have sent an email notification. One of our representatives
+									will contact you soon</p>
+								<p><a href="orderHistory.html"> Click here</a> to view order history</p>
+							</div>
+							<div class="col s2"></div>
+						</div>
+					</section>
+				</div>
+			</div>
+		</div>
+	</script>
+
+	<script type="text/html" id="failureMsg">
+		<br/>
+		<br/>
+		<div class="container payment-content-wrapper" style="width: 90%">
+
+			<div class="row">
+				<div class="col s12">
+					<div class="clearfix"></div>
+					<section class="img-section">
+						<div class="col s2"></div>
+						<div class="col s8">
+							<img src="img/error.png" class="center-block" style="margin: 0px auto;" width="100" alt="Success" />
+							<h3 class="text-center">Oops!</h3>
+						</div>
+						<div class="col s2"></div>
+
+					</section>
+					<section class="text-section">
+						<div class="col s12">
+							<div class="col s2"></div>
+							<div class="col s8">
+								<p class="message"><strong>Hi,</strong> Your order was placed successfully. We have sent an email notification. One of our representatives
+									will contact you soon</p>
+								<p>You can add your <a href="linkcard.html"> card here</a></p>
+							</div>
+							<div class="col s2"></div>
+						</div>
+					</section>
+
+				</div>
+			</div>
+		</div>
+	</script>
+
+
+	<!-- script -->
+	<script src="js/jquery.min.js"></script>
+        	<script type="text/javascript" src="js/jquery-ui-1.7.custom.min.js"></script>
+	<script src="js/jquery.form.js"></script>
+	<script src="js/jquery.blockUI.js"></script>
+	<script src="js/picker.js"></script>
+	<script src="js/picker.date.js"></script>
+	<script src="js/picker.time.js"></script>
+	<script src="js/legacy.js"></script>
+	<script src="js/materialize.min.js"></script>
+	<script src="js/slick.min.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
+	<script src="js/custom.js"></script>
+	<script src="js/parsely.min.js"></script>
+	<script src="js/mprogress.min.js"></script>
+	<script src="js/material.min.js"></script>
+	<script src="js/mdl-jquery-modal-dialog.js"></script>
+
+	<script src="js/pages/Main.js"></script>
+	<script src="js/pages/sideprofile.js"></script>
+	<script src="js/pages/bookaservice.js"></script>
+
+    <script type="text/javascript">
+		$(function() {
+
+			var $tabs = $('#tabs').tabs();
+	
+			$(".ui-tabs-panel").each(function(i){
+	
+			  var totalSize = $(".ui-tabs-panel").size() - 1;
+	
+			  if (i != totalSize) {
+			      next = i + 2;
+		   		  $(this).append("<a href='#' class='next-tab mover' rel='" + next + "'>Next Page &#187;</a>");
+			  }
+	  
+			  if (i != 0) {
+			      prev = i;
+		   		  $(this).append("<a href='#' class='prev-tab mover' rel='" + prev + "'>&#171; Prev Page</a>");
+			  }
+   		
+			});
+	
+			$('.next-tab, .prev-tab').click(function() { 
+		           $tabs.tabs('select', $(this).attr("rel"));
+		           return false;
+		       });
+       
+
+		});
+    </script>
+
+	<script type="text/javascript">
+		$(document).ready(function () {
+			Cedezone.init();
+			// userOrders.init();
+			sideProfile.init();
+			serviceOrder.init();
+			// $(".tabs #3step").click(); 
+
+		});
+		var yesterday = new Date((new Date()).valueOf() - 1000 * 60 * 60 * 24);
+		var $input = $('.datepicker').pickadate({
+			disable: [{
+				from: [0, 0, 0],
+				to: yesterday
+			}],
+			format: 'yyyy-mm-dd',
+			container: '#container',
+			closeOnSelect: true,
+			closeOnClear: true,
+		})
+		var picker = $input.pickadate('picker');
+		// picker.close();
+
+		var $input2 = $('.timepicker').pickatime({
+			closeOnSelect: true,
+			closeOnClear: true,
+		})
+		var picker2 = $input2.pickatime('picker');
+		// picker2.open();
+
+		function imgError(image) {
+			image.onerror = "";
+			image.src = "img/author.png";
+			return true;
+		}
+	</script>
+
+</body>
+
+</html>
