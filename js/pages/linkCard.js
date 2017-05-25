@@ -91,8 +91,19 @@ linkcard = {
             dataType: 'json',
             success: function (data) {
                 Cedezone.hideLoadingGif();
-                    $('#cardstatus').append('<h6 style="margin: 0 0; text-transform: uppercase; color:orange" id="cardstatus">' + data.data.card_linking + '</h6>');
-            },
+                // alert(data.data.card_linking);
+                                    $('#cardstatus').append('<div style="background: orange"><h6 style="margin: 0 0; text-transform: uppercase; color:white;">' + data.data.card_linking + '</h6></div>');
+
+// if(data.data.card_linking== true){
+//                     $('#cardstatus').append('<div style="background: green"><h6 style="margin: 0 0; text-transform: uppercase; color:white;">' + data.data.card_linking + '</h6></div>');
+//                 }
+
+//                 if(data.data.card_linking==false){
+//                     $('#cardstatus').append('<div style="background: red"><h6 style="margin: 0 0; text-transform: uppercase; color:white;>' + data.data.card_linking + '</h6></div>');
+//                 }
+             
+                        // <div style="border: 1px green"></div>
+         },
             type: 'GET',
             beforeSend: function () {
                 Cedezone.showLoadingGif();
