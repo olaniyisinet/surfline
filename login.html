@@ -27,11 +27,12 @@
     <link rel="stylesheet" href="css/material.indigo-pink.min.css">
     <link rel="stylesheet" href="css/icon.css">
     <link rel="stylesheet" href="css/mdl-jquery-modal-dialog.css">
-    <!--    
+        
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+            <script src="js/platform.js" async defer></script>
 
-    <script async defer src="https://apis.google.com/js/api.js" onload="this.onload=function(){};handleClientLoad()" onreadystatechange="if (this.readyState === 'complete') this.onload()">
-    </script>-->
+    <script async defer onload="this.onload=function(){};handleClientLoad()" onreadystatechange="if (this.readyState === 'complete') this.onload()" src="https://apis.google.com/js/api.js">
+    </script>
 <style>
      .abcRioButtonBlue {
             width: 30px !important;
@@ -97,6 +98,7 @@
                
                 <ul class="icon-social">
                     <li class="facebook"><a href="#" onclick="fb_login();"><i class="fa fa-facebook"></i></a></li>
+                    <li class="google" id="sign-in-or-out-button"><a href="#"><i class="fa fa-google"></i></a></li>
 
                     <li>
                         <div id="my-signin2"></div>
@@ -138,6 +140,7 @@
     <script src="js/pages/socialMediaLogin.js"></script>
     <script src="js/faceboklogin.js"></script>
     <script src="js/logingoogle.js"></script>
+        <script src="js/googlelogin.js"></script>
 
     <script type="application/javascript">
         $(document).ready(function () {
@@ -148,7 +151,6 @@
 
         });
     </script>
-        <script src="js/platform.js" async defer></script>
 
     <!--<script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>-->
 
