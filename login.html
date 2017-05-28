@@ -28,10 +28,10 @@
     <link rel="stylesheet" href="css/icon.css">
     <link rel="stylesheet" href="css/mdl-jquery-modal-dialog.css">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
     <script async defer src="https://apis.google.com/js/api.js" onload="this.onload=function(){};" onreadystatechange="if (this.readyState === 'complete') this.onload()">
-    </script>
+    </script>-->
     <style>
         .abcRioButtonBlue {
             width: 30px !important;
@@ -102,6 +102,7 @@
                         <!--<div id="my-signin2"></div>-->
                         <!--<div id="custom_signin_button"></div>-->
                     </li>
+                    <li class="google" onclick="callGoogle();"><a href="#"><i class="fa fa-google"></i></a></li>
 
                 </ul>
                 <div class="create-account" style="color: white">Not Registered? <a href="register.html" style="color: orange">Create an account</a></div>
@@ -137,8 +138,10 @@
     <script src="js/pages/Login.js"></script>
     <script src="js/pages/socialMediaLogin.js"></script>
     <script src="js/faceboklogin.js"></script>
-    <script src="js/logingoogle.js"></script>
-    <script src="js/googlelogin.js"></script>
+    <!--<script src="js/logingoogle.js"></script>-->
+    <!--<script src="js/googlelogin.js"></script>-->
+
+    <script src="js/cordovagoogle.js"></script>
 
     <script type="application/javascript">
         $(document).ready(function () {
@@ -146,7 +149,7 @@
             Login.init();
             Cedezone.init();
             socialLogin.init();
-            handleClientLoad();
+            // handleClientLoad();
         });
     </script>
 
