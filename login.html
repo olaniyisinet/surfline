@@ -28,11 +28,10 @@
     <link rel="stylesheet" href="css/icon.css">
     <link rel="stylesheet" href="css/mdl-jquery-modal-dialog.css">
         
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-            <script src="js/platform.js" async defer></script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
     <script async defer onload="this.onload=function(){};handleClientLoad()" onreadystatechange="if (this.readyState === 'complete') this.onload()" src="https://apis.google.com/js/api.js">
-    </script>
+    </script>-->
 <style>
      .abcRioButtonBlue {
             width: 30px !important;
@@ -101,12 +100,14 @@
                     <li class="google" id="sign-in-or-out-button"><a href="#"><i class="fa fa-google"></i></a></li>
 
                     <li>
-                        <div id="my-signin2"></div>
+                        <!--<div id="my-signin2"></div>-->
+                          <div id="custom_signin_button"></div>
                     </li>
 
                 </ul>
                 <div class="create-account" style="color: white">Not Registered? <a href="register.html" style="color: orange">Create an account</a></div>
-
+<div class="g-signin2" data-onsuccess="onSuccess"></div>
+  <a href="#" onclick="signOut();">Sign out</a>
                 <div id="status">
                 </div>
 
@@ -153,9 +154,33 @@
     </script>
 
     <!--<script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>-->
+<script>
+  function onSuccess(googleUser) {
+       console.log('onSuccess!');
+    }
 
-    <script>
-    </script>
+    function onCustomSuccess(googleUser) {
+       console.log('onCustomSignIn!');
+    var profile = googleUser.getBasicProfile();
+
+    alert(profile);
+    }
+
+    function signOut() {
+      var auth2 = gapi.auth2.getAuthInstance();
+      auth2.signOut().then(function () {
+        console.log('User signed out.');
+      });
+    }
+
+    function onLoad() {
+      gapi.signin2.render('custom_signin_button', {
+        'onsuccess': onCustomSuccess
+      });
+    }
+  </script>
+              <!--<script src="js/platform.js" async defer></script>-->
+  <script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
 </body>
 
 </html>
