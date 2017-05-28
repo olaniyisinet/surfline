@@ -41,7 +41,9 @@ Home = {
         });
 
         var url      = window.location.href; 
+        var url2 = document.URL
         alert(url);
+        alert(url2);
     },
 
     getMyOrders: function (p) {
