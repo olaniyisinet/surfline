@@ -95,7 +95,11 @@
 
   };
 
-  function fb_login() {
+  function fb_login(permissions) {
+     permissionObj = {};
+                if (permissions && permissions.length > 0) {
+                    permissionObj.scope = permissions.toString();
+                }
     FB.login(function (response) {
 
       if (response.authResponse) {
@@ -121,7 +125,7 @@
       }
     }, {
       scope: 'public_profile,email'
-    });
+    } , permissionObj);
   }
   (function () {
     var e = document.createElement('script');
