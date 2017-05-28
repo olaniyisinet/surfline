@@ -39,6 +39,9 @@ Home = {
            Home.changeorderStatus(orderid, 7);
 
         });
+
+        var url      = window.location.href; 
+        alert(url);
     },
 
     getMyOrders: function (p) {
