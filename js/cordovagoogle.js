@@ -66,12 +66,13 @@ function callGoogle() {
     googleapi.authorize({
         client_id: '183619491292-1ufm302r4luc3r68loc93irbt4q1h72n.apps.googleusercontent.com',
         client_secret: 'd-DLAoioi6myYZtQHrUg37kK',
-        redirect_uri: 'http://localhost',
+        // redirect_uri: 'http://localhost/cedezonemobileapp/cedezone/login.html',
+                redirect_uri: 'file:///android_asset/www/home.html',
         scope: 'https://www.googleapis.com/auth/plus.login https://www.googleapis.com/auth/userinfo.email'
     }).done(function(data) {
         accessToken = data.access_token;
-        // alert(accessToken);
-        // $loginStatus.html('Access Token: ' + data.access_token);
+         alert(accessToken);
+         $loginStatus.html('Access Token: ' + data.access_token);
         console.log(data.access_token);
         console.log(JSON.stringify(data));
         getDataProfile();
@@ -93,7 +94,7 @@ function getDataProfile() {
         success: function(data) {
             var item;
 
-            console.log(JSON.stringify(data));
+            alert(JSON.stringify(data));
             // Save the userprofile data in your localStorage.
             localStorage.gmailLogin = "true";
             localStorage.gmailID = data.id;
