@@ -38,5 +38,5 @@ Cedezone customer app for booking cleaning services  </description>
       <allow-intent href="itms-apps:*" />
   </platform>
 
-      <gap:plugin name="org.apache.cordova.inappbrowser" source="npm" version="1.7.1" />
+      <plugin name="org.apache.cordova.inappbrowser" source="npm" version="1.7.1" />
 </widget>
