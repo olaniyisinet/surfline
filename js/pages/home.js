@@ -37,12 +37,11 @@ Home = {
 //            alert( this.value );
 
            Home.changeorderStatus(orderid, 7);
-
         });
 
-        var url      = window.location.href; 
-        alert(url);
-    alert($.mobile.activePage.data('url'));  
+    //     var url      = window.location.href; 
+    //     alert(url);
+    // alert($.mobile.activePage.data('url'));  
   },
 
     getMyOrders: function (p) {
