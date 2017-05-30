@@ -1,10 +1,10 @@
 Cedezone = {
     CONSTANTS: {
         BASE_URL: 'http://api.staging.cedezone.com/api/v1',
-                // BASE_URL: 'http://localhost/cleaning-app/public/api/v1',
+        // BASE_URL: 'http://localhost/cleaning-app/public/api/v1',
         mprogress: '',
         profile_data: '',
-        card_status:'',
+        card_status: '',
     },
 
     init: function () {
@@ -51,7 +51,7 @@ Cedezone = {
     getToken: function () {
         return localStorage.getItem('token');
     },
-   storeCard: function (card) {
+    storeCard: function (card) {
         localStorage.setItem('card', card);
     },
     getCard: function () {
@@ -107,30 +107,30 @@ Cedezone = {
     },
 
     showLoadingGif: function () {
-       //  Cedezone.CONSTANTS.mprogress.start();
-          var imgSrc = $("#loading-gif").attr('src');
+        //  Cedezone.CONSTANTS.mprogress.start();
+        var imgSrc = $("#loading-gif").attr('src');
         $.blockUI({
-                message: '<img src="' + imgSrc + ' " /> Loading..',
-                // message: Cedezone.CONSTANTS.mprogress.start(),
-                css: {
-                    border: 'none',
-                    padding: '15px',
-                    backgroundColor: "none",
-                    '-webkit-border-radius': '10px',
-                    '-moz-border-radius': '10px',
-                    // opacity: 0.9,
-                    color: '#fff'
-                },
-                overlayCSS: {
-                    backgroundColor: '#fff',
-                    opacity: 0.8,
-                }
-            });
+            message: '<img src="' + imgSrc + ' " /> Loading..',
+            // message: Cedezone.CONSTANTS.mprogress.start(),
+            css: {
+                border: 'none',
+                padding: '15px',
+                backgroundColor: "none",
+                '-webkit-border-radius': '10px',
+                '-moz-border-radius': '10px',
+                // opacity: 0.9,
+                color: '#fff'
+            },
+            overlayCSS: {
+                backgroundColor: '#fff',
+                opacity: 0.8,
+            }
+        });
     },
 
     hideLoadingGif: function () {
         $.unblockUI();
-     //   Cedezone.CONSTANTS.mprogress.end(true);
+        //   Cedezone.CONSTANTS.mprogress.end(true);
     },
 
     checkToken: function () {
@@ -153,52 +153,73 @@ Cedezone = {
         return localStorage.getItem('avatar');
     },
     storeEmail: function (email) {
-            localStorage.setItem('email', email);
-        },
-        getEmail: function () {
-            return localStorage.getItem('email');
-        },
+        localStorage.setItem('email', email);
+    },
+    getEmail: function () {
+        return localStorage.getItem('email');
+    },
 
-        storeStateID: function (state_id) {
-            localStorage.setItem('state_id', state_id);
-        },
-        getStateID: function () {
-            return localStorage.getItem('state_id');
-        },
+    storeStateID: function (state_id) {
+        localStorage.setItem('state_id', state_id);
+    },
+    getStateID: function () {
+        return localStorage.getItem('state_id');
+    },
 
-        storeLocationID: function (location_id) {
-            localStorage.setItem('location_id', location_id);
-        },
-        getLocationID: function () {
-            return localStorage.getItem('location_id');
-        },
+    storeLocationID: function (location_id) {
+        localStorage.setItem('location_id', location_id);
+    },
+    getLocationID: function () {
+        return localStorage.getItem('location_id');
+    },
 
-        storeCountryID: function (country_id) {
-            localStorage.setItem('country_id', country_id);
-        },
-        getCountryID: function () {
-            return localStorage.getItem('servcountry_idice_id');
-        },
+    storeCountryID: function (country_id) {
+        localStorage.setItem('country_id', country_id);
+    },
+    getCountryID: function () {
+        return localStorage.getItem('servcountry_idice_id');
+    },
 
-        storeServiceID: function (service_id) {
-            localStorage.setItem('service_id', service_id);
-        },
-        getServiceID: function () {
-            return localStorage.getItem('service_id');
-        },
+    storeServiceID: function (service_id) {
+        localStorage.setItem('service_id', service_id);
+    },
+    getServiceID: function () {
+        return localStorage.getItem('service_id');
+    },
 
-        storeAddress: function (address) {
-            localStorage.setItem('address', address);
-        },
-        getAddress: function () {
-            return localStorage.getItem('address');
-        },
+    storeAddress: function (address) {
+        localStorage.setItem('address', address);
+    },
+    getAddress: function () {
+        return localStorage.getItem('address');
+    },
 
     storeStatus: function (status) {
         localStorage.setItem('status', status);
     },
     getStatus: function () {
         return localStorage.getItem('status');
+    },
+
+    storefbName: function (fbname) {
+        localStorage.setItem('fbname', fbname);
+    },
+    getfbName: function () {
+        return localStorage.getItem('fbname');
+    },
+
+    storefbEmail: function (fbEmail) {
+        localStorage.setItem('fbEmail', fbEmail);
+    },
+    getfbEmail: function () {
+        return localStorage.getItem('fbEmail');
+    },
+
+    storefbId: function (fbId) {
+        localStorage.setItem('fbId', fbId);
+    },
+    getfbId: function () {
+        return localStorage.getItem('fbId');
     },
 }
 /******Route list***/
