@@ -314,6 +314,8 @@ var openFB = (function () {
         //   socialLogin.getToken(name[0] + '@facebook.com', data.name, 'Facebook', data.id)
                 document.getElementById("userName").innerHTML = data.name;
                 document.getElementById("userPic").src = 'http://graph.facebook.com/' + data.id + '/picture?type=small';
+
+                window.location="test_tab.html"
             },
             error: errorHandler});
     }
