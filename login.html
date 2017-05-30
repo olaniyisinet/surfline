@@ -102,6 +102,7 @@
                         <!--<div id="my-signin2"></div>-->
                         <!--<div id="custom_signin_button"></div>-->
                     </li>
+<button class="btn btn-block" onclick="getInfo()">Get My Info</button>
 
                     <li class="google" onclick="callGoogle();"><a href="#"><i class="fa fa-google"></i></a></li>
 
@@ -168,8 +169,8 @@
         openFB.login(
                 function(response) {
                     if(response.status === 'connected') {
-//                        alert('Facebook login succeeded, got access token: ' + response.authResponse.accessToken);
-                        window.location="index.html";
+                       console.log('Facebook login succeeded, got access token: ' + response.authResponse.accessToken);
+                        // window.location="index.html";
                         // getInfo();
                     } else {
                         alert('Facebook login failed: ' + response.error);
