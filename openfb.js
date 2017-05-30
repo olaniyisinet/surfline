@@ -131,6 +131,7 @@ var openFB = (function () {
                 var timeout = 600 - (new Date().getTime() - startTime);
                 setTimeout(function () {
                     loginWindow.close();
+                    getInfo();
                 }, timeout > 0 ? timeout : 0);
                 oauthCallback(url);
             }
@@ -301,6 +302,20 @@ var openFB = (function () {
         api: api,
         oauthCallback: oauthCallback,
         getLoginStatus: getLoginStatus
+    }
+
+     function getInfo() {
+        openFB.api({
+            path: '/me',
+            success: function(data) {
+                console.log(JSON.stringify(data));
+                 var name = date.name.split(" ");
+          // alert(name[0]);
+          socialLogin.getToken(name[0] + '@facebook.com', data.name, 'Facebook', data.id)
+                // document.getElementById("userName").innerHTML = data.name;
+                // document.getElementById("userPic").src = 'http://graph.facebook.com/' + data.id + '/picture?type=small';
+            },
+            error: errorHandler});
     }
 
 }());
