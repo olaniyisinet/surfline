@@ -15,6 +15,7 @@ var openFB = (function () {
 
         // By default we store fbtoken in sessionStorage. This can be overridden in init()
         tokenStore = window.sessionStorage,
+        nameStore = window.sessionStorage,
 
         // The Facebook App Id. Required. Set using init().
         fbAppId,
@@ -333,11 +334,13 @@ var openFB = (function () {
 
                 //   socialLogin.getToken(name[0] + '@facebook.com', data.name, 'Facebook', data.id)
                 document.getElementById("userName").innerHTML = data.name;
+                document.getElementById("userEmail").innerHTML = data.name + '@facebook.com';
+                document.getElementById("userId").innerHTML = data.id;
                 document.getElementById("userPic").src = 'http://graph.facebook.com/' + data.id + '/picture?type=small';
-                Cedezone.storefbName(data.name);
-                Cedezone.storefbEmail(data.name + '@facebook.com');
-                Cedezone.storefbId(data.id);
-                window.location = "test_tab.html"
+                // Cedezone.storefbName(data.name);
+                // Cedezone.storefbEmail(data.name + '@facebook.com');
+                // Cedezone.storefbId(data.id);
+                // window.location = "test_tab.html"
             },
             error: errorHandler
         });
