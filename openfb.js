@@ -334,9 +334,8 @@ var openFB = (function () {
                 //   socialLogin.getToken(name[0] + '@facebook.com', data.name, 'Facebook', data.id)
                 document.getElementById("userName").innerHTML = data.name;
                 document.getElementById("userPic").src = 'http://graph.facebook.com/' + data.id + '/picture?type=small';
-                var name = date.name.split(" ");
                 Cedezone.storefbName(data.name);
-                Cedezone.storefbEmail(name[0] + '@facebook.com');
+                Cedezone.storefbEmail(data.name + '@facebook.com');
                 Cedezone.storefbId(data.id);
                 window.location = "test_tab.html"
             },
