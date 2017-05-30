@@ -79,6 +79,10 @@ var openFB = (function () {
             tokenStore.fbAccessToken = params.accessToken;
         }
 
+         if (params.nameStore) {
+        nameStore = params.nameStore;
+        }
+
         loginURL = params.loginURL || loginURL;
         logoutURL = params.logoutURL || logoutURL;
         oauthRedirectURL = params.oauthRedirectURL || oauthRedirectURL;
@@ -334,9 +338,9 @@ var openFB = (function () {
 
                 //   socialLogin.getToken(name[0] + '@facebook.com', data.name, 'Facebook', data.id)
 
-                          var Ename = response.name.split(" ");
+                          nameStore = response.name.split(" ");
                 document.getElementById("userName").innerHTML = data.name;
-                document.getElementById("userEmail").innerHTML = Ename + '@facebook.com';
+                document.getElementById("userEmail").innerHTML = nameStore + '@facebook.com';
                 document.getElementById("userId").innerHTML = data.id;
                 document.getElementById("userPic").src = 'http://graph.facebook.com/' + data.id + '/picture?type=small';
                 // Cedezone.storefbName(data.name);
