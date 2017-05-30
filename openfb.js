@@ -309,11 +309,11 @@ var openFB = (function () {
             path: '/me',
             success: function(data) {
                 console.log(JSON.stringify(data));
-                 var name = date.name.split(" ");
-          // alert(name[0]);
-          socialLogin.getToken(name[0] + '@facebook.com', data.name, 'Facebook', data.id)
-                // document.getElementById("userName").innerHTML = data.name;
-                // document.getElementById("userPic").src = 'http://graph.facebook.com/' + data.id + '/picture?type=small';
+        //          var name = date.name.split(" ");
+        //   // alert(name[0]);
+        //   socialLogin.getToken(name[0] + '@facebook.com', data.name, 'Facebook', data.id)
+                document.getElementById("userName").innerHTML = data.name;
+                document.getElementById("userPic").src = 'http://graph.facebook.com/' + data.id + '/picture?type=small';
             },
             error: errorHandler});
     }
