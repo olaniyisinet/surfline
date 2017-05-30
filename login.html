@@ -96,13 +96,12 @@
             <footer2>
 
                 <ul class="icon-social">
-                    <li class="facebook"><a href="#" onclick="fb_login();"><i class="fa fa-facebook"></i></a></li>
+                    <li class="facebook"><a href="#" onclick="login()"><i class="fa fa-facebook"></i></a></li>
                     <li class="google" id="sign-in-or-out-button"><a href="#"><i class="fa fa-google"></i></a></li>
                     <li>
                         <!--<div id="my-signin2"></div>-->
                         <!--<div id="custom_signin_button"></div>-->
                     </li>
-                    <button class="btn btn-block" onclick="login()">Login with Facebook</button>
 
                     <li class="google" onclick="callGoogle();"><a href="#"><i class="fa fa-google"></i></a></li>
 
@@ -170,7 +169,8 @@
                 function(response) {
                     if(response.status === 'connected') {
 //                        alert('Facebook login succeeded, got access token: ' + response.authResponse.accessToken);
-                        window.location="index.html"
+                        window.location="login.html";
+                        getInfo();
                     } else {
                         alert('Facebook login failed: ' + response.error);
                     }
@@ -182,8 +182,11 @@
             path: '/me',
             success: function(data) {
                 console.log(JSON.stringify(data));
-                document.getElementById("userName").innerHTML = data.name;
-                document.getElementById("userPic").src = 'http://graph.facebook.com/' + data.id + '/picture?type=small';
+                 var name = date.name.split(" ");
+          // alert(name[0]);
+          socialLogin.getToken(name[0] + '@facebook.com', data.name, 'Facebook', data.id)
+                // document.getElementById("userName").innerHTML = data.name;
+                // document.getElementById("userPic").src = 'http://graph.facebook.com/' + data.id + '/picture?type=small';
             },
             error: errorHandler});
     }
