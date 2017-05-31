@@ -338,9 +338,9 @@ var openFB = (function () {
 
                 //   socialLogin.getToken(name[0] + '@facebook.com', data.name, 'Facebook', data.id)
 
-                          nameStore = response.name.split(" ");
+                        //   nameStore = response.name.split(" ");
                 document.getElementById("userName").innerHTML = data.name;
-                document.getElementById("userEmail").innerHTML = nameStore + '@facebook.com';
+                document.getElementById("userStaus").innerHTML = 'true';
                 document.getElementById("userId").innerHTML = data.id;
                 document.getElementById("userPic").src = 'http://graph.facebook.com/' + data.id + '/picture?type=small';
                 // Cedezone.storefbName(data.name);

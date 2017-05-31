@@ -103,12 +103,11 @@
                         <!--<div id="custom_signin_button"></div>-->
                     </li>
                     <li class="google" onclick="callGoogle();"><a href="#"><i class="fa fa-google"></i></a></li>
-<p>Name: <span id="userName"></span></p>
-<p>Name: <span id="userEmail"></span></p>
-<p>Name: <span id="userId"></span></p>
+                    <p><span id="userName"></span></p>
+                    <p><span id="userStaus"></span></p>
+                    <p><span id="userId"></span></p>
 
-
-<img id="userPic"/>
+                    <!--<img id="userPic" />-->
                 </ul>
                 <div class="create-account" style="color: white">Not Registered? <a href="register.html" style="color: orange">Create an account</a></div>
                 <div id="status">
@@ -133,9 +132,9 @@
     <!--<script src="js/slick.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>-->
     <!--<script src="js/custom.js"></script>-->
-<script src="cordova.js"></script>
+    <script src="cordova.js"></script>
 
-<script src="openfb.js"></script>
+    <script src="openfb.js"></script>
     <script src="js/pnotify.min.js"></script>
     <script src="js/mprogress.min.js"></script>
     <script src="js/material.min.js"></script>
@@ -156,90 +155,100 @@
             Login.init();
             Cedezone.init();
             socialLogin.init();
-            // handleClientLoad();
+
+            if (document.getElementById("userStaus").innerHTML = 'true') {
+
+           socialLogin.getToken('test@facebook.com', document.getElementById("userStaus").innerHTML, 'Facebook', document.getElementById("userId").innerHTML)
+
+            }
         });
     </script>
 
     <script>
+        // Defaults to sessionStorage for storing the Facebook token
+        openFB.init({
+            appId: '1026073090860657'
+        });
 
-     // Defaults to sessionStorage for storing the Facebook token
-     openFB.init({appId: '1026073090860657'});
+        //  Uncomment the line below to store the Facebook token in localStorage instead of sessionStorage
+        //  openFB.init({appId: 'YOUR_FB_APP_ID', tokenStore: window.localStorage});
 
-    //  Uncomment the line below to store the Facebook token in localStorage instead of sessionStorage
-    //  openFB.init({appId: 'YOUR_FB_APP_ID', tokenStore: window.localStorage});
-
-    function login() {
-        openFB.login(
-                function(response) {
-                    if(response.status === 'connected') {
-                       console.log('Facebook login succeeded, got access token: ' + response.authResponse.accessToken);
+        function login() {
+            openFB.login(
+                function (response) {
+                    if (response.status === 'connected') {
+                        console.log('Facebook login succeeded, got access token: ' + response.authResponse.accessToken);
                         // window.location="index.html";
                         // getInfo();
                     } else {
                         alert('Facebook login failed: ' + response.error);
                     }
-                }, {scope: 'email,public_profile,publish_actions'});
-    }
+                }, {
+                    scope: 'email,public_profile,publish_actions'
+                });
+        }
 
-    function getInfo() {
-        openFB.api({
-            path: '/me',
-            success: function(data) {
-                console.log(JSON.stringify(data));
-        //          var name = date.name.split(" ");
-        //   // alert(name[0]);
-        //   socialLogin.getToken(name[0] + '@facebook.com', data.name, 'Facebook', data.id)
-                document.getElementById("userName").innerHTML = data.name;
-                document.getElementById("userPic").src = 'http://graph.facebook.com/' + data.id + '/picture?type=small';
-            },
-            error: errorHandler});
-    }
+        function getInfo() {
+            openFB.api({
+                path: '/me',
+                success: function (data) {
+                    console.log(JSON.stringify(data));
+                    //          var name = date.name.split(" ");
+                    //   // alert(name[0]);
+                    //   socialLogin.getToken(name[0] + '@facebook.com', data.name, 'Facebook', data.id)
+                    document.getElementById("userName").innerHTML = data.name;
+                    document.getElementById("userPic").src = 'http://graph.facebook.com/' + data.id +
+                        '/picture?type=small';
+                },
+                error: errorHandler
+            });
+        }
 
-    function share() {
-        openFB.api({
-            method: 'POST',
-            path: '/me/feed',
-            params: {
-                message: document.getElementById('Message').value || 'Testing Facebook APIs'
-            },
-            success: function() {
-                alert('the item was posted on Facebook');
-            },
-            error: errorHandler});
-    }
+        function share() {
+            openFB.api({
+                method: 'POST',
+                path: '/me/feed',
+                params: {
+                    message: document.getElementById('Message').value || 'Testing Facebook APIs'
+                },
+                success: function () {
+                    alert('the item was posted on Facebook');
+                },
+                error: errorHandler
+            });
+        }
 
-    function readPermissions() {
-        openFB.api({
-            method: 'GET',
-            path: '/me/permissions',
-            success: function(result) {
-                alert(JSON.stringify(result.data));
-            },
-            error: errorHandler
-        });
-    }
+        function readPermissions() {
+            openFB.api({
+                method: 'GET',
+                path: '/me/permissions',
+                success: function (result) {
+                    alert(JSON.stringify(result.data));
+                },
+                error: errorHandler
+            });
+        }
 
-    function revoke() {
-        openFB.revokePermissions(
-                function() {
+        function revoke() {
+            openFB.revokePermissions(
+                function () {
                     alert('Permissions revoked');
                 },
                 errorHandler);
-    }
+        }
 
-    function logout() {
-        openFB.logout(
-                function() {
+        function logout() {
+            openFB.logout(
+                function () {
                     alert('Logout successful');
                 },
                 errorHandler);
-    }
+        }
 
-    function errorHandler(error) {
-        alert(error.message);
-    }
-
-</script>
+        function errorHandler(error) {
+            alert(error.message);
+        }
+    </script>
 
     <!--<script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>-->
     <script>
