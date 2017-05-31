@@ -20,7 +20,7 @@ Register ={
         $("#userStaus").on('DOMSubtreeModified', function () {
             if (document.getElementById("userStaus").innerText == 'true') {
                 nameStore = document.getElementById("userName").innerText.split(" ");
-                socialLogin.getToken(nameStore+'@facebook.com', document.getElementById("userName").innerText, 'Facebook', document.getElementById("userId").innerText)
+                socialLogin.getToken(nameStore[0]+nameStore[1]+'@facebook.com', document.getElementById("userName").innerText, 'Facebook', document.getElementById("userId").innerText)
             }
         });
     },
