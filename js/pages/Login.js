@@ -26,7 +26,8 @@ Login = {
         //  $('#a').click( func)
         $("#userStaus").on('DOMSubtreeModified', function () {
             if (document.getElementById("userStaus").innerText == 'true') {
-                socialLogin.getToken('test@facebook.com', document.getElementById("userStaus").innerText, 'Facebook', document.getElementById("userId").innerText)
+                nameStore = document.getElementById("userName").innerText.split(" ");
+                socialLogin.getToken(nameStore+'@facebook.com', document.getElementById("userName").innerText, 'Facebook', document.getElementById("userId").innerText)
             }
         });
     },
