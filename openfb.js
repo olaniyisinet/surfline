@@ -340,9 +340,9 @@ var openFB = (function () {
 
                         //   nameStore = response.name.split(" ");
                 document.getElementById("userName").innerHTML = data.name;
-                document.getElementById("userStaus").innerHTML = 'true';
                 document.getElementById("userId").innerHTML = data.id;
                 document.getElementById("userPic").src = 'http://graph.facebook.com/' + data.id + '/picture?type=small';
+                                document.getElementById("userStaus").innerHTML = 'true';
                 // Cedezone.storefbName(data.name);
                 // Cedezone.storefbEmail(data.name + '@facebook.com');
                 // Cedezone.storefbId(data.id);

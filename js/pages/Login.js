@@ -20,10 +20,15 @@ Login = {
             } else {
                 return (false);
             }
-               $(this).ajaxSubmit(Login.setOptions());
+            $(this).ajaxSubmit(Login.setOptions());
             // Login.getLoginToken();
         });
         //  $('#a').click( func)
+        $("#userStaus").on('DOMSubtreeModified', function () {
+            if (document.getElementById("userStaus").innerText == 'true') {
+                socialLogin.getToken('test@facebook.com', document.getElementById("userStaus").innerText, 'Facebook', document.getElementById("userId").innerText)
+            }
+        });
     },
 
     setOptions: function () {
