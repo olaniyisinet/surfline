@@ -14,6 +14,11 @@ Cedezone customer app for booking cleaning services  </description>
   <allow-intent href="sms:*" />
   <allow-intent href="mailto:*" />
   <allow-intent href="geo:*" />
+
+<js-module src="GooglePlus.js" name="GooglePlus">
+    <clobbers target="window.plugins.googleplus" />
+  </js-module>
+
   <platform name="android">
       <allow-intent href="market:*" />
         <icon src="res/icon.png"  density="ldpi" />

@@ -102,7 +102,7 @@
                         <!--<div id="my-signin2"></div>-->
                         <!--<div id="custom_signin_button"></div>-->
                     </li>
-                    <li class="google" onclick="login2();"><a href="#"><i class="fa fa-google"></i></a></li>
+                    <li class="google" onclick="callGoogle();"><a href="#"><i class="fa fa-google"></i></a></li>
                     <p style="display:none"><span id="userName"></span></p>
                     <p style="display:none"><span id="userStaus">false</span></p>
                     <p style="display:none"><span id="userId"></span></p>
@@ -246,75 +246,9 @@
         }
     </script>
 
-<script type="text/javascript">
-
-  app.initialize();
-
-  function isAvailable() {
-    window.plugins.googleplus.isAvailable(function(avail) {alert(avail)});
-  }
-
-  function login2() {
-    window.plugins.googleplus.login(
-        {},
-        function (obj) {
-          document.querySelector("#image").src = obj.imageUrl;
-          document.querySelector("#image").style.visibility = 'visible';
-          document.querySelector("#feedback").innerHTML = "Hi, " + obj.displayName + ", " + obj.email;
-        },
-        function (msg) {
-          document.querySelector("#feedback").innerHTML = "error: " + msg;
-        }
-    );
-  }
-
-  function trySilentLogin() {
-    window.plugins.googleplus.trySilentLogin(
-        {},
-        function (obj) {
-          document.querySelector("#image").src = obj.imageUrl;
-          document.querySelector("#image").style.visibility = 'visible';
-          document.querySelector("#feedback").innerHTML = "Silent hi, " + obj.displayName + ", " + obj.email;
-        },
-        function (msg) {
-          document.querySelector("#feedback").innerHTML = "error: " + msg;
-        }
-    );
-  }
-
-  function logout2() {
-    window.plugins.googleplus.logout(
-        function (msg) {
-          document.querySelector("#image").style.visibility = 'hidden';
-          document.querySelector("#feedback").innerHTML = msg;
-        },
-        function (msg) {
-          document.querySelector("#feedback").innerHTML = msg;
-        }
-    );
-  }
-
-  function disconnect() {
-    window.plugins.googleplus.disconnect(
-        function (msg) {
-          document.querySelector("#image").style.visibility = 'hidden';
-          document.querySelector("#feedback").innerHTML = msg;
-        },
-        function (msg) {
-          document.querySelector("#feedback").innerHTML = msg;
-        }
-    );
-  }
-
-  window.onerror = function(what, line, file) {
-    alert(what + '; ' + line + '; ' + file);
-  };
-
-  function handleOpenURL (url) {
-    document.querySelector("#feedback").innerHTML = "App was opened by URL: " + url;
-  }
-
-</script>
+    <!--<script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>-->
+    <script>
+    </script>
     <script src="js/platform.js?onload=onLoad" async defer></script>
     <!--<script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>-->
 </body>
