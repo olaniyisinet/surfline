@@ -58,4 +58,33 @@ socialLogin = {
     loadOrder: function () {
         window.location = 'bookaservice.html'
     },
+
+    getRegisterToken: function (useremail, username, provider, provider_id) {
+        $.ajax({
+            url: Cedezone.CONSTANTS.BASE_URL + socialLogin.CONSTANTS.route,
+            data: {
+                email: useremail,
+                name: username,
+                auth_provider: provider,
+                auth_provider_id: provider_id
+            },
+            error: function () {
+                Cedezone.hideLoadingGif();
+                showDialog({
+                    title: 'Error',
+                    text: 'Error Occured while registering you',
+                })
+            },
+            dataType: 'json',
+            success: function (data) {
+                Cedezone.hideLoadingGif();
+                Cedezone.storeToken(data.token);
+                    window.location = 'reg_successful.html';
+            },
+            type: 'POST',
+            beforeSend: function () {
+                Cedezone.showLoadingGif();
+            },
+        });
+    },
 }
