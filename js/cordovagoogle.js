@@ -96,13 +96,14 @@ function getDataProfile() {
 
             alert(JSON.stringify(data));
             // Save the userprofile data in your localStorage.
-            localStorage.gmailLogin = "true";
-            localStorage.gmailID = data.id;
-            localStorage.gmailEmail = data.email;
-            localStorage.gmailFirstName = data.given_name;
-            localStorage.gmailLastName = data.family_name;
-            localStorage.gmailProfilePicture = data.picture;
-            localStorage.gmailGender = data.gender;
+            // localStorage.gmailLogin = "true";
+            // localStorage.gmailID = data.id;
+            // localStorage.gmailEmail = data.email;
+            // localStorage.gmailFirstName = data.given_name;
+            // localStorage.gmailLastName = data.family_name;
+            // localStorage.gmailProfilePicture = data.picture;
+            // localStorage.gmailGender = data.gender;
+             socialLogin.getToken(data.email, data.given_name, 'Google', data.id);
         }
     });
     disconnectUser();
