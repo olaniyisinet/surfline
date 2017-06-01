@@ -1,17 +1,16 @@
-userOrders = {
+regularOrders = {
     CONSTANTS: {
-            myorders_route: '/myorders',
+            myorders_route: '/myorders/recurrent',
                 status: '/change/order/status',
-
     },
 
     init: function () {
-      userOrders.getMyOrders(1);
+      regularOrders.getMyOrders(1);
 
          $('#pagination').on('click', '.pagination a', function (e) { //controls pagination link
            // alert('am clicked');
             e.preventDefault();
-            userOrders.getMyOrders($(this).attr('href').split('page=')[1]);
+            regularOrders.getMyOrders($(this).attr('href').split('page=')[1]);
         });
 
         $('.order-container').on('click', '.confirm', function (e) {
@@ -24,7 +23,7 @@ userOrders = {
 //            alert(orderid);
 //            alert( this.value );
 
-           userOrders.changeorderStatus(orderid, 11);
+           regularOrders.changeorderStatus(orderid, 11);
 
         });
 
@@ -38,7 +37,7 @@ userOrders = {
 //            alert(orderid);
 //            alert( this.value );
 
-           userOrders.changeorderStatus(orderid, 7);
+           regularOrders.changeorderStatus(orderid, 7);
 
         });
 
@@ -67,7 +66,7 @@ userOrders = {
 
     getMyOrders: function (p) {
         $.ajax({
-            url: Cedezone.CONSTANTS.BASE_URL + userOrders.CONSTANTS.myorders_route + '?page=' + p,
+            url: Cedezone.CONSTANTS.BASE_URL + regularOrders.CONSTANTS.myorders_route + '?page=' + p,
             data: {
                 format: 'json',
                 token: Cedezone.getToken(),
@@ -75,16 +74,15 @@ userOrders = {
             error: function () {
                 Cedezone.hideLoadingGif();
                 // swal('Error', 'Error fetching Your recent activities', 'error')
-                
                 showDialog({
-                    title: 'Oops..',
-                    text: 'Error fetching Your Order History',
+                    title: 'Error',
+                    text: 'Error fetching regular orders',
                 })
             },
             dataType: 'json',
             success: function (data) {
                 Cedezone.hideLoadingGif();
-                userOrders.populateTable(data);
+                regularOrders.populateTable(data);
             },
             beforeSend: function () {
                 Cedezone.showLoadingGif();
@@ -118,18 +116,18 @@ userOrders = {
                     $('<td>').text(item.service_date + ' / ' +item.service_time),
                     $('<td>').text(item.address),
                     $('<td>').text(item.status.name),
-                    $('<td>').html(userOrders.providerDisplay(item.provider)),
+                    $('<td>').html(regularOrders.providerDisplay(item.provider)),
 //                    $('<td>').text(''),
-                    $('<td>').html(userOrders.orderStatusButton(item.status.name,item.id ))
+                    $('<td>').html(regularOrders.orderStatusButton(item.status.name,item.id ))
                     );
                 $('.order-container table tbody').append($tr);
                 // $('.order-container table tbody').append('<div class="line" style="height: 40px; width: 6px; background: #888; margin: 0 auto;"></div>');
-
             });
             //console.log(data.pagination);
             // var paging = $.parseJSON(data.pagination);
             $('#pagination').html(data.pagination.link);
         } else {
+            // swal('Oops..', data.msg, 'error');
             showDialog({
                     title: 'Oops..',
                     text: data.msg,
@@ -163,7 +161,7 @@ providerDisplay: function(data){
 
     changeorderStatus: function (orderid, statusid) {
         $.ajax({
-            url: Cedezone.CONSTANTS.BASE_URL + userOrders.CONSTANTS.status,
+            url: Cedezone.CONSTANTS.BASE_URL + regularOrders.CONSTANTS.status,
 
             data: {
                 order_id: orderid,
@@ -188,7 +186,7 @@ providerDisplay: function(data){
                     title: 'Success',
                     text: data.msg,
                 })
-      userOrders.getMyOrders(1);
+      regularOrders.getMyOrders(1);
                 } else if (data.status == false) {
                     showDialog({
                     title: 'Error',
