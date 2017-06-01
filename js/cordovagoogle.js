@@ -67,7 +67,7 @@ function callGoogle() {
         client_id: '183619491292-1ufm302r4luc3r68loc93irbt4q1h72n.apps.googleusercontent.com',
         client_secret: 'd-DLAoioi6myYZtQHrUg37kK',
         // redirect_uri: 'http://localhost/cedezonemobileapp/cedezone/login.html',
-                redirect_uri: 'file:///android_asset/www/home.html',
+        redirect_uri: 'http://localhost',
         scope: 'https://www.googleapis.com/auth/plus.login https://www.googleapis.com/auth/userinfo.email'
     }).done(function(data) {
         accessToken = data.access_token;
