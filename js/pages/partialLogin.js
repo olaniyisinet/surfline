@@ -24,6 +24,7 @@ Login = {
                 nameStore = document.getElementById("userName").innerText.split(" ");
                 socialLogin.getToken(nameStore[0]+nameStore[1]+'@facebook.com', document.getElementById("userName").innerText, 'Facebook', document.getElementById("userId").innerText)
             }
+        });
     },
 
     setOptions: function () {
