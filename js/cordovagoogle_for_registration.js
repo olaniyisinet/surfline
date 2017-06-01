@@ -102,7 +102,7 @@ function getDataProfile() {
             // localStorage.gmailLastName = data.family_name;
             // localStorage.gmailProfilePicture = data.picture;
             // localStorage.gmailGender = data.gender;
-             socialLogin.getToken(data.email, data.name, 'Google', data.id);
+             socialLogin.getRegisterToken(data.email, data.name, 'Google', data.id);
         }
     });
     disconnectUser();
