@@ -692,6 +692,12 @@ serviceOrder = {
 
     orderAjax: function () {
         // alert($('#service_date').val());
+        var active_order =0;
+        var frequency_length = 0;
+        if($('#attribute_id option:selected')=="Regular"){
+            active_order = 1;
+            frequency_length = $('#regularly').val();
+        }
         $.ajax({
             url: Cedezone.CONSTANTS.BASE_URL + '/order',
             data: {
@@ -705,8 +711,8 @@ serviceOrder = {
                 service_date: serviceOrder.CONSTANTS.service_date,
                 service_time: serviceOrder.CONSTANTS.service_time,
                 order_attributes: serviceOrder.CONSTANTS.serviceattributesArray,
-                active: 0,
-                frequency: 7
+                active: active_order,
+                frequency: frequency_length
             },
             error: function (data) {
                 Cedezone.hideLoadingGif();
