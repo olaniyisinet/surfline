@@ -71,10 +71,10 @@ function callGoogle() {
         scope: 'https://www.googleapis.com/auth/plus.login https://www.googleapis.com/auth/userinfo.email'
     }).done(function(data) {
         accessToken = data.access_token;
-         alert(accessToken);
-         $loginStatus.html('Access Token: ' + data.access_token);
-        console.log(data.access_token);
-        console.log(JSON.stringify(data));
+        //  alert(accessToken);
+        //  $loginStatus.html('Access Token: ' + data.access_token);
+        // console.log(data.access_token);
+        // console.log(JSON.stringify(data));
         getDataProfile();
 
     });
