@@ -2,7 +2,6 @@ userOrders = {
     CONSTANTS: {
             myorders_route: '/myorders',
                 status: '/change/order/status',
-
     },
 
     init: function () {

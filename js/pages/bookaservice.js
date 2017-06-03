@@ -25,7 +25,6 @@ serviceOrder = {
         //  alert('hidhjdbvs');
         $("#bathrooms").hide();
         $("#garden").hide();
-        $("#plan").hide();
 
         serviceOrder.listener(); ////listen to any price change
         serviceOrder.checkStatus();
@@ -393,17 +392,17 @@ serviceOrder = {
             }
         });
 
-        $('#attribute_id').on('change', function () {
-            var selectedattrib = $('#attribute_id option:selected').text();
-            //  var selectedattrib = $('#attribute_id').val();
-            //alert(selectedattrib);
-            if (selectedattrib == 'Regular') {
-                $("#plan").show();
-            } else {
-                $("#plan").hide();
-                $("#regularly").val = 0;
-            }
-        });
+        // $('#attribute_id').on('change', function () {
+        //     var selectedattrib = $('#attribute_id option:selected').text();
+        //     //  var selectedattrib = $('#attribute_id').val();
+        //     //alert(selectedattrib);
+        //     if (selectedattrib == 'Regular') {
+        //         $("#plan").show();
+        //     } else {
+        //         $("#plan").hide();
+        //         $("#regularly").val = 0;
+        //     }
+        // });
 
         $('#housetype').on('change', function () {
             var selectedhouse = $('#housetype option:selected').text();
@@ -694,7 +693,7 @@ serviceOrder = {
         // alert($('#service_date').val());
         var active_order =0;
         var frequency_length = 0;
-        if($('#regularly option:selected')!=""){
+        if($('#regularly').val()!=""){
             active_order = 1;
             frequency_length = $('#regularly').val();
         }
