@@ -8,22 +8,6 @@ Transactions = {
         Transactions.getMyTransactions();
     },
 
-    getIndex: function () {
-        $('#users').DataTable({
-            "bDestroy": true,
-            processing: true,
-            serverSide: true,
-            responsive: true,
-            ajax: {
-                url: Cedezone.CONSTANTS.BASE_URL + Transactions.CONSTANTS.get_all_trans,
-                type: "GET",
-                headers: {
-                    "Authorization": "Bearer " + Cedezone.getToken()
-                },
-            },
-        });
-    },
-
 getMyTransactions: function () {
         $.ajax({
             url: Cedezone.CONSTANTS.BASE_URL + Transactions.CONSTANTS.get_all_trans,
@@ -71,14 +55,10 @@ getMyTransactions: function () {
                     $tr = $('<tr>').append(
                     $('<td>').text(no),
                     // $('<td>').text(item.order_ref_id),
-                    $('<td>').text(item.service.category + ' ' + item.service.name),
-                    $('<td>').text(item.service.attribute),
-                    $('<td>').text(item.service_date + ' / ' +item.service_time),
-                    $('<td>').text(item.address),
-                    $('<td>').text(item.status.name),
-                    $('<td>').html(userOrders.providerDisplay(item.provider)),
-//                    $('<td>').text(''),
-                    $('<td>').html(userOrders.orderStatusButton(item.status.name,item.id ))
+                    $('<td>').text(item.amount),
+                    $('<td>').text(item.narration),
+                    $('<td>').text(item.order_details),
+                    $('<td>').text(item.order_date),
                     );
                 $('.order-container table tbody').append($tr);
                 // $('.order-container table tbody').append('<div class="line" style="height: 40px; width: 6px; background: #888; margin: 0 auto;"></div>');
