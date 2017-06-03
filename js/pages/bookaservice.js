@@ -694,7 +694,7 @@ serviceOrder = {
         // alert($('#service_date').val());
         var active_order =0;
         var frequency_length = 0;
-        if($('#attribute_id option:selected')=="Regular"){
+        if($('#regularly option:selected')!=""){
             active_order = 1;
             frequency_length = $('#regularly').val();
         }
@@ -750,6 +750,7 @@ serviceOrder = {
 
     successfulOrderResponse: function (data) {
         $view = $('#successMsg').html();
+        $('.header').html("");
         $('#changepage').html("");
         $('#changepage').html($view);
     },
