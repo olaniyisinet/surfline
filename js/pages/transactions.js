@@ -37,7 +37,7 @@ getMyTransactions: function () {
                 
                 showDialog({
                     title: 'Oops..',
-                    text: 'Error fetching Your Order History',
+                    text: 'Error fetching Your Transaction History',
                 })
             },
             dataType: 'json',

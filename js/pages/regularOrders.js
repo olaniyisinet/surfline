@@ -76,7 +76,7 @@ regularOrders = {
                 // swal('Error', 'Error fetching Your recent activities', 'error')
                 showDialog({
                     title: 'Error',
-                    text: 'Error fetching regular orders',
+                    text: 'Error fetching your regular orders',
                 })
             },
             dataType: 'json',
