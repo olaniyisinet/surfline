@@ -95,6 +95,7 @@ regularOrders = {
         if (data.status == true) {
             var $tr = '';
             var responses = data.data;
+            // alert(JSON.stringify(data.data));
             if($.isEmptyObject(data.data)){
                 $('.order-container').append($('#empty-activity').html())
                 return false;
@@ -118,7 +119,8 @@ regularOrders = {
                     $('<td>').text(item.status.name),
                     $('<td>').html(regularOrders.providerDisplay(item.provider)),
 //                    $('<td>').text(''),
-                    $('<td>').html(regularOrders.orderStatusButton(item.status.name,item.id ))
+                    $('<td>').html(regularOrders.orderStatusButton(item.status.name,item.id )),
+                    $('<td>').text('Next Service Date - ' +item.next_order_date)
                     );
                 $('.order-container table tbody').append($tr);
                 // $('.order-container table tbody').append('<div class="line" style="height: 40px; width: 6px; background: #888; margin: 0 auto;"></div>');
