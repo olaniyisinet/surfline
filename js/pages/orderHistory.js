@@ -142,7 +142,8 @@ userOrders = {
                 }else if(data == 'Confirmed'){
                    $html='<button class="btn waves-effect waves-light green" data-id="" disabled><i class="fa fa-check"></i> Confirmed </button>'
                 }else if(data == 'Canceled'){
-                   $html='<button class="btn waves-effect waves-light red data-id="" disabled><i class="fa fa-trash"></i> Canceled </button>'
+                //    $html='<button class="btn waves-effect waves-light red data-id="" disabled><i class="fa fa-trash"></i> Canceled </button>'
+                $html=''
                 }else{
 
                    $html='<a class="btn waves-effect waves-light red cancel" data-id="'+id+'"><i class="fa fa-trash"></i> Cancel </a>'
