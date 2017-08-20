@@ -48,9 +48,7 @@ Cedezone customer app for booking cleaning services  </description>
   <param name="183619491292-1ufm302r4luc3r68loc93irbt4q1h72n.apps.googleusercontent.com" value="myreversedclientid" />
 </gap:plugin>-->
 
-       <!-- <plugin name="org.apache.cordova.inappbrowser" source="npm" version="1.7.1" />  -->
+        <plugin name="org.apache.cordova.inappbrowser" source="npm" version="1.7.1" />  
        <!-- <plugin name="org.apache.cordova.inappbrowser" source="npm" version="1.7.2" />  -->
-<feature name="InAppBrowser">
-    <param name="android-package" value="org.apache.cordova.InAppBrowser" />
-</feature>
+
 </widget>
