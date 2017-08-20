@@ -49,6 +49,6 @@ Cedezone customer app for booking cleaning services  </description>
 </gap:plugin>-->
 
        <!-- <plugin name="org.apache.cordova.inappbrowser" source="npm" version="1.7.1" />  -->
-       <plugin name="org.apache.cordova.inappbrowser" source="npm" version="1.7.2" /> 
+       <!-- <plugin name="org.apache.cordova.inappbrowser" source="npm" version="1.7.2" />  -->
 
 </widget>
