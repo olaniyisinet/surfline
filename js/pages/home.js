@@ -103,7 +103,6 @@ Home = {
 
             //console.log(data.pagination);
             // var paging = $.parseJSON(data.pagination);
-            $('#pagination').html(data.pagination.link);
         } else {
             swal('Oops..', data.msg, 'error')
         }
