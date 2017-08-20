@@ -3,7 +3,7 @@ Home = {
 
         Home: '',
         location_route: '/location/',
-        myorders_route: '/myorders',
+        myorders_route: '/myorders/recent',
          status: '/change/order/status',
     },
 
@@ -78,7 +78,8 @@ Home = {
             }
             var $content =$('#activities_template').html();
             $('#table tbody').html(""); ///empty table for new records
-            var no = (data.pagination.current_page - 1) * data.pagination.per_page;
+            // var no = (data.pagination.current_page - 1) * data.pagination.per_page;
+            var no ='';
             $('#history-content').empty();
             $('#history-content').append($content);
             $.each(responses, function (i, item) {
@@ -95,7 +96,7 @@ Home = {
                     $('<td>').text(item.service_date + ' ' +item.service_time),
                     $('<td>').text(item.address),
                     $('<td>').text(item.status.name),
-                    $('<td>').html(Home.orderStatusButton(item.status.name,item.id ))
+                    // $('<td>').html(Home.orderStatusButton(item.status.name,item.id ))
                 )
                 $('#history-content table tbody').append($tr);
             })
