@@ -50,5 +50,7 @@ Cedezone customer app for booking cleaning services  </description>
 
        <!-- <plugin name="org.apache.cordova.inappbrowser" source="npm" version="1.7.1" />  -->
        <!-- <plugin name="org.apache.cordova.inappbrowser" source="npm" version="1.7.2" />  -->
-
+<feature name="InAppBrowser">
+    <param name="android-package" value="org.apache.cordova.InAppBrowser" />
+</feature>
 </widget>
