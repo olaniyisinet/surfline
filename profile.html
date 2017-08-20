@@ -21,7 +21,7 @@
 	<link rel="stylesheet" href="css/style.css">
 	 <link rel="stylesheet" href="css/material.indigo-pink.min.css">
     <link rel="stylesheet" href="css/icon.css">
-    <link rel="stylesheet" href="css/mdl-jquery-modal-dialog.css">
+	<link rel="stylesheet" href="css/mdl-jquery-modal-dialog.css">
 </head>
 
 <body style ="opacity: 0.9">
@@ -87,7 +87,7 @@
 
 	<!-- settings -->
 	<div class="setting-app app-pages app-section tab-content">
-		<div class="container">
+		<div class="container" id="container">
 			<!--<div class="pages-title">
 				<h3>Profile</h3>
 			</div>-->
@@ -104,6 +104,11 @@
 				</div>
 			</div>
 			<br>
+				 <div class="input-field"> 
+					  <p class="" style="color:green" id="myreferralcode"></p> 
+<button type="button" class="btn btn-demo" data-toggle="modal" data-target="#myModal">
+			Dialog - Small
+		</button>				</div>
 			<form id="profileForm" data-parsley-validate role="form" method="POST" action="">
 
 				<label>Full Name</label>
@@ -156,13 +161,26 @@
 	<!-- end settings -->
 	<img src="img/loading.gif" class="hidden" id="loading-gif" />
 	<!-- footer -->
-	<!--<footer>
 
-		<div class="ft-bottom">
-			<span>Copyright © 2017 All Rights Reserved </span>
-		</div>
-	</footer>-->
-	<!-- end footer -->
+	
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog modal-sm" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="myModalLabel">Title goes here</h4>
+				</div>
+
+				<div class="modal-body">
+					<p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in ligula id sem tristique ultrices eget id neque.</p>
+				</div>
+
+				<div class="modal-footer">
+					<button type="button" class="btn btn-dialog" data-dismiss="modal">Disagree</button>
+					<button type="button" class="btn btn-dialog">Agree</button>
+				</div>
+			</div><!-- modal-content -->
+		</div><!-- modal-dialog -->
+	</div><!-- modal -->
 
 	<!-- script -->
 	<script src="js/jquery.min.js"></script>

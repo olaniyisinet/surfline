@@ -34,7 +34,7 @@
             </div>
             <div class="site-title">
                 <a href="#" class="logo">
-                    <h1>Password</h1>
+                    <h1>Refer a Friend</h1>
                 </a>
             </div>
             <div class="panel-control-right">
@@ -75,9 +75,9 @@
             <li>
                 <a href="transactions.html"><i class="fa fa-money"></i>Payment History</a>
             </li>
-            <!-- <li>
+            <li>
                 <a href="refer_a_friend.html"><i class="fa fa-users"></i>Refer a Friend</a>
-            </li> -->
+            </li>
             <li>
                 <a href="change_password.html"><i class="fa fa-lock"></i>Change Password</a>
             </li>
@@ -95,36 +95,18 @@
                 <h3>Password</h3>
             </div>-->
 
-            <form id="resetpassword" class="form-horizontal" data-parsley-validate role="form" method="POST" action="">
 
-                <label>Old Password</label>
+                <label>Email Address</label>
                 <div class="input-field">
-                    <input type="password" class="validate" id="oldpassword" name="oldpassword" required>
-                    <span class="help-block">
-                                        <strong></strong>
-                                    </span>
-                </div>
-
-                <label>New Password</label>
-                <div class="input-field">
-                    <input type="password" class="validate" id="password" name="password" required>
-                    <span class="help-block">
-                                        <strong></strong>
-                                    </span>
-                </div>
-
-                <label>Confirm Password</label>
-                <div class="input-field">
-                    <input type="password" class="validate" id="password-confirmation" name="password-confirmation" required data-parsley-equalto="#password">
+                    <input type="email" class="validate" id="friend_email" name="friend_email" required>
                     <span class="help-block">
                                         <strong></strong>
                                     </span>
                 </div>
 
                 <div class="input-field center">
-                    <button class="button" type="submit" style="border-radius: 5px;">Change Password</button>
+                    <button class="button" type="button" id="refer_friend" style="border-radius: 5px;">Submit</button>
                 </div>
-            </form>
         </div>
     </div>
     <!-- end settings -->
@@ -155,13 +137,13 @@
 
     <script src="js/pages/Main.js"></script>
     <script src="js/pages/sideprofile.js"></script>
-    <script src="js/pages/change_password.js"></script>
+    <script src="js/pages/referral.js"></script>
 
     <script type="application/javascript">
         $(document).ready(function () {
             // Form.init('login');
-            Password.init();
             Cedezone.init();
+            Referral.init();
             sideProfile.init();
          });
         function imgError(image) {

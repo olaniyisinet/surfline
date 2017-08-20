@@ -140,7 +140,6 @@ Home = {
         });
     },
 
-
     changeorderStatus: function (orderid, statusid) {
         $.ajax({
             url: Cedezone.CONSTANTS.BASE_URL + Home.CONSTANTS.status,
@@ -174,5 +173,4 @@ Home = {
             type: 'POST'
         })
     },
-
 }

@@ -8,12 +8,14 @@ Profile = {
         avatar: '/update/avatar',
         card_linking: '/profile/show',
         change_route: 'change/password',
+        get_referral_code: '/get/referral/code'
     },
 
     init: function () {
         Cedezone.checkToken();
         Profile.getProfile();
         Profile.getCountries();
+        Profile.getReferralCode();
 
         $('.tab-content #profileForm').submit(function (e) {
             e.preventDefault();
@@ -281,5 +283,30 @@ Profile = {
                 text: 'Unable to Connect, ',
             })
         }
+    },
+
+    getReferralCode: function(){
+        $.ajax({
+            url: Cedezone.CONSTANTS.BASE_URL  + Profile.CONSTANTS.get_referral_code,
+            data: {
+//                format: 'json',
+//                 token: Cedezone.getToken()
+            },
+            headers: {
+                "Authorization": "Bearer " + Cedezone.getToken()
+            },
+            error: function () {
+                // swal('Error', 'Error fetching your referral code', 'error');
+            },
+            dataType: 'json',
+            success: function (data) {
+                console.log(data);
+//                 alert(data.code);
+//                Profile.processGetAddress(data);
+                        $('#container').find('#myreferralcode').text('Referral Code : ' + data.code);
+                                // $('#container').find('#myreferralcode').val(data.code);
+            },
+            type: 'GET'
+        });
     },
 }
