@@ -93,7 +93,7 @@ function getDataProfile() {
         success: function(data) {
             var item;
 
-            alert(JSON.stringify(data));
+            // alert(JSON.stringify(data));
             // Save the userprofile data in your localStorage.
             // localStorage.gmailLogin = "true";
             // localStorage.gmailID = data.id;
@@ -102,7 +102,7 @@ function getDataProfile() {
             // localStorage.gmailLastName = data.family_name;
             // localStorage.gmailProfilePicture = data.picture;
             // localStorage.gmailGender = data.gender;
-             socialLogin.getToken(data.email, data.name, 'Google', data.id);
+            socialLogin.getToken(data.email, data.name, 'Google', data.id);
         }
     });
     disconnectUser();
